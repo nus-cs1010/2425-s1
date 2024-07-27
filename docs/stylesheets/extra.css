@@ -111,3 +111,21 @@ s {
   --md-primary-fg-color--dark:  #5a92ef;
   --md-accent-fg-color:         #5a92ef;
 }
+
+/* Monokai color scheme for code highlighting */
+  --md-code-hl-number-color:    #AE81FF;
+  --md-code-hl-special-color:   #F92672;
+  --md-code-hl-function-color:  #A6E22E;
+  --md-code-hl-constant-color:  #AE81FF;
+  --md-code-hl-keyword-color:   #F92672;
+  --md-code-hl-string-color:    #E6DB74;
+  --md-code-hl-name-color:      #66D9EF;
+  --md-code-hl-operator-color:  #F92672;
+  --md-code-hl-punctuation-color: #F8F8F2;
+  --md-code-hl-comment-color:   #75715E;
+  --md-code-hl-generic-color:   #F92672;
+  --md-code-hl-variable-color:  #FD971F;
+  --md-code-fg-color:           #F8F8F2;
+  --md-code-bg-color:           #272822;
+  --md-code-hl-color:           #3E3D32;
+*/

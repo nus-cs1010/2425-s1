@@ -38,7 +38,6 @@
 
     </div>
 
-
     ## Basic C
     <div class="grid cards" markdown>
 
