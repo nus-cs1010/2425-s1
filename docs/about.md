@@ -168,9 +168,9 @@ Please note that the following are not handled by the CS1010 teaching team.  We 
  
 ## Communication Policy
 
-There are two main platforms for communication in CS1010: Piazza and Ticketing System.
+There are two main platforms for communication in CS1010: Piazza and RT.
 - Use Piazza if you have questions about the course content and assessments.  The teaching team will monitor Piazza regularly and respond to your questions there.
-- Use the CS1010 Ticketing System for administrative and logistic matters (e.g., missing an assessment, request for re-grading of an assessment, incorrect Canvas grades).
+- Use RT (Request Tracker) for administrative and logistic matters (e.g., request for make-up test, request for re-grading of an assessment)
 
 Emails or Canvas messages can be used in the following situations:
 - You are contacted by the teaching team through email or Canvas messages first.
@@ -186,7 +186,7 @@ CS1010 uses several web applications to manage the content, assessments, and int
 
 -   [**Canvas**](https://canvas.nus.edu.sg/courses/62224): Announcements, class rosters, surveys, quizzes, grades, and sharing of PDF documents are managed through Canvas.
 -   [**Handbook**](https://nus-cs1010.github.io/2425-s1/): Notes, problem sets, programming exercises, and lab guides, are publicly available on the web.
--   **Ticketing System** (URL TBD): For filing tickets to the teaching team for administrative and logistics matters.
+-   [**RT**](https://mysoc.nus.edu.sg/app/cs1010/): For submitting request tickets for administrative and logistics matters.
 -   [**Piazza**](https://piazza.com/nus.edu.sg/fall2024/cs1010): Q & A website that serves as the main forum for discussion about CS1010.
 -   [**GitHub**](https://www.github.com): Contains submitted code repositories and feedback about the code from tutors.
 -   [**Softmark**](https://softmark.comp.nus.edu.sg): Use to disseminate graded written tests/practical exams back to students.
