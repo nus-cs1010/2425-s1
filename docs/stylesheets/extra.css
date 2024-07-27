@@ -94,11 +94,20 @@ s {
 	vertical-align: baseline;
 }
 
+/* Pairing of #b26e57 and #e7d7c8 
 [data-md-color-scheme="cs1010"] {
-  --md-primary-bg-color:        #492b21; /* #b26e57 darken 60% */
-  --md-primary-fg-color:        #e7d7c8;
+  --md-primary-fg-color:        #b26e57;
   --md-primary-fg-color--light: #e7d7c8;
   --md-primary-fg-color--dark:  #e7d7c8;
   --md-accent-fg-color:         #b26e57;
-  --md-typeset-a-color:         #7f4c3a; /* #b26e57 darken 30% */
+  --md-typeset-a-color:         #7f4c3a; /* #b26e57 darken 30% 
+}
+*/
+
+/* 5a92ef 86c1d4 9cd9de d9f9f4b */
+[data-md-color-scheme="cs1010"] {
+  --md-primary-fg-color:        #5a92ef;
+  --md-primary-fg-color--light: #5a92ef;
+  --md-primary-fg-color--dark:  #5a92ef;
+  --md-accent-fg-color:         #5a92ef;
 }
