@@ -24,7 +24,6 @@
 -   Joel Chin Junwei (Computer Engineering, Year 2)
 -   Kieran Ho (Business Analytics, Year 2)
 -   Lai Yong Rong (Information Security, Year 2)
--   Miguel Foo Ming Yew (Computer Science, Year 3)
 -   Ong Zhi Hong (Computer Engineering, Master)
 -   Pereira Prince Matthew James (Computer Engineering, Year 4)
 -   Phan Dinh Hung (Computer Engineering, Year 3)
