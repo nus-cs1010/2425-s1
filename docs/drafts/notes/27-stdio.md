@@ -174,4 +174,4 @@ The advantage of `fgets` is that it never overflows the buffer (it knows the siz
 
 Instead of `strtol` or `strtof, some old-school textbooks might show you that you can convert a string to a `long` or a `double` using `atol` or `atof`.  You should avoid these two functions (even the man pages of `atof` says so!).  They do not provide any mechanism for error checking if the string is not a valid integer or if the input is out of range of the type.
 
-You can read [the source code for the CS1010 library](https://github.com/nus-cs1010-1819-s1/libcs1010) to see how it uses `fgets`, `strtol` and related functions to parse numbers and strings from the standard inputs.
+You can read [the source code for the CS1010 library](https://github.com/nus-cs1010/libcs1010) to see how it uses `fgets`, `strtol` and related functions to parse numbers and strings from the standard inputs.

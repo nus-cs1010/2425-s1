@@ -56,8 +56,6 @@ __[VIM Pays Excellent Dividends](https://dispatches.artifexdeus.com/vim-pays-exc
 
 > Being conservative, let’s say it makes you 5% more productive. More specifically — once your brain maps the keystrokes to muscle memory — it makes you 5% faster at completing the mundane tasks…the ones which dominate programming. That added productivity snowballs. It’s an extra twenty minutes a day to build or explore (or learn), that used to go to copy/paste-like operations.
 
-__[The Powers of VIM](http://dudarev.com/blog/powers-of-vim/)__ by Artem Dudarev
-
 __[The 11 Steps to Learning Vim](https://github.com/damassi/learn-vim/blob/master/README.md)__ - by [damassi](https://github.com/damassi). 
 
 > Regardless of the initial confusion and difficulty in getting started, you're making your future developer self immensely more productive by diving in and taking the plunge. Seriously. I'm just a few weeks in right now and I can positively say that learning Vim has been the best work-related decision of my life. It's fun, and in the strangest of ways it makes you think better.
@@ -66,7 +64,7 @@ __[Vim for People Who Think Things like Vim and Weird and Hard](https://csswizar
 
 > .. the fact that, yes, people still use an editor that is over 20 years old (in turn based on a tool from the 70s), and those people number in the hundreds of thousands, perhaps they might be onto something.
 
-__[Why I use Vim](https://pascalprecht.github.io/posts/why-i-use-vim/)__ - Pascal Precht. 
+__[Why I use Vim](https://sovereign-individual.xyz/posts/why-i-use-vim/)__ - Pascal Precht. 
 
 > once I was able to do some basic operations in Vim and actually started working again, I made almost as twice as much progress at work in about half the time. I know that sounds kind of crazy but I’m serious. And that convinced me that I made the right choice._
 

@@ -78,8 +78,6 @@ If you repeat the operation ++c++, ++d++, and ++y++, it applies to the whole lin
 
 You can add a number before an operation to specify how many times you want to repeat an operation.  So ++5++++d++++d++  deletes 5 lines, ++5++++d++++w++ deletes 5 words, etc.
 
-See the article [Operator, the True Power of `Vim`](http://whileimautomaton.net/2008/11/vimm3/operator) for more details.
-
 ### Swapping Lines
 
 Sometimes you want to swap the order of two lines of code, in command mode, ++d++++d++++p++ will do the trick.  ++d++++d++ deletes the current line, ++p++ paste it after the current line, in effect swapping the order of the two lines.
