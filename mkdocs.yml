@@ -1,9 +1,9 @@
 nav:
   - Home: 'index.md'
   - About:
-    - General Information : 'drafts/about.md'
-    - Teaching Team: 'drafts/team.md'
-    - Schedule: 'drafts/schedule.md'
+    - General Information : 'about.md'
+    - Teaching Team: 'team.md'
+    - Schedule: 'schedule.md'
   - Notes: 
     - 1. What is a Program?: "drafts/notes/01-program.md"
     - 2. Computational Problems: "drafts/notes/02-algo.md"
