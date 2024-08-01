@@ -1,4 +1,4 @@
-# CS1010 Course Information 
+# CS1010 Course Information and Policy
 
 ## Course Description
 
@@ -72,7 +72,7 @@ Students entering CS1010 are expected to
 
 ### Catch-Up Sessions
 
-- Every three weeks, we run a 2-hour Q&A session for students to clarify doubts on Saturday morning.  
+- Every three weeks, we run a 2-hour Q&A session for students to clarify doubts on Wednesday afternoon.
 - Attendance is optional, but we strongly encourage students who are falling behind to take this opportunity to clarify doubts and catch up.
 - Catch-up sessions are recorded.  The video will be shared after the session.
 
@@ -81,12 +81,12 @@ Students entering CS1010 are expected to
 
 There are two types of assessment, formative and summative assessments.
 
-Formative assessments in CS1010 include past-year questions, problem sets, programming exercises, and online quizzes.  They carry little weight (10%) and are meant to help students self-diagnose and improve their problem-solving ability, programming skills, and understanding of the concepts taught in class.  They are also meant to make students think deeper about the lessons, apply what they learn, and gain experience and confidence in their problem-solving/programming ability.  Despite the smaller weightage, we expect that students spend most of their time on formative assessments.
+Formative assessments in CS1010 include past-year questions, problem sets, programming exercises, and online quizzes.  They carry little or no weight, and are meant to help students self-diagnose and improve their problem-solving ability, programming skills, and understanding of the concepts taught in class.  They are also meant to make students think deeper about the lessons, apply what they learn, and gain experience and confidence in their problem-solving/programming ability.  Despite the smaller total weightage (10%), we expect that students spend most of their time on formative assessments.
 
 The summative assessments, on the other hand, are meant to evaluate student learning.  These include two written assessments (the midterm and the final exam) and three practical exams.  These are high-stakes assessments carrying 90% of the total weights.
 
 -   **Problem Sets**: At the end of some lesson units, we will provide some exercise questions to make students reflect and practice applying what they have learned in the corresponding unit. These questions are not graded. There is no need to submit answers for grading. They will be discussed and presented during the tutorial sessions.
--   Past Year Test Papers: Past year test papers are made available for practice.  These are not graded.  There is no need to submit answers for grading.  Selected questions may be discussed during class.  They can be discussed on Piazza.
+-   **Past Year Test Papers**: Past year test papers are made available for practice.  These are not graded.  There is no need to submit answers for grading.  Selected questions may be discussed during class.  They can be discussed on Piazza.
 -   **Quizzes**: The online quizzes are released every week after the lecture (Monday, 6 PM) and are due two days later (Wednesday, 11:59 PM). The quizzes are more tightly coupled to the content of the weekly lectures and are meant to help students self-diagnose their understanding of what is taught for that week.  You may attempt the quizzes an unlimited number of times.  We will consider only your highest score.
 -   **Programming Exercises**: These are programming questions of various difficulty levels that are critical for students to solve, to gain experience, skills, and confidence in solving computational problems with C. Typically students spend more than half of their time in CS1010 on solving these programming exercises. Students should submit them on time to get feedback from their lab tutors.  More [details about programming exercises](guides/exercises.md) can be found in the handbook.
 -   **Practical Exams**: Students will be given programming questions to solve within a limited time frame, in an examination setting in SoC computer labs.  This is usually held during the evening or on a Saturday.
@@ -112,12 +112,12 @@ The summative assessments, on the other hand, are meant to evaluate student lear
 -   Students may use AI tools to assist them complete their formative assessments (quizzes, past-year papers, problem sets, and programming exercises).  The use of AI tools, however, should be moderated and used to help students achieve the learning outcomes of CS1010.  It is pointless to use AI tools to generate answers to formative assessments.
 -   Students should familiarise themselves with the NUS policy [on the use of AI tools](https://libguides.nus.edu.sg/new2nus/acadintegrity#s-lib-ctab-22144949-4) and [the guidelines for using AI tools for academic work](https://libguides.nus.edu.sg/new2nus/acadintegrity#s-lib-ctab-22144949-5)
 
-### Discussion and Plagiarism
+### Collaboration on Programming Exercises
 
--   We encourage discussions among students for programming exercises, but each student should be responsible for writing his/her code and should give credit to others when appropriate.
--   NUS and the School of Computing have a high standard of academic honesty and take any violation seriously. In the context of computing modules, source code plagiarism -- copying code from another source and attributing it as one's code -- is a serious violation. Please read the page Preventing Plagiarism from the school's website to familiarize yourself with the policy.
--   CS1010 adopts a "no mercy" policy when it comes to disciplinary action on plagiarism. Both parties, the student who copied, and the student who allowed others to copy, will be penalized equally.
--   Considering that the programming exercises are meant to be formative and contribute very little to the grade of CS1010, there is no point in plagiarising when solving programming exercises.  Doing so would not help students learn and prepare them for the practical exams.  Our experience indicates that students whose exercise submissions exhibit high similarity with other students tend to perform poorly in practical exams.
+- As a key component to train students in problem-solving and programming skills, the programming exercises are best solved with an individual effort.  
+- Students are, however, free to collaborate and learn from each other.  If the exercises are solved with the help of others, students should give credit to those who helped them (in comments of the code) as good professional etiquette.
+- Copy-pasting from collaborators (or other online sources) when solving programming exercises would not help students learn.  Our experience indicates that students whose exercise submissions exhibit high similarity with other students tend to perform poorly in practical exams.
+- A good rule-of-thumb to follow is the Gilligan Island's Rule: After discussing with others, engage in 30 minutes of mind-numbing activities, before working again on an exercise question without referring to any notes of the discussion.  This approach ensures that the student is able to reconstruct the solution based on what he/she has understood through the discussion.
 
 ### Late/Missed Submission Policy
 
@@ -128,7 +128,7 @@ The summative assessments, on the other hand, are meant to evaluate student lear
 
 ### Absence from Midterm and Practical Exams
 
--   Students who are absent during a practical exam or the midterm test must inform the teaching team by filing a ticket with a justification for missing the exam within 24 hours after the end of the exam.  Only medical, academic, and compassionate reasons can be considered (e.g., representing NUS for a sports event is OK; Clashes with another course activity is OK; Attending a concert is not). Documented proofs (e.g., medical certificates, an email from the other course instructor) are required.
+-   Students who are absent during a practical exam or the midterm test must inform the teaching team by filing a request ticket with a justification for missing the exam within 24 hours after the end of the exam.  Only medical, academic, and compassionate reasons can be considered (e.g., representing NUS for a sports event is OK; Clashes with another course activity is OK; Attending a concert is not). Documented proofs (e.g., medical certificates, an email from the other course instructor) are required.
 -   Being absent without justification during a practical exam or the midterm test will result in 0 marks for the corresponding assessment.
 -   An alternative assessment will be arranged for students who are absent during the midterm or practical exams with valid justification.
 -   Note that there is no second alternative assessment if a student is absent from the alternative assessment.  Students who miss the alternative assessment can file for special consideration at the end of the semester.  Details for filing for special consideration can be found at the NUS Student Portal (look under Special Consideration).
@@ -145,10 +145,9 @@ The summative assessments, on the other hand, are meant to evaluate student lear
 -   The number of As and Fs will not be artificially capped.
 -   As such, students should work together and help each other learn, instead of competing with each other for a limited number of As.
 
- 
 ## The Teaching Team
 
-You can find the members of [the teaching team here](team.md). You can reach the team by filing at ticket at the [CS1010 RT](https://mysoc.nus.edu.sg/app/cs1010/).
+You can find the members of [the teaching team here](team.md). 
 
 The team is responsible for facilitating your learning in CS1010. Their responsibilities include:
 
@@ -169,10 +168,12 @@ Please note that the following are not handled by the CS1010 teaching team.  We 
 ## Communication Policy
 
 There are two main platforms for communication in CS1010: Piazza and RT.
+
 - Use Piazza if you have questions about the course content and assessments.  The teaching team will monitor Piazza regularly and respond to your questions there.
 - Use RT (Request Tracker) for administrative and logistic matters (e.g., request for make-up test, request for re-grading of an assessment)
 
-Emails or Canvas messages can be used in the following situations:
+Emails or Canvas messages should be used only in the following situations:
+
 - You are contacted by the teaching team through email or Canvas messages first.
 - You wish to contact an individual instructor on private or personal matters.
 
@@ -211,10 +212,10 @@ CS1010 is not an easy course. Students are encouraged to ask questions if they d
  
 ## Mental Health and Wellness
 
--   Adjusting to new ways of learning and a new environment at NUS can be challenging, and it may be especially more so for students from diverse backgrounds and circumstances. 
--   If you feel stressed, anxious, depressed, overwhelmed, or just need someone to talk to, you may reach out to the [SoC Student Support Manager](https://www.comp.nus.edu.sg/studentlife/) from the Student Life office or the [NUS University Counselling Services](http://NUS%20University%20Counselling%20Services)
--   You may also approach the CS1010 Teaching Team, who can work with these services to support and accommodate students who need help (e.g., with alternative deadlines).
--   Consider this - As you embark on your university journey with SoC, it's crucial to remember that your goals extend beyond just scoring high grades. While studying is important, equally vital are opportunities for personal growth, forming meaningful connections, enjoying life, and preparing for your future career. It is essential to maintain a healthy balance between academics and mental well-being, recognizing that a few marks should never jeopardize your overall health and well-being.
+- Adjusting to new ways of learning and a new environment at NUS can be challenging, and it may be especially more so for students from diverse backgrounds and circumstances. 
+- If you feel stressed, anxious, depressed, overwhelmed, or just need someone to talk to, you may reach out to the [SoC Student Support Manager](https://www.comp.nus.edu.sg/studentlife/) from the Student Life office or the [NUS University Counselling Services](https://nus.edu.sg/hwb/ucs/).
+- You may also approach the CS1010 Teaching Team, who can work with these services to support and accommodate students who need help (e.g., with alternative deadlines).
+- Consider this -- As you embark on your university journey with SoC, it's crucial to remember that your goals extend beyond just scoring high grades. While studying is important, equally vital are opportunities for personal growth, forming meaningful connections, enjoying life, and preparing for your future career. It is essential to maintain a healthy balance between academics and mental well-being, recognizing that a few marks should never jeopardize your overall health and well-being.
 
  
 ## Expectations
@@ -229,4 +230,3 @@ To maximize the gain out of CS1010, students should commit to
 -   helping each other learn (through discussion and teaching each other) to better understand the course materials and to solve the assessment questions, without providing solutions verbatim for others to copy;
 -   actively participating in lab and tutorial lessons, by asking questions, sharing attempts, and commenting on each others' attempts;
 -   actively asking for guidance and feedback, when feeling lost with what is taught or falling behind.
-
