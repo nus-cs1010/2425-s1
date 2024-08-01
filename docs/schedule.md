@@ -2,7 +2,7 @@
 
 |  | Week Starting | Lecture                          | PE      | Tutorials          | Labs     | Catch-Up Sessions | 
 |--|---------------|----------------------------------|---------|--------------------|----------|-------------------|
-|  |       | Monday                                   | Tuesday | Wednesday          | Thursday | Saturday          |
+|  |       | Monday                                   | Tuesday | Wednesday          | Thursday | Wednesday         |
 |1 | 08-12 | Units 1-2: Computational Problem-Solving |         |                    |          |                   | 
 |2 | 08-19 | Units 3-4: Functions and Types 	      |         |                    |          |                   |
 |3 | 08-26 | Units 5-7: Basic C Programming           |         | Problem Set 2      | Unix/Vim Setup |	Session 1   |
@@ -19,6 +19,6 @@
 |13 | 11-11 | Recap 	                              | PE2     |                    |          | Session 4         |
 
 
--   Catch-up sessions are optional review + Q&A sessions meant for students who need time to recap and catch up. They are held on Saturday 10 AM to 12 PM.
+-   Catch-up sessions are optional review + Q&A sessions meant for students who need time to recap and catch up. They are held on Wednesday 4 PM to 6 PM
 -   Practical exams (PEs) are held on Tuesday evening from 6 to 9 PM
 -   Midterm is held during the lecture slot.
