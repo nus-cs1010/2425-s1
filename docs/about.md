@@ -88,7 +88,7 @@ The summative assessments, on the other hand, are meant to evaluate student lear
 -   **Problem Sets**: At the end of some lesson units, we will provide some exercise questions to make students reflect and practice applying what they have learned in the corresponding unit. These questions are not graded. There is no need to submit answers for grading. They will be discussed and presented during the tutorial sessions.
 -   Past Year Test Papers: Past year test papers are made available for practice.  These are not graded.  There is no need to submit answers for grading.  Selected questions may be discussed during class.  They can be discussed on Piazza.
 -   **Quizzes**: The online quizzes are released every week after the lecture (Monday, 6 PM) and are due two days later (Wednesday, 11:59 PM). The quizzes are more tightly coupled to the content of the weekly lectures and are meant to help students self-diagnose their understanding of what is taught for that week.  You may attempt the quizzes an unlimited number of times.  We will consider only your highest score.
--   **Programming Exercises**: These are programming questions of various difficulty levels that are critical for students to solve, to gain experience, skills, and confidence in solving computational problems with C. Typically students spend more than half of their time in CS1010 on solving these programming exercises. Students should submit them on time to get feedback from their lab tutors.
+-   **Programming Exercises**: These are programming questions of various difficulty levels that are critical for students to solve, to gain experience, skills, and confidence in solving computational problems with C. Typically students spend more than half of their time in CS1010 on solving these programming exercises. Students should submit them on time to get feedback from their lab tutors.  More [details about programming exercises](guides/exercises.md) can be found in the handbook.
 -   **Practical Exams**: Students will be given programming questions to solve within a limited time frame, in an examination setting in SoC computer labs.  This is usually held during the evening or on a Saturday.
 -   **Midterm and Final Exams** are written tests (on pen and paper) conducted in exam halls.
 
@@ -140,7 +140,7 @@ The summative assessments, on the other hand, are meant to evaluate student lear
  
 ## Grading
 
--   CS1010 is not graded using a bell curve. 
+-   CS1010 is not graded using a [bell curve](https://blog.nus.edu.sg/provost/2012/01/20/the-bell-curve/). 
 -   A student will receive the grade he or she deserves, irrespective of how the other students in the class perform.
 -   The number of As and Fs will not be artificially capped.
 -   As such, students should work together and help each other learn, instead of competing with each other for a limited number of As.
@@ -148,7 +148,7 @@ The summative assessments, on the other hand, are meant to evaluate student lear
  
 ## The Teaching Team
 
-You can find the members of [the teaching team here](team.md). You can reach the team by filing at ticket at the [CS1010 Helpdesk]().
+You can find the members of [the teaching team here](team.md). You can reach the team by filing at ticket at the [CS1010 RT](https://mysoc.nus.edu.sg/app/cs1010/).
 
 The team is responsible for facilitating your learning in CS1010. Their responsibilities include:
 
@@ -176,7 +176,7 @@ Emails or Canvas messages can be used in the following situations:
 - You are contacted by the teaching team through email or Canvas messages first.
 - You wish to contact an individual instructor on private or personal matters.
 
-Use only your official NUS email if you email the teaching staff -- either the one with @u.nus.edu or @comp.nus.edu.sg.
+Use only your official NUS email if you email the teaching staff -- either the one with `@u.nus.edu` or `@comp.nus.edu.sg`.
 
 If you email us, and we feel that your question and the answer are useful to the rest of the class, we will publish it on Piazza, with proper anonymization.
  
