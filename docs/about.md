@@ -52,7 +52,7 @@ Students entering CS1010 are expected to
 
 -   The weekly 2-hour lectures are typically where you learn about new concepts.   
 -   The lectures closely follow the course notes.  Students are encouraged to read through the notes before the lectures.
--   The lectures will be recorded.  Screencasts of the lectures will be posted online 1-2 days after the lecture. This will be done on a 'best effort' basis.  Screencasts are not guaranteed to be available on time, or at all.   Posting of the screencasts are meant to help students who attended the lecture to recap the content or to help those who are not able to attend the lecture due to unexpected circumstances. It is not meant to be a replacement for lecture attendance.  Students are encouraged to attend the lectures live so that they can interact and ask questions.
+-   The lectures will be recorded.  Screencasts of the lectures will be posted online 1-2 days after the lecture. This will be done on a 'best effort' basis.  Screencasts are not guaranteed to be available on time, or at all.   Posting of the screencasts is meant to help students who attended the lecture to recap the content or to help those who are not able to attend the lecture due to unexpected circumstances. It is not meant to be a replacement for lecture attendance.  Students are encouraged to attend the lectures live so that they can interact and ask questions.
 -   Lecture slides will be posted after the class. Note that slides are used as a visual aid to assist me during the lectures. It is not meant as a summary of lectures nor a replacement for lecture notes.
 -   We do not take attendance for the lectures.
 
@@ -81,7 +81,7 @@ Students entering CS1010 are expected to
 
 There are two types of assessment, formative and summative assessments.
 
-Formative assessments in CS1010 include past-year questions, problem sets, programming exercises, and online quizzes.  They carry little or no weight, and are meant to help students self-diagnose and improve their problem-solving ability, programming skills, and understanding of the concepts taught in class.  They are also meant to make students think deeper about the lessons, apply what they learn, and gain experience and confidence in their problem-solving/programming ability.  Despite the smaller total weightage (10%), we expect that students spend most of their time on formative assessments.
+Formative assessments in CS1010 include past-year questions, problem sets, programming exercises, and online quizzes.  They carry little or no weight and are meant to help students self-diagnose and improve their problem-solving ability, programming skills, and understanding of the concepts taught in class.  They are also meant to make students think deeper about the lessons, apply what they learn, and gain experience and confidence in their problem-solving/programming ability.  Despite the smaller total weightage (10%), we expect that students spend most of their time on formative assessments.
 
 The summative assessments, on the other hand, are meant to evaluate student learning.  These include two written assessments (the midterm and the final exam) and three practical exams.  These are high-stakes assessments carrying 90% of the total weights.
 
@@ -114,10 +114,10 @@ The summative assessments, on the other hand, are meant to evaluate student lear
 
 ### Collaboration on Programming Exercises
 
-- As a key component to train students in problem-solving and programming skills, the programming exercises are best solved with an individual effort.  
-- Students are, however, free to collaborate and learn from each other.  If the exercises are solved with the help of others, students should give credit to those who helped them (in comments of the code) as good professional etiquette.
+- As a key component through which students learn problem-solving and programming skills, the programming exercises are best solved with an individual effort.  
+- Students are, however, free to collaborate and learn from each other.  If the exercises are solved with the help of others, students should give credit to those who helped them (as part of C comments) as good professional etiquette.
 - Copy-pasting from collaborators (or other online sources) when solving programming exercises would not help students learn.  Our experience indicates that students whose exercise submissions exhibit high similarity with other students tend to perform poorly in practical exams.
-- A good rule-of-thumb to follow is the Gilligan Island's Rule: After discussing with others, engage in 30 minutes of mind-numbing activities, before working again on an exercise question without referring to any notes of the discussion.  This approach ensures that the student is able to reconstruct the solution based on what he/she has understood through the discussion.
+A good rule of thumb to follow is Gilligan Island's Rule: After discussing with others, engage in 30 minutes of mind-numbing activities, before working again on an exercise question without referring to any notes of the discussion.  This approach ensures that the student can reconstruct the solution based on what he/she has understood through the discussion.
 
 ### Late/Missed Submission Policy
 
