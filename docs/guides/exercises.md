@@ -2,7 +2,7 @@
 
 Programming cannot be "studied".  Students must practice what they learn, through solving programming problems, to attain the skills of computational problem-solving in C.
 
-CS1010 provides close to 90 programming questions for students to practice.  These are organized into 11 weekly programming exercises.
+CS1010 provides close to 90 programming questions for students to practice.  These are organized into 9 weekly programming exercises.
 
 ## General Advice
 
@@ -30,7 +30,7 @@ All instructions below are meant to be run on the [PE hosts](environments.md).
 
 Every programming exercise has a unique ID, prefixed with `ex`, and is followed by a two-digit sequence number. 
 
-We use [GitHub Classroom](https://classroom.github.com/classrooms/141557850-cs1010-23-24-s1) for managing the submission (including submissions history) and grading.  You will have one code _repository_ for each exercise.
+We use [GitHub Classroom](https://classroom.github.com/classrooms/176658209-cs1010-24-25-s1) for managing the submission (including submissions history) and grading.  You will have one code _repository_ for each exercise.
 
 The steps for completing a programming assignment/exercise are as follows:
 
@@ -50,12 +50,18 @@ The steps for completing a programming assignment/exercise are as follows:
 ~cs1010/submit <id>
 ```
 
-    This process uploads your C code for each question onto GitHub.  Note that any additional files in the directory will not be uploaded.
+    This command processes your code for each question before it uploads them onto GitHub.  Note that only the modified skeleton code that corresponds to the questions are uploaded.  Any additional files in the directory will not be processed.
 
-    For example, `~cs1010/submit ex01`.  You should see a message like this:
+    The `submit` command perform the following action:
+
+    - checks whether the deadline has passed
+    - checks whether there are any warnings/errors caused by `clang-tidy`
+    - re-format your code using `clang-format`
+
+    A successful run of `~cs1010/submit ex01` would yield a message like this:
     ```
     You have submitted your code.  Please verify your submission online at:
-      https://github.com/nus-cs1010-2324-s1/ex00-ooiwt
+      https://github.com/nus-cs1010-2425-s1/ex00-ooiwt
     to make sure that everything is in order.
     ```
 
@@ -73,14 +79,14 @@ Inside that directory, you should see the following files:
 - `inputs` and `outputs` are subdirectories that contain test inputs and test outputs. We use the convention `<problem>.<id>.in` for input test data, and `<problem>.<id>.out` for output test data.  For example, you will see files such as `echo.1.in`, `divide.1.out`, etc.  The expected output for `echo.1.in` is in `echo.1.out`.  You can look at the content of these files if you wish.  You can also edit these files to change the test input and output to modify the test cases.
 - `Makefile`: The configuration for the tool `make` that we use to automate the compilation and testing of the programs.  
 - `test.sh`: A bash script for testing your code.
-- `compiler_flags.txt` and `.clang-tidy` are two files used to configure `clang` and `clang-tidy` respectively.  You do not need to edit this.
+- `compiler_flags.txt`, `.clang-tidy` and `.clang-format` are three files used to configure `clang`, `clang-tidy`, and `clang-format` respectively.  You do not need to edit this.
 - `.gitignore` contains a list of filenames to be ignored by the submission script.
 
 ## Automating the Edit-Compile-Run Cycle
 
-`make` is a programmer's utility to automate the workflow of the edit-compile-run cycle.  We use `make` for all your exercises, assignments, and practical exams.
+`make` is a programmer's utility to automate the workflow of the edit-compile-run cycle.  We use `make` for your exercises and your practical exams.
 
-A `Makefile` is provided for each of your assignments, exercises, and practical exams.  You don't have to know how to write a `Makefile`, but interested students can contact the teaching team for learning resources.
+A `Makefile` is provided for each of your exercises and practical exams.  You do not have to know how to write a `Makefile`, but interested students can contact the teaching team for learning resources.
 
 For most situations, you only need to run:
 ```
@@ -103,6 +109,13 @@ If you only want to run `clang-tidy` on all the C files, you can run
 ```
 make tidy
 ```
+
+You may invoke the command `clang-format` to format your C files.  To do so, you can run
+```
+make format
+```
+
+Note that `make format` will format all C files under your directory, regardless of whether it is part of the exercise or not. 
 
 If you only want to test all the programs, you can run
 ```
@@ -182,10 +195,18 @@ In every C file that you submit to CS1010, it is a good practice to identify you
 and change it to something like:
 
 ```
-@author Elsa of Arendelle (Group B10)
+@author Elsa of Arendelle (Group 10F)
 ```
 
 This helps us to easily identify the authors when needed.  Furthermore, signing off your work is a sign that you take pride in the work that you have produced!
+
+## Giving Credits to Others
+
+If you have collaborated with others to write your code, you should give credits to them as a professional courtesy.  You can do so by adding a comment in your code, like this:
+
+```
+@remark Anna of Arendelle provided the idea for this function and Sven helped to debug it.  ChatGPT helped to generate the documentation for all functions.
+```
 
 ## Submitting and Receiving Feedback
 
@@ -204,7 +225,16 @@ The dimension for review includes correctness, design, style, efficiency, and do
 - Need improvement
 - Insufficient effort 
 
-A program that cannot compile (i.e., there is a compilation error) will be considered as "insufficient effort".
+The criteria for each category are as follows:
+
+| Category | Syntax Errors | Design/Style Issues | Correct | 
+|----------|---------------|---------------------|---------|
+| Excellent | No | No | Yes |
+| Good | No | Yes | Yes |
+| Need Improvement | No | Yes | No |
+| Insufficient Effort | Yes | - | - |
+
+No/late submission will be considered as "insufficient effort".  
 
 Feedback is done by both a bot and a human (i.e., a lab tutor) and is posted as comments in your GitHub repository. A summary of "Feedback.md" will be made available in your GitHub repository when the review is completed.
 
@@ -224,7 +254,7 @@ Please review the following policies related to programming exercises
 
 - [Asking questions and getting help](../about.md#asking-questions-and-getting-help)
 - [Use of AI tools](../about.md#use-of-ai-tools)
-- [Discussion and plagiarism](../about.md#discussion-and-plagiarism)
+- [Collaborating on Programming Exercises](about.md#collaboration-on-programming-exercises)
 - [Late/miss submission policy](../about.md#latemissed-submission-policy)
 
 ---

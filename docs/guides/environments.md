@@ -74,8 +74,8 @@ CS1010 practical exams will be conducted in the programming labs in COM1, COM4, 
 - Launch the terminal and use `ssh` command above.
 
 !!! warning
-    The local home directory on the lab PCs will be cleaned regularly.  Do not store any files in the home directory of the lab PCs.  You can copy your files to external drive, to your home directory on the PE hosts, to cloud storage.
-
+    The local home directory on the lab PCs will be cleaned regularly.  _Do not expect that files stored in the lab PCs to be persistent_.  You can copy your files to external drive, to your home directory on the PE hosts, or to a cloud storage.
+    
 ## Copying Files between PE Nodes and Local Computer
 
 Secure copy, or `scp`, is one way to transfer files between the programming environments and your local computer.   `scp` behaves just like `cp` (see [Unix: Essentials](unix-essentials.md)).  The command takes in two arguments, the source and the destination.   The difference is that we use the `<username>@<hostname>:<filename>` notation to specify a file on a remote host.
@@ -166,8 +166,7 @@ and you get the following error:
 
 3. `Permission denied, please try again`
 
-    You did not enter the correct password or username.  Please use the username and password 
-of your SoC Unix account which you have created here: https://mysoc.nus.edu.sg/~newacct/.
+    You did not enter the correct password or username.  Please use the username and password of your SoC Unix account which you have created here: https://mysoc.nus.edu.sg/~newacct/.
 
     Check that you have entered your username correctly.  It is _case-sensitive_.
 

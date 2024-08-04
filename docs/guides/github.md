@@ -1,14 +1,14 @@
-# Linking Your PE Accounts to Your GitHub Accounts
+# Linking Your PE Account to Your GitHub Account
 
 ## Prerequisites
 
 1. You should already have your SoC Unix account, cluster access, and SoC VPN set up, and be able to `ssh` into one of the CS1010 PE nodes.  If you are not able to do this, please look at the guide on [CS1010 programming environments](environments.md)
-2. You should feel comfortable running basic UNIX commands.  If you have not gone through the UNIX guide and get your hands dirty, please [look at the guide and play with the various basic Unix commands](unix-essentials.md).
+2. You should feel comfortable running basic Unix commands.  If you have not gone through the Unix guide and got your hands dirty, please [look at the guide and play with the various basic Unix commands](unix-essentials.md).
 3. You should already have a GitHub account and can log into [GitHub.com](https://www.github.com).
+4. You know how to create and edit a file in Vim.
 
 ## Purpose
-
-Your will be using `git` (indirectly) for retrieving skeleton code and submitting completed assignments.  We will set up your accounts on PE hosts below so that `git` will be associated with your GitHub account.  This is a one-time setup.  You don't have to do this for every assignment.
+You will be using `git` (indirectly) for retrieving skeleton code and submitting completed assignments.  We will set up your accounts on PE hosts below so that `git` will be associated with your GitHub account.  This is a one-time setup.  You don't have to do this for every assignment.
 
 ## 1. Setting up `.gitconfig`
 
@@ -19,7 +19,7 @@ Create and edit a file called `.gitconfig` in **your home directory on the PE ho
   name = Your Name
   email = Your Email
 [github]  
-  user = Your GitHub ID
+  user = Your GitHub Username
 ```
 
 Your email should be whatever you used to sign up on GitHub (which may not be your SoC or NUS email).
@@ -52,9 +52,15 @@ SSH uses _public-key cryptography_ for authentication.  The keys come in pairs: 
 
 To authenticate yourself to another host or service, you configure the host/service with your public key.  When it is time for you to log in, your private key is "matched"[^1] with your public key.  Since only you know your private key, the service or the host can be sure that you are you and not someone else.
 
-Suppose you want to log in from host X to host Y without a password.  You generate a pair of keys on X, then keep the private keys on X and store the public keys on Y.  If you want to [set up SSH Keys](environments.md#setting-up-ssh-keys) so that you can log into CS1010 PE nodes from your computer without a password, for example, you generate the pair of keys on your computer (X) and then copy the public key to CS1010 PE nodes.
+Suppose you want to log in from host _X_ to host _Y_ without a
+password.  You generate a pair of keys on _X_, then keep the private
+keys on _X_ and store the public keys on _Y_.  If you want to [set
+up SSH Keys](environments.md#setting-up-ssh-keys) so that you can
+log into CS1010 PE nodes from your computer without a password, for
+example, you generate the pair of keys on your computer (e.g., _X_)
+and then copy the public key to CS1010 PE nodes (_Y_).
 
-Our goal now is to authenticate ourselves to GitHub from the CS1010 PE nodes.  So, X is the PE nodes, and Y is GitHub.
+Our goal now is to authenticate ourselves to GitHub from the CS1010 PE nodes.  So, _X_ is the PE nodes, and _Y_ is GitHub.
 
 ### Generating SSH keys
 
@@ -64,11 +70,16 @@ On any of the PE nodes, run
 ```
 ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
-where `your_email@example.com` is the email your associate with you, when you signed up for your GitHub account (i.e., the same one you entered in `.gitconfig`).
+
+where `your_email@example.com` is the email you used when you signed up for your GitHub account (i.e., the same one you entered in `.gitconfig`).
 
 The command will prompt you where to save the key.  Just press ++enter++ to save into the default location, which is `$HOME/.ssh/id_ed25519`.
 
-You will then be prompted for a passphrase.  Since our goal is to automate assignment submission without needing to type anything, you should enter an empty passphrase.  This increases the security risk, but then, we are working with CS1010 assignments here, not a top-secret project.  So empty passphrase will do.
+You will then be prompted for a passphrase.  Since our goal is to
+automate assignment submission without needing to type anything,
+you should enter an empty passphrase.  This increases the security
+risk, but then, we are working with CS1010 exercises here, not a
+top-secret project.  So an empty passphrase will do.
 
 You should see something like this:
 ```
@@ -95,7 +106,7 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-### Adding Your CS1010 Public Key to Your GitHub Account
+### Adding Your PE Node Public Key to Your GitHub Account
 
 
 The next step involves logging into GitHub.com: click on your avatar in the top right corner, and choose "Settings".  Then choose "SSH and GPG keys" on the sidebar.
@@ -108,12 +119,17 @@ Next, you need to paste your public key into the text box.  Go back to your term
 cat ~/.ssh/id_ed25519.pub
 ```
 
-Remember that `cat` just dumps the content of the file to the standard output.  Now, you need to copy the content of the file displayed on the terminal, which is your public key, and paste it into the text box in the browser.  Your key should start with `ssh-ed22519` and ends with your email address.  For instance, this is the exact text that I copy-pasted:
+Remember that `cat` just dumps the content of the file to the
+standard output.  Now, you need to copy the content of the file
+displayed on the terminal, which is your public key, and paste it
+into the text box in the browser.  Your key should start with
+`ssh-ed22519` and end with your email address.  For instance, this
+is the exact text that I copy-pasted:
 ```
 ssh-ed25519 AAAZC3NzaC1lZDI1NTE8AAAAIDdmwMpRrhRB95u7CTahehtBEeOdhSxDQdlpCxBK3KCP ooiwt@comp.nus.edu.sg
 ```
 
-I showed the above as an example, don't use my public key for your GitHub.  Otherwise, I will have access to your account :)
+I showed the above as an example, do not use my public key for your GitHub.  Otherwise, I will have access to your account :)
 
 After entering the title and key above, click the green "Add SSH key" button to add the key you entered.  If prompted, confirm your GitHub password.
 
@@ -140,4 +156,33 @@ or other error messages.
 
 Note that you need to connect with the username `git`.  Do not use your GitHub username (e.g., do not use `ssh -T ooiwt@github.com`)
 
-[^1]: I skipped many cool details here.  This topic is part of CS2105 and CS2107.  Interested students can google up various articles and videos online about how public-key cryptography is used for authentication.
+## 4. Accept and Retrieve a Test Skeleton from GitHub
+
+We have created an empty lab for you to test if you can correctly retrieve future lab files from GitHub.  Complete the following steps:
+
+- Click here [https://classroom.github.com/a/oBcJPBQ1](https://classroom.github.com/a/oBcJPBQ1).  You should see a page that looks like the following:
+
+![accept](figures/accept-assignment-demo.png){: style="width:500px"}
+
+- Click the accept button.  Wait a bit and then refresh until you see a "You're ready to go" message.
+
+- Now, on your PE host, run
+
+```Bash
+~cs1010/get setup-test
+```
+
+If everything works well, you should see:
+
+```
+Cloning into 'setup-test-<username>'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 2 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+```
+
+Change your working directory into `setup-test-<username>` and look at the directory content.  It should contain a file `README.md`. 
+
+[^1]: I skipped many cool details here.  This topic is part of CS2105 and CS2107.  Interested students can search for various articles and videos online about how public-key cryptography is used for authentication.
