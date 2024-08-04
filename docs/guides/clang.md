@@ -2,7 +2,7 @@
 
 We have automated the steps to compile C programs for all CS1010 assignments and exercises by providing `Makefile` and `compile_flags.txt`.  The following guide explains how one can compile a C program with `clang` directly, without using `Makefile`.  This information is useful once students graduated from CS1010 and go to other modules/scenarios where `Makefile` is not provided.
 
-## 1. Compile a standalone C program
+## 1. Compiling a standalone C program
 
 Suppose we have a standalone C program `teh.c` that does not use any external libraries.  We can compile the program using the command
 
@@ -16,7 +16,7 @@ This command should create an executable called `a.out` in the current directory
 ooiwt@pe118:~$ ./a.out
 ```
 
-## 2. Renaming executable file
+## 2. Renaming an executable file
 
 The name `a.out` is an abbreviation for _assembler output_, a name that many compilers kept as the default output name since the 60s.  We should, however, give our executable more descriptive name, by using the `-o` flag.  (`o` is the mnemonic for output).
 
@@ -39,7 +39,7 @@ The command above would create an executable called `teh`.
 	```
 	`clang` would overwrite your code `teh.c` -- all your hard work will be gone!!
 
-## 3. Warning for possible bugs.
+## 3. Warning for possible bugs
 
 The `clang` checks for syntax errors in your C files -- i.e., things that violate the C syntax rules.  The compiler, however, is smart enough to identify possible bugs -- errors that will cause your program to behave incorrectly, even if the syntax follows C's rules.  You can ask `clang` to warn you about this, using the `-W` flag (`W` is the mnemonic for warning -- note the capital W).  The manual for `clang` lists different types of warnings that `clang` can warn you about.  For instance, we can ask `clang` to warn us by enabling `-Wall` warnings.  The command to do so is:
 
@@ -56,7 +56,7 @@ For beginners, it is _highly recommended_ that you _always_ compile with at leas
 	so that you can use `make` to automate the compilation process. 
 	Appropriate warning flags will be enabled for you.
 
-## 4. Generating additional information for debugging.
+## 4. Generating additional information for debugging
 
 In order to use the debugger `lldb` to trace through and debug your program, `clang` needs to generate additional information and store them in the executable file.  We can instruct `clang` to generate them with the flag `-g` (`g` for generate).  
 
@@ -66,7 +66,7 @@ ooiwt@pe118:~$ clang -Wall -g teh.c -o teh
 
 It is recommended that you always compile with `-g` flags during the development phase.  If you need to measure the performance (e.g., how fast it runs) of your program or when you are releasing the program to the public, you can remove the `-g` flag and compile with the optimization flags (e.g., `-O`) instead.  
 
-## 5. Linking with the standard library.
+## 5. Linking with the standard library
 
 To link with a standard library, we use the `-l` flag to specify the name of the library to link.  For instance, to link with the C standard math library (abbreviated as `m`), you issue the command:
 
@@ -95,4 +95,31 @@ The list of compilation flags can get lengthy.  For CS1010 assignments/exercises
 
 ```bash
 ooiwt@pe118:~$ clang @compile_flags.txt teh.c -lcs1010
+```
+
+## 8. Combining multiple source files into an executable
+
+Sometimes it is useful to separate the source code for an executable into multiple files. For instance, you may have a file `main.c` that contains the `main` function, and another file `foo.c` that contains the function `foo`.  You can compile these two files into an executable with the command:
+
+```bash
+ooiwt@pe118:~$ clang -Wall -g main.c foo.c
+```
+
+Alternatively, you can compile the C files separately into object files and then link them together:
+
+```bash
+ooiwt@pe118:~$ clang -c main.c
+ooiwt@pe118:~$ clang -c foo.c
+ooiwt@pe118:~$ clang main.o foo.o
+```
+
+The flag `-c` tells `clang` to compile the source file into an object file.  The object file is a binary file that contains the machine code for the functions in the source file.  The object file has the same name as the source file, but with the extension `.o`.  The flag `-c` does not produce an executable.  
+
+Finally, the last command (without the `-c` flag)  _links_ the object files together into an executable.  Linking cross references the function names in the object files and resolves them, ensuring that every function that is invoked is defined somewhere in the object files.  If a function is not defined, `clang` will issue an error message.  
+
+Note that you can mix C files and object files in one compilation command:
+
+```bash
+ooiwt@pe118:~$ clang -c foo.c
+ooiwt@pe118:~$ clang main.c foo.o
 ```
