@@ -200,18 +200,18 @@
     - __CS1010 Programming Environment__
 
         We will be using a programming environment for CS1010 labs and practical exams.
-        [:octicons-arrow-right-24:](drafts/guides/environments.md)
+        [:octicons-arrow-right-24:](guides/environments.md)
 
     - __Linking GitHub to CS1010 PE__
 
         We use GitHub Classroom for our labs.  Here is how to link your 
         GitHub account to your PE accounts.
-        [:octicons-arrow-right-24:](drafts/guides/github.md)
+        [:octicons-arrow-right-24:](guides/github.md)
     
     - __Using `tmate`__
 
         `tmate` is a tool that is useful for sharing terminal with others.
-        [:octicons-arrow-right-24:](drafts/guides/tmate.md)
+        [:octicons-arrow-right-24:](guides/tmate.md)
 
 
     </div>
@@ -222,27 +222,27 @@
     - __Philosophy of Vim__
 
         Understand the philosophy behind the design of Vim and why it is useful.
-        [:octicons-arrow-right-24:](drafts/guides/vim-philosophy.md)
+        [:octicons-arrow-right-24:](guides/vim-philosophy.md)
 
     - __Quick Vim Lessons__
 
         Learn the basic commands of Vim for navigation and editing.
-        [:octicons-arrow-right-24:](drafts/guides/vim-quick-lessons.md)
+        [:octicons-arrow-right-24:](guides/vim-quick-lessons.md)
 
     - __Vim Setup__
 
         Set up your Vim properly for CS1010.
-        [:octicons-arrow-right-24:](drafts/guides/vim-setup.md)
+        [:octicons-arrow-right-24:](guides/vim-setup.md)
 
     - __Vim Extensions__
 
         Learn about Vim extensions officially supported by CS1010.
-        [:octicons-arrow-right-24:](drafts/guides/vim-plugins.md)
+        [:octicons-arrow-right-24:](/guides/vim-plugins.md)
 
     - __Vim Tips for CS1010__
 
         Read about useful `vim` tips for CS1010.
-        [:octicons-arrow-right-24:](drafts/guides/vim-tips.md)
+        [:octicons-arrow-right-24:](guides/vim-operations.md)
 
     </div>
 
@@ -252,17 +252,17 @@
     - __Background__
 
         Understand the design principles of Unix and its power through its historical background.
-        [:octicons-arrow-right-24:](drafts/guides/unix-background.md)
+        [:octicons-arrow-right-24:](guides/unix-background.md)
 
     - __Essential Unix Commands__
 
         Learn the essential commands to perform day-to-day operations in a Unix shell.
-        [:octicons-arrow-right-24:](drafts/guides/unix-essentials.md)
+        [:octicons-arrow-right-24:](guides/unix-essentials.md)
 
     - __Advanced Unix Commands__
 
         Level-up your productivity when operating in a Unix shell.
-        [:octicons-arrow-right-24:](drafts/guides/unix-advanced.md)
+        [:octicons-arrow-right-24:](guides/unix-advanced.md)
 
     </div>
 
@@ -272,27 +272,27 @@
     - __C in CS1010__
 
         C is a programming language with some nuances that get in the way of learning programming for beginners.   CS1010 bans and discourages some of these features.
-        [:octicons-arrow-right-24:](drafts/guides/c-in-cs1010.md)
+        [:octicons-arrow-right-24:](guides/c-in-cs1010.md)
 
     - __CS1010 I/O Library__
 
         One of the ways CS1010 simplify C programming for beginners is to provide a library for robust reading and writing of common types without resorting to `printf` and `scanf`.  Read more about this `libcs1010` library here.
-        [:octicons-arrow-right-24:](drafts/guides/library.md)
+        [:octicons-arrow-right-24:](guides/library.md)
 
     - __C Style Guide__
       
         Read more about the expected coding style that CS1010 has to follow
-        [:octicons-arrow-right-24:](drafts/guides/style.md)
+        [:octicons-arrow-right-24:](guides/style.md)
 
     - __C Documentation Guide__
       
         Read more about the expected documentation format that CS1010 has to follow
-        [:octicons-arrow-right-24:](drafts/guides/documentation.md)
+        [:octicons-arrow-right-24:](guides/documentation.md)
 
     - __Compiling with `clang`__
 
         CS1010 hides much details about the use of `clang`, the C language compiler, behind the provided `Makefile`.  Students wishing to learn how to compile using `clang` can learn more here..
-        [:octicons-arrow-right-24:](drafts/guides/clang.md)
+        [:octicons-arrow-right-24:](guides/clang.md)
 
 
     </div>
