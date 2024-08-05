@@ -308,12 +308,6 @@ In the implementation of bubble sort above, we always make $n-1$ passes through 
 
 ### Problem 22.2
 
-(a) Suppose the input list to insertion sort is already sorted.  What is the running time of insertion sort?
-
-(b) Suppose the input list to insertion sort is inversely sorted.  What is the running time of insertion sort?
-
-### Problem 22.3
-
 In certain scenarios, a comparison is more expensive than an assignment.  For instance, comparing two strings is more expensive than assigning a string to a variable.  In this case, we can reduce the number of comparisons during insertion sort by doing the following:
 
 repeat
