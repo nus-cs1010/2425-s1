@@ -147,6 +147,8 @@ to remove all the generated executable files.
 
 ## Testing
 
+`make` invokes the script `test.sh` to check your code.  It checks if your code meets some of the requirements of the questions (e.g., whether the required functions are present, whether loops are present).  It also checks if your code produces the correct output for the given test cases, within a reasonable amont of time (1 second is the default limit -- for questions that require more time, the time limit will be specified in the question).
+
 If your code prints the wrong output for some of the test inputs, familiarity with Unix CLI would be helpful.  Suppose that your code for problem `echo` fails on test case 3.  To see the input of this test case, run:
 ```
 cat inputs/echo.3.in
@@ -205,7 +207,9 @@ This helps us to easily identify the authors when needed.  Furthermore, signing 
 If you have collaborated with others to write your code, you should give credits to them as a professional courtesy.  You can do so by adding a comment in your code, like this:
 
 ```
-@remark Anna of Arendelle provided the idea for this function and Sven helped to debug it.  ChatGPT helped to generate the documentation for all functions.
+@remark Tony provided the idea for this function and Steve 
+        helped me debug it.  ChatGPT generated  the documentation 
+        for all functions.
 ```
 
 ## Submitting and Receiving Feedback
