@@ -258,7 +258,7 @@ Please review the following policies related to programming exercises
 
 - [Asking questions and getting help](../about.md#asking-questions-and-getting-help)
 - [Use of AI tools](../about.md#use-of-ai-tools)
-- [Collaborating on Programming Exercises](about.md#collaboration-on-programming-exercises)
+- [Collaborating on Programming Exercises](../about.md#collaboration-on-programming-exercises)
 - [Late/miss submission policy](../about.md#latemissed-submission-policy)
 
 ---

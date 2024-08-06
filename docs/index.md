@@ -237,7 +237,7 @@
     - __Vim Extensions__
 
         Learn about Vim extensions officially supported by CS1010.
-        [:octicons-arrow-right-24:](/guides/vim-plugins.md)
+        [:octicons-arrow-right-24:](guides/vim-plugins.md)
 
     - __Vim Tips for CS1010__
 

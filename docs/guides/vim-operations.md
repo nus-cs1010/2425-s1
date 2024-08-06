@@ -86,7 +86,7 @@ Note that you can navigate to a different file to paste.  This is useful if you 
 
 ### Copy-Pasting
 
-If you need to copy-paste your code, you should first pause and think about whether you have violated the [abstraction principles](../00-overview.md#the-abstraction-principle).
+If you need to copy-paste your code, you should first pause and think about whether you can reduce repetition in your code by factoring out the common part as a function.
 
 If there is a valid reason to copy-paste, then you can use `y` (stands for yank) for copying text to the clipboard for pasting elsewhere.  `y` behaves similarly to `d`:
 
