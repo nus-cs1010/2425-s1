@@ -1,5 +1,8 @@
 # The CS1010 Programming Environment
 
+![architecture](figures/pe-nodes-architecture/pe-nodes-architecture.001.png)
+<div align="center">Figure 1: The CS1010 Programming Environment.  TL;DR: All work should be done on the PE nodes.  You can access the nodes via `ssh` through lab PCs or your personal devices.  If you need to access them outside SoC, you need to go through SoC VPN.</div>
+
 ## OS and Compiler
 
 C is a common programming language.  You can find different implementations of a C compiler on many platforms.  Wikipedia [lists more than 40 different C compilers](https://en.wikipedia.org/wiki/List_of_compilers#C_compilers).  These different compilers support different processor architectures and operating systems and may behave slightly differently as well as support different features of C standards.  It is therefore important for CS1010 to stick to a single platform and single compiler.
@@ -8,7 +11,7 @@ Our platform of choice is **Ubuntu 20.04.** using the `clang` compiler (**versio
 
 ## PE Hosts
 
-The school has provided a list of computing servers with the above environments for you to use.  The hosts are named `pe111`, `pe112`, ... , `pe119`.  (`pe` stands for "programming environment").  We will refer to these servers generally as the _PE hosts._
+The school has provided a list of computing servers with the above environments for you to use (:material-alpha-a-circle: in Figure 1).  The hosts are named `pe111`, `pe112`, ... , `pe119`.  (`pe` stands for "programming environment").  We will refer to these servers generally as the _PE hosts._
 
 !!! note "pe115 and pe116"
     For this semester, two servers `pe115` and `pe116` are not available.
@@ -29,7 +32,7 @@ Basic requirements:
 
 2. Once you have an account, you need to [activate your access to the PE hosts](https://mysoc.nus.edu.sg/~myacct/services.cgi), which are part of the SoC computer clusters.
 
-3. To access PE Hosts from your computer, you need
+3. To access PE Hosts from your computer (:material-alpha-c-circle: or :material-alpha-d-circle: in Figure 1) you need
 
     - a command line `ssh` client.  Windows 10/11, macOS, and Linux users should already have `ssh` installed by default.  If your OS does come with `ssh` (i.e., it cannot find the `ssh` command when you type `ssh` into your terminal), look for instructions on how to install OpenSSH client on your operating system.
    - a [terminal emulator](unix-background.md#what-is-a-terminal).  The default terminal emulator that comes with Windows and Mac supports only basic features.  For Windows 10/11 users, CS1010 recommends either PowerShell (pre-installed) or [Windows Terminal](https://apps.microsoft.com/detail/9n0dx20hk701?ocid=webpdpshare).  For macOS users, CS1010 recommends [iTerm2](https://iterm2.com/).
@@ -37,7 +40,7 @@ Basic requirements:
 
 ### The Command to SSH
 
-You can access them remotely via `ssh` (Secure SHell).  
+You can access them remotely via `ssh` (Secure SHell).
 
 To connect to a remote host, run the following in your terminal on your local computer:
 ```
@@ -57,7 +60,7 @@ After the command above, follow the instructions on the screen.  The first time 
 
 ### Accessing The PE Hosts from Outside SoC
 
-The PE hosts can only be accessed from within the School of Computing networks.  If you want to access it from outside, you need to connect through SoC VPN.
+The PE hosts can only be accessed from within the School of Computing networks.  If you want to access it from outside, you need to connect through SoC VPN (:material-alpha-d-circle: in Figure 1).
 
 First, you need to set up a Virtual Private Network (VPN) (See [instructions here](https://dochub.comp.nus.edu.sg/cf/guides/network/vpn)).  The staff at `helpdesk@comp.nus.edu.sg` or the IT helpdesk in COM1, Level 1, will be able to help you with setting up if needed.
 
@@ -67,7 +70,9 @@ First, you need to set up a Virtual Private Network (VPN) (See [instructions her
 
 ### Accessing The PE Hosts from SoC Lab PCs
 
-CS1010 practical exams will be conducted in the programming labs in COM1, COM4, and AS6 using the Ubuntu environment on the lab PCs.  Students are advised to use the lab PCs during regular lab sessions to familiarize themselves with the environment.  To access the PE hosts from the lab PCs during lab sessions:
+CS1010 practical exams will be conducted in the programming labs in COM1, COM4, and AS6 using the Ubuntu environment on the lab PCs.  Students are advised to use the lab PCs during regular lab sessions to familiarize themselves with the environment (:material-alpha-b-circle: in Figure 1).  
+
+To access the PE hosts from the lab PCs during lab sessions:
 
 - Boot into Ubuntu if the PC is not already running Ubuntu
 - Log into the PC using the SoC Unix account
@@ -137,7 +142,7 @@ If you experience frequent disconnection, you can consider running `screen`. Aft
 screen
 ```
 
-You will see some messages, press ++Enter++ to go to the command prompt. You can now use the PE host as usual. In case you are disconnected (e.g., in the middle of editing), you can log into the same PE host again, and run:
+You will see some messages, press ++enter++ to go to the command prompt. You can now use the PE host as usual. In case you are disconnected (e.g., in the middle of editing), you can log into the same PE host again, and run:
 
 ```
 screen -r
