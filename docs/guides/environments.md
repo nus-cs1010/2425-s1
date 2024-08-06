@@ -62,7 +62,7 @@ After the command above, follow the instructions on the screen.  The first time 
 
 The PE hosts can only be accessed from within the School of Computing networks.  If you want to access it from outside, you need to connect through SoC VPN (:material-alpha-d-circle: in Figure 1).
 
-First, you need to set up a Virtual Private Network (VPN) (See [instructions here](https://dochub.comp.nus.edu.sg/cf/guides/network/vpn)).  The staff at `helpdesk@comp.nus.edu.sg` or the IT helpdesk in COM1, Level 1, will be able to help you with setting up if needed.
+First, you need to set up a Virtual Private Network (VPN) (See [instructions here](https://dochub.comp.nus.edu.sg/cf/guides/network/vpn)).  The staff at the IT helpdesk in COM1, Level 1, will be able to help you with setting up if needed.  You can also contact them via the NUS IT RT system at [https://rt.comp.nus.edu.sg](https://rt.comp.nus.edu.sg).
 
 !!! note "SoC VPN vs NUS VPN"
 
@@ -181,5 +181,5 @@ and you get the following error:
 
     This error means that you have successfully connected to the PE hosts, but you have no access to your home directory. 
 
-	This should not happen.  Please send an email with the above error message to helpdesk@comp.nus.edu.sg, including the PE hosts that you
+	This should not happen.  Please submit a IT service request with the above error message via [https://rt.comp.nus.edu.sg](https://rt.comp.nus.edu.sg), including the PE hosts that you
 	connected to with this error and your username.  The system administrator can reset the permission of your home directory for you.
