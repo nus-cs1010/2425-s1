@@ -56,16 +56,7 @@ nav:
       - Compiling with Clang: 'guides/clang.md'
   - Exercises: 
       - Guide to Exercises: "guides/exercises.md"
-      - 0. I/O, Types, and Arithmetic: 'drafts/exercises/ex00.md'
-      - 1. Conditionals: 'drafts/exercises/ex01.md'
-      - 2. Loops: 'drafts/exercises/ex02.md'
-      - 3. Fixed-Length Arrays: 'drafts/exercises/ex03.md'
-      - 4. Dynamic Arrays and Strings: 'drafts/exercises/ex04.md'
-      - 5. Multi-dimensional Arrays: 'drafts/exercises/ex05.md'
-      - 6. Searching and Sorting: 'drafts/exercises/ex06.md'
-      - 7. Recursions : 'drafts/exercises/ex07.md'
-      - 8. Struct : 'drafts/exercises/ex08.md'
-  - Readings: "drafts/readings.md" 
+  - Readings: "readings.md" 
 
 
 theme: 
