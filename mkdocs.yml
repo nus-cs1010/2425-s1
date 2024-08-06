@@ -5,57 +5,57 @@ nav:
     - Teaching Team: 'team.md'
     - Schedule: 'schedule.md'
   - Notes: 
-    - 1. What is a Program?: "drafts/notes/01-program.md"
-    - 2. Computational Problems: "drafts/notes/02-algo.md"
-    - 3. Functions: "drafts/notes/03-func.md"
-    - 4. Types: "drafts/notes/04-type.md"
-    - 5. First C Program: "drafts/notes/05-first-c.md"
-    - 6. CS1010 I/O: "drafts/notes/06-cs1010-io.md"
-    - 7. Arithmetic Operations: "drafts/notes/07-arithmetic-ops.md"
-    - 8. Conditional Statement: "drafts/notes/08-if-else.md"
-    - 9. Logical Expression: "drafts/notes/09-logical-exp.md"
-    - 10. Assertion: "drafts/notes/10-assert.md"
-    - 11. Loop: "drafts/notes/11-loop.md"
-    - 12. Invariant: "drafts/notes/12-invariant.md"
-    - 13. Call Stack: "drafts/notes/13-call-stack.md"
-    - 14. Fixed-Length Array: "drafts/notes/14-array.md"
-    - 15. Pointers: "drafts/notes/15-pointers.md"
-    - 16. Call by Reference: "drafts/notes/16-call-by-reference.md"
-    - 17. Heap: "drafts/notes/17-heap.md"
-    - 18. String: "drafts/notes/18-string.md"
-    - 19. Multidimensional Array: "drafts/notes/19-md-array.md"
-    - 20. Efficiency: "drafts/notes/20-efficiency.md"
-    - 21. Searching: "drafts/notes/21-search.md"
-    - 22. Sorting: "drafts/notes/22-sort.md"
-    - 23. Tower of Hanoi: "drafts/notes/23-tower.md"
-    - 24. Permutation: "drafts/notes/24-permutation.md"
-    - 25. N-Queens: "drafts/notes/25-queens.md"
-    - 26. Structure: "drafts/notes/26-struct.md"
-    - 27. Standard I/O: "drafts/notes/27-stdio.md"
+    - 1. What is a Program?: "notes/01-program.md"
+    - 2. Computational Problems: "notes/02-algo.md"
+    - 3. Functions: "notes/03-func.md"
+    - 4. Types: "notes/04-type.md"
+    - 5. First C Program: "notes/05-first-c.md"
+    - 6. CS1010 I/O: "notes/06-cs1010-io.md"
+    - 7. Arithmetic Operations: "notes/07-arithmetic-ops.md"
+    - 8. Conditional Statement: "notes/08-if-else.md"
+    - 9. Logical Expression: "notes/09-logical-exp.md"
+    - 10. Assertion: "notes/10-assert.md"
+    - 11. Loop: "notes/11-loop.md"
+    - 12. Invariant: "notes/12-invariant.md"
+    - 13. Call Stack: "notes/13-call-stack.md"
+    - 14. Fixed-Length Array: "notes/14-array.md"
+    - 15. Pointers: "notes/15-pointers.md"
+    - 16. Call by Reference: "notes/16-call-by-reference.md"
+    - 17. Heap: "notes/17-heap.md"
+    - 18. String: "notes/18-string.md"
+    - 19. Multidimensional Array: "notes/19-md-array.md"
+    - 20. Efficiency: "notes/20-efficiency.md"
+    - 21. Searching: "notes/21-search.md"
+    - 22. Sorting: "notes/22-sort.md"
+    - 23. Tower of Hanoi: "notes/23-tower.md"
+    - 24. Permutation: "notes/24-permutation.md"
+    - 25. N-Queens: "notes/25-queens.md"
+    - 26. Structure: "notes/26-struct.md"
+    - 27. Standard I/O: "notes/27-stdio.md"
   - Lab Guides: 
     - Unix:
-      - Background: "drafts/guides/unix-background.md"
-      - Essentials: "drafts/guides/unix-essentials.md"
-      - Advanced: "drafts/guides/unix-advanced.md"
+      - Background: "guides/unix-background.md"
+      - Essentials: "guides/unix-essentials.md"
+      - Advanced: "guides/unix-advanced.md"
     - Vim:
-      - Philosophy: "drafts/guides/vim-philosophy.md"
-      - Quick Lesson: "drafts/guides/vim-quick-lessons.md"
-      - Setup: "drafts/guides/vim-setup.md"
-      - Extensions: "drafts/guides/vim-plugins.md"
-      - Tips: "drafts/guides/vim-tips.md"
+      - Philosophy: "guides/vim-philosophy.md"
+      - Quick Lesson: "guides/vim-quick-lessons.md"
+      - Setup: "guides/vim-setup.md"
+      - Extensions: "guides/vim-plugins.md"
+      - Common Operations: "guides/vim-operations.md"
     - PE Nodes:
-      - Programming Environments: "drafts/guides/environments.md"
-      - Linking GitHub to PE: "drafts/guides/github.md"
-      - Using tmate: "drafts/guides/tmate.md"
+      - Programming Environments: "guides/environments.md"
+      - Linking GitHub to PE: "guides/github.md"
+      - Using tmate: "guides/tmate.md"
     - C Programming:
-      - C in CS1010: 'drafts/guides/c-in-cs1010.md'
-      - Common Clang Messages: 'drafts/guides/messages.md'
-      - CS1010 I/O Library: "drafts/guides/library.md"
-      - C Style Guide: 'drafts/guides/style.md'
-      - C Documentation Guide: 'drafts/guides/documentation.md'
-      - Compiling with Clang: 'drafts/guides/clang.md'
+      - C in CS1010: 'guides/c-in-cs1010.md'
+      - Common Clang Messages: 'guides/messages.md'
+      - CS1010 I/O Library: "guides/library.md"
+      - C Style Guide: 'guides/style.md'
+      - C Documentation Guide: 'guides/documentation.md'
+      - Compiling with Clang: 'guides/clang.md'
   - Exercises: 
-      - Guide to Exercises: "drafts/guides/exercises.md"
+      - Guide to Exercises: "guides/exercises.md"
       - 0. I/O, Types, and Arithmetic: 'drafts/exercises/ex00.md'
       - 1. Conditionals: 'drafts/exercises/ex01.md'
       - 2. Loops: 'drafts/exercises/ex02.md'

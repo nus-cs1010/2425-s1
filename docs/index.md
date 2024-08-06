@@ -31,22 +31,22 @@
     - __1. Programming__
 
         What is a program?  What is programming?  What is CS1010 about?
-        [:octicons-arrow-right-24:](drafts/notes/01-program.md)
+        [:octicons-arrow-right-24:](notes/01-program.md)
 
     - __2. Computational Problems__
         
         What is a computational problem?  Express a step-by-step solution to a computational problem with a flowchart. 
-        [:octicons-arrow-right-24:](drafts/notes/02-algo.md)
+        [:octicons-arrow-right-24:](notes/02-algo.md)
 
     - __3. Functions__
 
         Write functions that solve simpler sub-problems and then combine the functions to solve higher-level and more complex problems.
-        [:octicons-arrow-right-24:](drafts/notes/03-func.md)
+        [:octicons-arrow-right-24:](notes/03-func.md)
 
     - __4. Types__
 
         Each variable has a type that tell the machine how to turn a bit sequence into a meaningful value.
-        [:octicons-arrow-right-24:](drafts/notes/04-type.md)
+        [:octicons-arrow-right-24:](notes/04-type.md)
 
     </div>
 
@@ -56,17 +56,17 @@
     - __5. First C Program__
 
         Introducing basic C syntax and writing our first C program.
-        [:octicons-arrow-right-24:](drafts/notes/05-first-c.md)
+        [:octicons-arrow-right-24:](notes/05-first-c.md)
 
     - __6. CS1010 I/O__
 
         Reading from the stdin and printing to the stdout using the CS1010 library.
-        [:octicons-arrow-right-24:](drafts/notes/06-cs1010-io.md)
+        [:octicons-arrow-right-24:](notes/06-cs1010-io.md)
 
     - __7. Arithmetic Operations__
 
         Performing basic computation with arithmetic operations with C.
-        [:octicons-arrow-right-24:](drafts/notes/07-arithmetic-ops.md)
+        [:octicons-arrow-right-24:](notes/07-arithmetic-ops.md)
 
     </div>
 
@@ -76,27 +76,27 @@
     - __8. Conditional Statements__
 
         Implementing conditional control in C
-        [:octicons-arrow-right-24:](drafts/notes/08-if-else.md)
+        [:octicons-arrow-right-24:](notes/08-if-else.md)
 
     - __9. Logical Expressions__
 
         How to express compound logical expressions in C
-        [:octicons-arrow-right-24:](drafts/notes/09-logical-exp.md)
+        [:octicons-arrow-right-24:](notes/09-logical-exp.md)
 
     - __10. Assertions__
 
         Asserting what must be true at each point of the program.
-        [:octicons-arrow-right-24:](drafts/notes/10-assert.md)
+        [:octicons-arrow-right-24:](notes/10-assert.md)
 
     - __11. Loops__
 
         Implementing iterative control in C
-        [:octicons-arrow-right-24:](drafts/notes/11-loop.md)
+        [:octicons-arrow-right-24:](notes/11-loop.md)
 
     - __12. Invariant__
 
         Reasoning about loops with invariant
-        [:octicons-arrow-right-24:](drafts/notes/12-invariant.md)
+        [:octicons-arrow-right-24:](notes/12-invariant.md)
 
     </div>
 
@@ -108,37 +108,37 @@
     - __13. Call Stack__ 
 
         How calling a function and passing parameters by-value works.
-        [:octicons-arrow-right-24:](drafts/notes/13-call-stack.md)
+        [:octicons-arrow-right-24:](notes/13-call-stack.md)
 
     - __14. Fixed-Length Array__
 
         How arrays are implemented and can be used in C
-        [:octicons-arrow-right-24:](drafts/notes/14-array.md)
+        [:octicons-arrow-right-24:](notes/14-array.md)
 
     - __15. Pointers__
 
         How to access a variable via its address
-        [:octicons-arrow-right-24:](drafts/notes/15-pointers.md)
+        [:octicons-arrow-right-24:](notes/15-pointers.md)
 
     - __16. Call-by-Reference__
 
         How to modify a variable by passing it into a function
-        [:octicons-arrow-right-24:](drafts/notes/16-call-by-reference.md)
+        [:octicons-arrow-right-24:](notes/16-call-by-reference.md)
 
     - __17. Heap__
 
         Dynamically allocating and deallocating memory
-        [:octicons-arrow-right-24:](drafts/notes/17-heap.md)
+        [:octicons-arrow-right-24:](notes/17-heap.md)
 
     - __18. Characters and Strings__
 
         Representing a string as an array of `char`s
-        [:octicons-arrow-right-24:](drafts/notes/18-string.md)
+        [:octicons-arrow-right-24:](notes/18-string.md)
 
     - __19. Multidimensional Array__ 
 
         Using array of arrays
-        [:octicons-arrow-right-24:](drafts/notes/19-md-array.md)
+        [:octicons-arrow-right-24:](notes/19-md-array.md)
 
     </div>
 
@@ -149,32 +149,32 @@
     - __20. Efficiency__ 
 
         Quantify the efficiency of an algorithm with big-O running time.
-        [:octicons-arrow-right-24:](drafts/notes/20-efficiency.md)
+        [:octicons-arrow-right-24:](notes/20-efficiency.md)
 
     - __21. Searching__ 
 
         How to look for an element in a list.
-        [:octicons-arrow-right-24:](drafts/notes/21-search.md)
+        [:octicons-arrow-right-24:](notes/21-search.md)
 
     - __22. Sorting__ 
 
         How to rearrange a list of items into an order.
-        [:octicons-arrow-right-24:](drafts/notes/22-sort.md)
+        [:octicons-arrow-right-24:](notes/22-sort.md)
 
     - __23. Tower of Hanoi__ 
 
         Solving the Tower of Hanoi recursively.
-        [:octicons-arrow-right-24:](drafts/notes/23-tower.md)
+        [:octicons-arrow-right-24:](notes/23-tower.md)
 
     - __24. Permutation__
 
         Generate all possible permutations recursively.
-        [:octicons-arrow-right-24:](drafts/notes/24-permutation.md)
+        [:octicons-arrow-right-24:](notes/24-permutation.md)
 
     - __25. N-Queens__
 
         Solving the N-Queens problem, recursively.
-        [:octicons-arrow-right-24:](drafts/notes/25-queens.md)
+        [:octicons-arrow-right-24:](notes/25-queens.md)
 
     </div>
 
@@ -184,12 +184,12 @@
     - __26. Structure__ 
 
         Defining your own composite data type with `struct`
-        [:octicons-arrow-right-24:](drafts/notes/26-struct.md)
+        [:octicons-arrow-right-24:](notes/26-struct.md)
 
     - __27. Standard C I/O__ 
 
         Use `printf` and `scanf` and their pitfalls
-        [:octicons-arrow-right-24:](drafts/notes/27-stdio.md)
+        [:octicons-arrow-right-24:](notes/27-stdio.md)
     </div>
 
 === ":fontawesome-solid-person-chalkboard: Lab Guide"
