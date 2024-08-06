@@ -7,7 +7,7 @@
 
 C is a common programming language.  You can find different implementations of a C compiler on many platforms.  Wikipedia [lists more than 40 different C compilers](https://en.wikipedia.org/wiki/List_of_compilers#C_compilers).  These different compilers support different processor architectures and operating systems and may behave slightly differently as well as support different features of C standards.  It is therefore important for CS1010 to stick to a single platform and single compiler.
 
-Our platform of choice is **Ubuntu 20.04.** using the `clang` compiler (**version 10.0 or later**).
+Our platform of choice is **Ubuntu 20.04.** using the `clang` compiler (**version 12.0 or later**).
 
 ## PE Hosts
 
