@@ -6,7 +6,7 @@
 2. You should feel comfortable running basic Unix commands.  If you have not gone through the Unix guide and got your hands dirty, please [look at the guide and play with the various basic Unix commands](unix-essentials.md).
 3. You should already have a GitHub account and can log into [GitHub.com](https://www.github.com).
 4. You know how to create and edit a file in Vim.
-5. {++You have [setup Vim](vim-setup.md).++}
+5. {++You have [set up Vim](vim-setup.md).++}
 
 ## Purpose
 You will be using `git` (indirectly) for retrieving skeleton code and submitting completed assignments.  We will set up your accounts on PE hosts below so that `git` will be associated with your GitHub account.  This is a one-time setup.  You don't have to do this for every assignment.
@@ -186,6 +186,6 @@ Receiving objects: 100% (3/3), done.
 
 Change your working directory into `setup-test-<username>` and look at the directory content.  It should contain a file `README.md`. 
 
-{++If you see the message "Vim is not set up setup properly," please refer to the our [Vim setup guide](vim-setup.md) and set up Vim accordingly.++}
+{++If you see the message "Vim is not set up set up properly," please refer to the our [Vim setup guide](vim-setup.md) and set up Vim accordingly.++}
 
 [^1]: I skipped many cool details here.  This topic is part of CS2105 and CS2107.  Interested students can search for various articles and videos online about how public-key cryptography is used for authentication.
