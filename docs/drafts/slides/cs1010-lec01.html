@@ -769,13 +769,50 @@ $m$ now contains the maximum element of $L$.
 ---
 class: top
 
+### Think about what $i$ represents:
+
+.fit[ ![:scale 45%](../../notes/figures/lec01/trace0.png) ]
+
+This is our initial program state.
+
+---
+class: top
+
+### Think about what $i$ represents:
+
+.fit[ ![:scale 45%](../../notes/figures/lec01/trace1.png) ]
+
+After one iteration.
+
+---
+class: top
+
+### Think about what $i$ represents:
+
+.fit[ ![:scale 45%](../../notes/figures/lec01/trace2.png) ]
+
+After another iteration.
+
+
+---
+class: top
+
+### Think about what $i$ represents:
+
+.fit[ ![:scale 50%](../../notes/figures/lec01/trace3.png) ]
+
+After the final iteration.
+
+---
+class: top
+
 ### To summarize:
 
 - Given list of numbers $L$, of size $k$. 
-- Set $m = -\infty$, and $index = 0$.
+- Set $m = l_0$, and $index = 1$.
 - Update $m$ to be the larger of $m$ and $l_i$.
 - Increment $i$. 
-- Stop when $i = k$. 
+- Stop when $i = k$.
 
 ---
 class: top
@@ -783,6 +820,8 @@ class: top
 ### Here's how you can picture it with a flowchart.
 
 .fit[![](../../notes/figures/max-flowchart/max-flowchart-pdf-0.png)]
+
+
 
 ---
 class: top
