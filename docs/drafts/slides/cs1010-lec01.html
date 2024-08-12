@@ -457,7 +457,7 @@ class: middle,center
 
 ### The Point:
 
-#### In this module, we are in the business of writing programs to solve computational problems.
+#### In this course, we are in the business of writing programs to solve computational problems.
 
 .fit[![:scale 75%](../../notes/figures/lec01/wearegiven.png)]
 ---
@@ -466,7 +466,7 @@ class: middle,center
 
 ### The Point:
 
-#### In this module, we are in the business of writing programs to solve computational problems.
+#### In this course, we are in the business of writing programs to solve computational problems.
 
 .fit[![:scale 75%](../../notes/figures/lec01/whatwedo.png)]
 
@@ -477,7 +477,8 @@ class: center
 What I need you to do:
 --
 
-* Pay special attention to your methods and strategy on how you solve the given problem.
+
+Pay special attention to your methods and strategy on how you solve the given problem.
 
 
 ---
@@ -603,8 +604,8 @@ It's easier for them to process singular values one by one:
 class: top
 
 
-### Computational Thinking
-Let's Try To Be Less Human 🤖 and try to get a computer 
+### Computational Thinking:
+Let's try to be less human 🤖 and try to get a computer 
 to follow the same strategy.
 
 --
@@ -656,7 +657,7 @@ We think of a program as something that
 <span style="color:red"><u>data</u></span>.
  Here, <span style="color:red"><u>data</u></span> is stored in _variables_.
 
-- E.g. $max\text{_}value$ could be a variable remembers the maximum value seen so far.
+- E.g. $m$ could be a variable remembers the maximum value seen so far.
 
 ---
 class: top 
@@ -668,9 +669,9 @@ We think of a program as something that
 <span style="color:red"><u>data</u></span>.
  Here, <span style="color:red"><u>data</u></span> is stored in _variables_.
 
-- E.g. $max\text{_}value$ could be a variable remembers the maximum value seen so far.
+- E.g. $m$ could be a variable remembers the maximum value seen so far.
 - We can also _read_ and _write_ values to variables.
-E.g. $max = 5$ sets $max$ to $5$. $max = i$, sets $max$ to whatever value $i$ had.
+E.g. $m = 5$ sets $m$ to $5$. $m = z$, sets $m$ to whatever value $z$ had.
 ---
 class: top 
 
@@ -679,11 +680,11 @@ class: top
 We think of a program as something that 
 <span style="color:blue"><u>manipulates</u></span> 
 <span style="color:red"><u>data</u></span>. 
-<span style="color:red"><u>Data</u></span> can also be stored in _arrays_.
-- E.g. our input is in the form of an array $L = \langle l\_0,...,l\_{k-1\} \rangle$.
+<span style="color:red"><u>Data</u></span> can also be stored in _lists_.
+- E.g. our input is in the form of a list $L = \langle l\_0,...,l\_{k-1\} \rangle$.
 
 --
-- E.g. $L[0]$ gives us the first element of $L$. And $L[1]$ gives us the second element of $L$, and so on.
+- E.g. $l_0$ gives us the first element of $L$. And $l_1$ gives us the second element of $L$, and so on.
 ---
 class: top 
 
@@ -717,14 +718,14 @@ We think of a program as something that
  To <span style="color:blue"><u>manipulate</u></span> data, we operate on the variables.
 
 - We will allow comparisons $<, >, =$, and basic arithmetic operations ($+$, $-$, $\times$, $\div$, $mod$).  
-- E.g. $index = index + 1$ will take $index$ and increment it by $1$.
+- E.g. $value = value + 1$ will take $value$ and increment it by $1$.
 ---
 class: top
 
 ### Step 2: Back at it. Our input:
 
-- $L[]$ : The list of numbers being scanned.
-- $size$ : The size of the list.
+- $L$ : The list of numbers being scanned.
+- $k$ : The size of the list (or number of values).
 
 ---
 class: top
@@ -732,38 +733,75 @@ class: top
 ### Step 2: Declare our program variables:
 
 - $m$ : The maximum value so far.
-- $index$ : Index into the list.
+- $i$ : Index into the list.
 
 --
 
-We will set $m = -\infty$ and $index = 0$. 
+We will set $m = l_0$ and $i = 1$. 
 
 ---
 class: top
 
 ### Step 3: Finally, the computation: 
 
-1. Compare $m$ with $L[index]$.
+1. Compare $m$ with $l_i$.
 
 --
-2. If $m < L[index]$, then update $m$ by setting $m = L[index]$.
+2. If $m < l_i$, then update $m$ by setting $m = l_i$.
 
 --
-3. Then to scan the next element, we set $index = index + 1$.
+3. Then to scan the next element, we set $i = i + 1$.
 
 ---
 class: top
 
 ### Done scanning?
 
-- Done _after_ we have scanned $L[k - 1]$ (remember this is the last element!).
+- Done _after_ we have scanned $l_{k - 1}$ (remember this is the last element!).
 
-- This happens when $index = k$. So when we realise $index = k$, we stop.
+- This happens when $i = k$. So when we realise $i = k$, we stop.
 $m$ now contains the maximum element of $L$.
 --
 
 
-(Pop quiz: Why when $index = k$ and not $index = k - 1$?).
+(Pop quiz: Why when $i = k$ and not $i = k - 1$?).
+
+---
+class: top
+
+### Think about what $i$ represents:
+
+.fit[ ![:scale 45%](../../notes/figures/lec01/trace0.png) ]
+
+This is our initial program state.
+
+---
+class: top
+
+### Think about what $i$ represents:
+
+.fit[ ![:scale 45%](../../notes/figures/lec01/trace1.png) ]
+
+After one iteration.
+
+---
+class: top
+
+### Think about what $i$ represents:
+
+.fit[ ![:scale 45%](../../notes/figures/lec01/trace2.png) ]
+
+After another iteration.
+
+
+---
+class: top
+
+### Think about what $i$ represents:
+
+.fit[ ![:scale 50%](../../notes/figures/lec01/trace3.png) ]
+
+After the final iteration.
 
 ---
 class: top
@@ -771,10 +809,10 @@ class: top
 ### To summarize:
 
 - Given list of numbers $L$, of size $k$. 
-- Set $m = -\infty$, and $index = 0$.
-- Update $m$ to be the larger of $m$ and $L[index]$.
-- Increment $index$. 
-- Stop when $index == k$. 
+- Set $m = l_0$, and $index = 1$.
+- Update $m$ to be the larger of $m$ and $l_i$.
+- Increment $i$. 
+- Stop when $i = k$.
 
 ---
 class: top
@@ -782,6 +820,8 @@ class: top
 ### Here's how you can picture it with a flowchart.
 
 .fit[![](../../notes/figures/max-flowchart/max-flowchart-pdf-0.png)]
+
+
 
 ---
 class: top
