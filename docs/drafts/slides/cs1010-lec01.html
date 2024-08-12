@@ -831,6 +831,21 @@ After the final iteration.
 ---
 class: top
 
+### Think about what $i$ represents:
+
+.fit[ ![:scale 25%](../../notes/figures/lec01/trace3.png) ]
+
+Notice: The variable $i$ represents the total number of scanned elements.
+
+--
+E.g. When $i = 2$, $m$ is the max of the first $2$ elements.
+
+--
+So when $i = k$, $m$ is the max of the first $k$ elements (i.e. all of them).
+
+---
+class: top
+
 ### To summarize:
 
 - Given list of numbers $L$, of size $k$. 
@@ -880,6 +895,22 @@ class: top
 
 --
 * For an algorithm to be correct it has to be correct on _all possible inputs_.
+
+---
+class: top
+
+
+#### For example, outputting if a number is odd:
+
+.center[.fit[![:scale 70%](../../notes/figures/lec01/incorrect1.png)]]
+
+---
+class: top
+
+
+#### For example, outputting if a number is odd:
+
+.center[.fit[![:scale 70%](../../notes/figures/lec01/incorrect2.png)]]
 
 ---
 class: top
