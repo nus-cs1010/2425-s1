@@ -421,7 +421,6 @@ class: middle,center
 
 ![:scale 75%](../../notes/figures/lec01/oddness.png)
 
-
 ---
 class: middle,center
 
@@ -450,6 +449,21 @@ class: middle,center
 ### Do I look good in this outfit?
 
 ![:scale 75%](../../notes/figures/lec01/notwelldefined.png)
+
+---
+class: top, center
+
+### Types of Computational Problems:
+
+1. Decision problems (e.g. Is there a path from point A to point B on a map?)
+
+--
+
+2. Search problems (e.g. Output a path from point A to point B if it exists.)
+
+--
+
+3. Optimization problems (e.g. Output the _shortest_ path from point A to point B if it exists.)
 
 ---
 
@@ -692,6 +706,17 @@ class: top
 
 We think of a program as something that 
 <span style="color:blue"><u>manipulates</u></span> 
+<span style="color:red"><u>data</u></span>. 
+<span style="color:red"><u>Data</u></span> can also be stored in _lists_.
+
+Important Note: A _variable_ has a corresponding location in computer memory, and it holds a value.
+---
+class: top 
+
+### Step 2 Detour: The Program Model.
+
+We think of a program as something that 
+<span style="color:blue"><u>manipulates</u></span> 
 <span style="color:red"><u>data</u></span>.
  To <span style="color:blue"><u>manipulate</u></span> data, we operate on the variables.
 
@@ -806,6 +831,21 @@ After the final iteration.
 ---
 class: top
 
+### Think about what $i$ represents:
+
+.fit[ ![:scale 25%](../../notes/figures/lec01/trace3.png) ]
+
+Notice: The variable $i$ represents the total number of scanned elements.
+
+--
+E.g. When $i = 2$, $m$ is the max of the first $2$ elements.
+
+--
+So when $i = k$, $m$ is the max of the first $k$ elements (i.e. all of them).
+
+---
+class: top
+
 ### To summarize:
 
 - Given list of numbers $L$, of size $k$. 
@@ -821,7 +861,8 @@ class: top
 
 .fit[![](../../notes/figures/max-flowchart/max-flowchart-pdf-0.png)]
 
-
+--
+Let's try going through the flowchart.
 
 ---
 class: top
@@ -843,6 +884,41 @@ to _implement_ it.
 
 Note Bene: A good approach is to think of how to solve the problem conceptually first.
 And _then_ implement it in C. (We've done the conceptual solving today.)
+
+---
+class: top
+
+### How do we know the algorithm is correct?
+
+--
+* Just because an algorithm outputs the correct value on some inputs, it does not necessarily mean it's correct.
+
+--
+* For an algorithm to be correct it has to be correct on _all possible inputs_.
+
+---
+class: top
+
+
+#### For example, outputting if a number is odd:
+
+.center[.fit[![:scale 70%](../../notes/figures/lec01/incorrect1.png)]]
+
+---
+class: top
+
+
+#### For example, outputting if a number is odd:
+
+.center[.fit[![:scale 70%](../../notes/figures/lec01/incorrect2.png)]]
+
+---
+class: top
+
+### Later in the course:
+
+* Will cover methods on how to show correctness.
+* Will cover how to come up with good test cases.
 
 ---
 ### Homework (Preparing for labs)
