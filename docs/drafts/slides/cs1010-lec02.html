@@ -16,7 +16,7 @@ class: middle, center
 
 # Lecture 2
 
-### 21 August 2023
+### 19 August 2024
 
 Admin Matters<br>
 **Unit 3**: Functions<br>
@@ -119,6 +119,7 @@ class: middle,center
 
 ## Functions
 
+<!-- Start changes here -->
 ---
 class: top,center
 
@@ -129,7 +130,6 @@ $$f : \mathbb{R} \rightarrow \mathbb{R}$$
 $$f(x) = x^2 + 1$$
 
 $f(2)$ evaluates to $5$
-
 
 ---
 class: middle,center,wide
@@ -167,6 +167,13 @@ or refer to existing solutions (as functions)
 ### $max(L, k) - min(L, k)$
 
 ---
+class: middle,center
+
+### Abstraction
+
+.fit[![:scale 95%](figures/excalidrawings/delegation.png)]
+
+---
 class: top
 
 ### Functions
@@ -178,6 +185,8 @@ class: top
 - Free us from worrying about details (e.g., variables $i$ and $m$ are now internal to $max$)
 
 ---
+class: top
+
 ### Find the Mean
 
 - Give an algorithm to find the mean value given a list $L$ of $k$ integers.
@@ -220,8 +229,15 @@ class: middle,center
 ---
 class: middle,center
 
-$$\sqrt{\frac{\sum\_{i=0}^{k-1}(l\_i - \mu)^2}{k}}$$
+### Colour Coded:
 
+.fit[![:scale 95%](figures/excalidrawings/std-dev.png)]
+---
+class: middle,center
+
+### Pictorially:
+
+.fit[![:scale 50%](figures/excalidrawings/pictorially.png)]
 ---
 class: middle,center
 
@@ -234,32 +250,26 @@ set $L'$ to $subtract(L, \mu)$
 set $L''$ to $square(L')$
 
 set $total$ to $sum(L'')$
-
 ---
-class: middle,center
+class: middle,center,wide
 
-$$\sum\_{i=0}^{k-1}(l\_i - \mu)^2$$
+### So here's the flowchart:
 
-$sum(square(subtract(L, mean(L))))$
-
----
-class: middle,center
-
-$$\frac{\sum\_{i=0}^{k-1}(l\_i - \mu)^2}{k}$$
-
-$mean(square(subtract(L, mean(L))))$
-
----
-class: middle,center
-
-$$\sqrt\frac{\sum\_{i=0}^{k-1}(l\_i - \mu)^2}{k}$$
-
-$sqrt(mean(square(subtract(L,mean(L)))))$
+.fit[![:scale 80%](figures/excalidrawings/huge-flow-chart.png)]
 
 ---
 class: middle,center,wide
 
-.fit[![flowchart](../notes/figures/max-flowchart/max-flowchart-pdf-12.png)]
+### Decomposing the problem into smaller problems.
+
+.fit[![:scale 80%](figures/excalidrawings/decomposition.png)]
+
+---
+class: middle,center,wide
+
+### The smaller problems should be abstracted away.
+
+.fit[![:scale 80%](figures/excalidrawings/abstraction.png)]
 
 ---
 ### Functions we wish for
@@ -267,17 +277,32 @@ class: middle,center,wide
 - $square(L)$
 - $subtract(L, \mu)$
 - $sqrt(x)$
+- $mean(L)$
 
 ---
-class:middle,wide
+class:center,top
 
-.fit[![flowchart](../notes/figures/max-flowchart/max-flowchart-pdf-10.png)]
+### Hold on, an important detail:
+
+.fit[![:scale 80%](figures/excalidrawings/what-are-the-incoming-arrows.png)]
+
+What are the incoming arrows for?
+
+---
+class:center,top
+
+### Hold on, an important detail:
+
+.fit[![:scale 80%](figures/excalidrawings/function-signatures.png)]
+
+.small[Remember: Functions take inputs and produce outputs.]
+
 
 ---
 
 ### Approach to solve computational problems
 
-- _Decompose_ a problem into sub-problems 
+- _Decompose_ a problem into (simpler, smaller) sub-problems
 
 - Solve the sub-problems one-by-one with appropriate functions  
 
@@ -286,203 +311,233 @@ class:middle,wide
 ---
 class: center
 
-### Find the maximum among these numbers
+### Question: What's stopping a function from using itself?
 
-```
-5  9  8
-1  3  2
-```
+--
 
----
-class: center
 
-### Find the maximum among these numbers
-
-.tiny[
-```
-12  20  11  20  14  2   24  36  43  16  27  6   11  7 
-10  15  38  10  22  7   16  26  32  30  11  9   30  6 
-20  6   27  19  26  10  27  6   19  34  5   9   3   22
-10  4   13  1   10  22  43  36  39  29  41  12  13  25
-17  8   30  31  29  38  2   42  7   45  24  33  9   40
-34  29  37  2   26  17  19  34  6   7   34  22  21  41
-38  5   15  13  9   1   42  39  5   29  38  4   22  29
-41  10  26  32  30  26  16  16  18  22  32  34  14  10
-5   17  25  16  19  6   31  16  3   13  8   42  41  0 
-13  30  44  1   41  14  5   39  40  38  6   37  38  9 
-.
-
-```
-]
+Nothing! We can totally do it.
 
 ---
-class: center
-
-### Compare `12` to the maximum among
-
-.tiny[
-```
-    20  11  20  14  2   24  36  43  16  27  6   11  7 
-10  15  38  10  22  7   16  26  32  30  11  9   30  6 
-20  6   27  19  26  10  27  6   19  34  5   9   3   22
-10  4   13  1   10  22  43  36  39  29  41  12  13  25
-17  8   30  31  29  38  2   42  7   45  24  33  9   40
-34  29  37  2   26  17  19  34  6   7   34  22  21  41
-38  5   15  13  9   1   42  39  5   29  38  4   22  29
-41  10  26  32  30  26  16  16  18  22  32  34  14  10
-5   17  25  16  19  6   31  16  3   13  8   42  41  0 
-13  30  44  1   41  14  5   39  40  38  6   37  38  9 
-.
-
-```
-]
-
----
-class: middle,center,wide
-
-### Wishful Thinking
-
-Suppose we know how to find $max(L,k)$ for smaller $k$
-
----
-class: middle,wide
-
-### Let $max'(L, i, j)$ returns the maximum among $l\_i, l\_{i+1} \ldots l\_j$
-
-### i.e., $max(L, k)$ is just $max'(L, 0, k-1)$
-
----
-class: middle,wide
-
-### if $i \not = j$, then $max'(L, i, j)$ is the larger between $l\_i$ and $max'(L, i+1, j)$ 
-
----
-class: middle,wide
-
-### if $i$ equals $j$, $max'(L, i, j)$ is just $l_i$
-
----
-class: middle,wide
-
-.fit[![flowchart](../notes/figures/max-flowchart/max-flowchart-pdf-8.png)]
-
----
-class: middle,center
-### Find the maximum among
-
-.tiny[
-```
-12  20  11  20  14  2   24  36  43  16  27  6   11  7 
-10  15  38  10  22  7   16  26  32  30  11  9   30  6 
-20  6   27  19  26  10  27  6   19  34  5   9   3   22
-10  4   13  1   10  22  43  36  39  29  41  12  13  25
-17  8   30  31  29  38  2   42  7   45  24  33  9   40
-34  29  37  2   26  17  19  34  6   7   34  22  21  41
-38  5   15  13  9   1   42  39  5   29  38  4   22  29
-41  10  26  32  30  26  16  16  18  22  32  34  14  10
-5   17  25  16  19  6   31  16  3   13  8   42  41  0 
-13  30  44  1   41  14  5   39  40  38  6   37  38  9 
-.
-
-```
-]
-
----
-class: middle,center
-
-### Wishful Thinking
-
-Suppose we know how to find $max(L,k)$ for smaller $k$
-
----
-class: middle,center
-### Compare the maximum among these numbers
-
-.tiny[
-```
-12  20  11  20  14  2   24                            
-10  15  38  10  22  7   16                            
-20  6   27  19  26  10  27                            
-10  4   13  1   10  22  43                            
-17  8   30  31  29  38  2                             
-34  29  37  2   26  17  19                            
-38  5   15  13  9   1   42                            
-41  10  26  32  30  26  16                            
-5   17  25  16  19  6   31                            
-13  30  44  1   41  14  5                             
-.
-
-```
-]
-
----
-class: middle,center
-### With the maximum among these numbers
-
-.tiny[
-```
-                            36  43  16  27  6   11  7 
-                            26  32  30  11  9   30  6 
-                            6   19  34  5   9   3   22
-                            36  39  29  41  12  13  25
-                            42  7   45  24  33  9   40
-                            34  6   7   34  22  21  41
-                            39  5   29  38  4   22  29
-                            16  18  22  32  34  14  10
-                            16  3   13  8   42  41  0 
-                            39  40  38  6   37  38  9 
-.
-
-```
-]
-
-
-
----
-class: middle
-
-### if $j \not= i$, $max(L,i,j)$ is the larger between
-
-- $max'(L, i, n)$ and 
-- $max'(L, n+1, j)$
-
-where $n = \left\lfloor\frac{i+j}{2}\right\rfloor$
-
----
-class: middle
-
-### if $j$ equals $i$, $max(L,i,j)$ is just $l_i$.
-
----
-class: center,wide
-
-.fit[![flowchart](../notes/figures/max-flowchart/max-flowchart-pdf-15.png)]
-
----
-class: middle, center
-
-## Divide and Conquer
-
----
-
-### Find the factorial of $n$
-
-$n!$ <br>
-$= n \times (n-1) \times \ldots \times 2 \times 1$<br>
-$= n \times (n-1)!$
-
-Special case: $0! = 1$
-
----
-class: middle
-
-.fit[![flowchart](../notes/figures/max-flowchart/max-flowchart-pdf-9.png)]
-
----
-class:middle,center
+class: center, middle
 ## Recursion
 
-### A function calling itself 
+To understand recursion, you must first understand recursion.
+
+---
+class: center, middle
+
+Let's go through a few problems that can be solved recursively
+
+---
+class: center
+#### What's this sequence?
+
+```
+1, 1, 2, 3, 5, 8, 13, 21, 34, ...
+```
+--
+Fibonacci! Let's say $Fib(n)$ is a function that takes a number n,
+and outputs the $n^{th}$ Fibonacci number.
+
+
+
+--
+
+E.g. F(0) = 1, F(1) = 1, F(5) = 8.
+
+---
+class: center
+#### What's this sequence?
+
+```
+1, 1, 2, 3, 5, 8, 13, 21, 34, ...
+```
+
+Formally, the $n^{th}$ Fibonacci number is the sum of 
+the $(n-1)^{th}$ and the $(n-2)^{th}$ Fibonacci number.
+
+--
+
+The $0^{th}$ and $1^{st}$ numbers are 1.
+
+---
+
+
+class: top, center
+
+### Fibonacci Flowchart
+
+.fit[![:scale 80%](figures/excalidrawings/fibonacci-basic.png)]
+
+--
+
+What's wrong with this?
+
+---
+class: top, center
+
+### Seems like it'll never end.
+
+.fit[![:scale 40%](figures/excalidrawings/fibonacci-flow-char.png)]
+
+---
+class: top, center
+
+### We need to add base cases.
+
+.fit[![:scale 75%](figures/excalidrawings/fib-fixed.png)]
+
+---
+class: top, center
+
+### We need to add base cases.
+
+.fit[![:scale 55%](figures/excalidrawings/fib-fixed.png)]
+
+
+.tiny[Think of base cases as the smallest or "most basic" sub-problem to solve.]
+---
+class: center
+
+### Let's try factorial instead:
+
+Recall:
+
+$$ n! = n \times (n - 1)!$$
+and also
+$$0! = 1$$
+
+---
+class: top, center
+
+### What do we think of this algorithm?
+.fit[![:scale 55%](figures/excalidrawings/factorial-basic.png)]
+
+--
+
+.small[Similar issue as to before: The program will not terminate!]
+
+---
+class: top, center
+
+### Actual factorial flowchart:
+.fit[![:scale 55%](figures/excalidrawings/factorial-fixed.png)]
+
+---
+class: top
+
+### Wishful thinking:
+
+In both cases, there are common features:
+- The algorithm solved the problem by relying on solutions to _smaller_ or _simpler_ sub-problems.
+- The algorithm "does not care" how it's done. Only that the answer is correct.
+- The algorithms have "base cases" that they eventually solve.
+
+--
+
+We call this "wishful thinking".
+
+---
+class: top
+
+### Recursion: Top-down vs Bottom-up.
+
+Up until this point, we've shown you how to solve Fibonacci and Factorial
+using a top-down approach:
+
+--
+
+(Informally) "To solve problem $n$, we trust someone to solve the $n - 1$ case, and
+we make use of it to solve our problem."
+
+---
+class: top
+
+### Recursion: Top-down vs Bottom-up.
+
+There is another way (slightly different way) of seeing it:
+
+--
+
+We slowly build up bigger and bigger solutions, using parts that we have built up.
+---
+class: center
+
+### One last example: Finding the max of a list.
+
+Recall we did this last week iteratively. This week, let's try to solve it recursively.
+
+---
+class: center
+
+### Before we begin:
+
+.fit[![](figures/excalidrawings/new-max-signature.png)]
+
+---
+class: center
+
+### Finding max of 3 elements:
+
+.fit[![](figures/excalidrawings/max-bottom-up.png)]
+
+---
+class: center
+
+### Finding max of 3 elements:
+
+.fit[![](figures/excalidrawings/max-3.png)]
+
+---
+class: center
+
+### Finding max of 4 elements:
+
+.fit[![](figures/excalidrawings/max-4.png)]
+
+---
+class: center
+
+### Finding max of $n$ elements:
+
+.fit[![](figures/excalidrawings/max-n.png)]
+
+
+---
+class: center
+
+### Here's how we represent it in a flowchart:
+
+.fit[![:scale 75%](figures/excalidrawings/max-faulty-flowchart.png)]
+
+--
+
+Gotcha! The base case is missing!
+
+---
+class: center
+
+### With the base case back in:
+
+.fit[![:scale 75%](figures/excalidrawings/max-chart-fixed.png)]
+
+
+---
+class: center
+
+### Pop quiz: what about this?
+
+.fit[![:scale 75%](figures/excalidrawings/max-n-question.png)]
+
+---
+class: top
+
+### Some details to think about:
+
+- What is the base case? What do we do during the base case?
+- How are we decomposing the problem into sub-problems? 
+- How do we use the answers of the sub-problems?
 
 ---
 class:middle,center
