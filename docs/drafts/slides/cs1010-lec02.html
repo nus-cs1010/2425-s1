@@ -331,76 +331,8 @@ Let's go through a few problems that can be solved recursively
 
 ---
 class: center
-#### What's this sequence?
 
-```
-1, 1, 2, 3, 5, 8, 13, 21, 34, ...
-```
---
-Fibonacci! Let's say $Fib(n)$ is a function that takes a number n,
-and outputs the $n^{th}$ Fibonacci number.
-
-
-
---
-
-E.g. F(0) = 1, F(1) = 1, F(5) = 8.
-
----
-class: center
-#### What's this sequence?
-
-```
-1, 1, 2, 3, 5, 8, 13, 21, 34, ...
-```
-
-Formally, the $n^{th}$ Fibonacci number is the sum of 
-the $(n-1)^{th}$ and the $(n-2)^{th}$ Fibonacci number.
-
---
-
-The $0^{th}$ and $1^{st}$ numbers are 1.
-
----
-
-
-class: top, center
-
-### Fibonacci Flowchart
-
-.fit[![:scale 80%](figures/excalidrawings/fibonacci-basic.png)]
-
---
-
-What's wrong with this?
-
----
-class: top, center
-
-### Seems like it'll never end.
-
-.fit[![:scale 40%](figures/excalidrawings/fibonacci-flow-char.png)]
-
----
-class: top, center
-
-### We need to add base cases.
-
-.fit[![:scale 75%](figures/excalidrawings/fib-fixed.png)]
-
----
-class: top, center
-
-### We need to add base cases.
-
-.fit[![:scale 55%](figures/excalidrawings/fib-fixed.png)]
-
-
-.tiny[Think of base cases as the smallest or "most basic" sub-problem to solve.]
----
-class: center
-
-### Let's try factorial instead:
+### Let's try solving factorial:
 
 Recall:
 
