@@ -348,7 +348,7 @@ class: top, center
 
 --
 
-.small[Similar issue as to before: The program will not terminate!]
+.small[The program will not terminate!]
 
 ---
 class: top, center
@@ -361,21 +361,18 @@ class: top
 
 ### Wishful thinking:
 
-In both cases, there are common features:
+Key features:
 - The algorithm solved the problem by relying on solutions to _smaller_ or _simpler_ sub-problems.
 - The algorithm "does not care" how it's done. Only that the answer is correct.
 - The algorithms have "base cases" that they eventually solve.
 
---
-
-We call this "wishful thinking".
 
 ---
 class: top
 
 ### Recursion: Top-down vs Bottom-up.
 
-Up until this point, we've shown you how to solve Fibonacci and Factorial
+Up until this point, we've shown you how to solve Factorial
 using a top-down approach:
 
 --
@@ -396,7 +393,7 @@ We slowly build up bigger and bigger solutions, using parts that we have built u
 ---
 class: center
 
-### One last example: Finding the max of a list.
+### Finding the max of a list. Again.
 
 Recall we did this last week iteratively. This week, let's try to solve it recursively.
 
@@ -412,29 +409,49 @@ class: center
 
 ### Finding max of 3 elements:
 
-.fit[![](figures/excalidrawings/max-bottom-up.png)]
+.fit[![:scale 70%](figures/excalidrawings/bottom-up-1.png)]
 
 ---
 class: center
 
 ### Finding max of 3 elements:
 
-.fit[![](figures/excalidrawings/max-3.png)]
+.fit[![:scale 70%](figures/excalidrawings/bottom-up-2.png)]
 
 ---
 class: center
 
-### Finding max of 4 elements:
+### Finding max of 3 elements:
 
-.fit[![](figures/excalidrawings/max-4.png)]
+.fit[![:scale 70%](figures/excalidrawings/bottom-up-3.png)]
 
 ---
 class: center
 
-### Finding max of $n$ elements:
+### Finding max of 3 elements:
 
-.fit[![](figures/excalidrawings/max-n.png)]
+.fit[![:scale 70%](figures/excalidrawings/bottom-up-4.png)]
 
+---
+class: center
+
+### Finding max of 3 elements:
+
+.fit[![:scale 70%](figures/excalidrawings/bottom-up-5.png)]
+
+---
+class: center
+
+### Finding max of 3 elements:
+
+.fit[![:scale 70%](figures/excalidrawings/bottom-up-6.png)]
+
+---
+class: center
+
+### Finding max of 3 elements:
+
+.fit[![:scale 40%](figures/excalidrawings/bottom-up-7.png)]
 
 ---
 class: center
@@ -454,13 +471,121 @@ class: center
 
 .fit[![:scale 75%](figures/excalidrawings/max-chart-fixed.png)]
 
+---
+class: center
+
+### Yet another way to do it recursively:
+
+.tiny[
+```
+12  20  11  20  14  2   24  36  43  16  27  6   11  7 
+10  15  38  10  22  7   16  26  32  30  11  9   30  6 
+20  6   27  19  26  10  27  6   19  34  5   9   3   22
+10  4   13  1   10  22  43  36  39  29  41  12  13  25
+17  8   30  31  29  38  2   42  7   45  24  33  9   40
+34  29  37  2   26  17  19  34  6   7   34  22  21  41
+38  5   15  13  9   1   42  39  5   29  38  4   22  29
+41  10  26  32  30  26  16  16  18  22  32  34  14  10
+5   17  25  16  19  6   31  16  3   13  8   42  41  0 
+13  30  44  1   41  14  5   39  40  38  6   37  38  9 
+.
+
+```
+]
+
+--
+Say we were given a list of numbers.
+
+---
+class: middle,center
+### Yet another way to do it recursively:
+
+.tiny[
+```
+12  20  11  20  14  2   24                            
+10  15  38  10  22  7   16                            
+20  6   27  19  26  10  27                            
+10  4   13  1   10  22  43                            
+17  8   30  31  29  38  2                             
+34  29  37  2   26  17  19                            
+38  5   15  13  9   1   42                            
+41  10  26  32  30  26  16                            
+5   17  25  16  19  6   31                            
+13  30  44  1   41  14  5                             
+.
+
+```
+]
+
+What if we knew the maximum from this half...
+
+(Let's call it $m_l$)
+
+---
+class: middle,center
+### Yet another way to do it recursively:
+
+.tiny[
+```
+                            36  43  16  27  6   11  7 
+                            26  32  30  11  9   30  6 
+                            6   19  34  5   9   3   22
+                            36  39  29  41  12  13  25
+                            42  7   45  24  33  9   40
+                            34  6   7   34  22  21  41
+                            39  5   29  38  4   22  29
+                            16  18  22  32  34  14  10
+                            16  3   13  8   42  41  0 
+                            39  40  38  6   37  38  9 
+.
+
+```
+]
+
+... and the maximum from this half?
+
+(Let's call it $m_r$)
+
+---
+class: middle,center
+### Yet another way to do it recursively:
+
+.tiny[
+```
+12  20  11  20  14  2   24  36  43  16  27  6   11  7 
+10  15  38  10  22  7   16  26  32  30  11  9   30  6 
+20  6   27  19  26  10  27  6   19  34  5   9   3   22
+10  4   13  1   10  22  43  36  39  29  41  12  13  25
+17  8   30  31  29  38  2   42  7   45  24  33  9   40
+34  29  37  2   26  17  19  34  6   7   34  22  21  41
+38  5   15  13  9   1   42  39  5   29  38  4   22  29
+41  10  26  32  30  26  16  16  18  22  32  34  14  10
+5   17  25  16  19  6   31  16  3   13  8   42  41  0 
+13  30  44  1   41  14  5   39  40  38  6   37  38  9 
+.
+
+```
+]
+
+Then, the overall max of the entire list is just the larger of $m_l$ and $m_r$!
+
 
 ---
 class: center
 
-### Pop quiz: what about this?
+### In general, this is the process:
 
-.fit[![:scale 75%](figures/excalidrawings/max-n-question.png)]
+.fit[![:scale 65%](figures/excalidrawings/max-half-and-half.png)]
+
+.tiny[Note: $\lfloor x \rfloor$ means to round $x$ down to the nearest integer.]
+
+---
+class: center
+
+### Again, but with a flowchart:
+
+.fit[![:scale 75](../../notes/figures/max-flowchart/max-flowchart-pdf-15.png)]
+
 
 ---
 class: top
