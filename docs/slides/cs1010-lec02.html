@@ -279,6 +279,7 @@ class: middle,center
 ---
 class: middle,center
 
+.small[
 $$\sum\_{i=0}^{k-1}(l\_i - \mu)^2$$
 
 set $\mu$ to $mean(L)$
@@ -287,7 +288,9 @@ set $L'$ to $subtract(L, \mu)$
 
 set $L''$ to $square(L')$
 
-set $total$ to $sum(L'')$
+set $v$ to $mean(L'')$
+
+set $\sigma$ to $sqrt(v)$]
 ---
 class: middle,center,wide
 
@@ -316,6 +319,18 @@ class: middle,center,wide
 - $subtract(L, \mu)$
 - $sqrt(x)$
 - $mean(L)$
+
+---
+class: middle,center
+
+.fit[![](../notes/figures/max-flowchart/max-flowchart-pdf-10.png)]
+
+---
+class: middle, center
+
+### What about $sqrt(x)$?
+
+How do we implement this?
 
 ---
 class:center,top
