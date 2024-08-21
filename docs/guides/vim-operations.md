@@ -176,7 +176,7 @@ Here are two useful tricks that can save you from typing long names.
 
 ### Auto-completion
 
-You can type CTRL-P or CTRL-N in NORMAL mode to auto-complete a word.  So you only need to type the long name the first time.  Subsequently, type the prefix and auto-complete.
+You can type CTRL-P or CTRL-N in {--NORMAL--} INSERT mode to auto-complete a word.  So you only need to type the long name the first time.  Subsequently, type the prefix and auto-complete.
 
 ### Abbreviation
 
