@@ -123,6 +123,13 @@ cat id_rsa.pub >> ~/.ssh/authorized_keys
 
 Make sure that the permission for `.ssh` both on the local machine and on PE is set to `700` and the files `id_rsa` on the local machine and `authorized_keys` on the remote machine are set to `600`.  Once set up, you need not enter your password every time you run `ssh` or `scp`.  
 
+!!! Tips "For Windows Users"
+    On Windows, the equivalent of `chmod` is `icacls`.  While the default permission should work without you doing anything, but if needed, you can change the permission with
+
+    ```
+    icacls <path> /grant:r "<username>:F"   
+    ```
+
 !!! Tips "Using ssh-copy-id"
     If you have [`ssh-copy-id`](https://www.ssh.com/academy/ssh/copy-id) installed (e.g., this is pre-installed with macOS), you can simplify the above to two steps:
     ```
