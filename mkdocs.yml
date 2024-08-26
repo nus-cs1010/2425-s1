@@ -56,6 +56,7 @@ nav:
       - Compiling with Clang: 'guides/clang.md'
   - Exercises: 
       - Guide to Exercises: "guides/exercises.md"
+      - Exercise 0: "exercises/ex00.md"
   - Readings: "readings.md" 
 
 
