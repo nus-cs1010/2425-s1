@@ -72,7 +72,7 @@ Students entering CS1010 are expected to
 
 ### Catch-Up Sessions
 
-- Every three weeks, we run a 2-hour Q&A session for students to clarify doubts on Wednesday afternoon.
+- Every three weeks, we run a 2-hour Q&A session for students to clarify doubts on {--Wednesday--}{++Saturday++} afternoon.
 - Attendance is optional, but we strongly encourage students who are falling behind to take this opportunity to clarify doubts and catch up.
 - Catch-up sessions are recorded.  The video will be shared after the session.
 
