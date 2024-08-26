@@ -41,7 +41,7 @@ You have also seen the multiplication operator `*`.  It can be used in the same 
 - `-` - subtraction (e.g., `#!C long deducted = income - 100;`)
 - `%` - remainder (e.g, `#!c long last_digit = number % 10;`)
 
-The `+`, `-`, `*`, and `/` operators work on both integer types (`char`, `short`, `int`, `long`, `long long`) and real numbers (`float`, `double`).  The module operator `%` works only on integer types.
+The `+`, `-`, `*`, and `/` operators work on both integer types (`char`, `short`, `int`, `long`, `long long`) and real numbers (`float`, `double`).  The {--module--} {++remainder++} operator `%` works only on integer types.
 
 ## Operator Precedence
 
@@ -117,7 +117,7 @@ What is the value of variable `c` after the operation above?
 
 Here, we are adding one to the value 255, so `c` must store the value 256, right?
 
-It turns out that after the execution above, `c` contains the value 0.  The variable `c` is of the type `uint8_t`, which is the unsigned 8-bit integer.  Being 8-bit, the variable can store values from 0 to 255.  When we add 1 to 255, even though we get the result 256, mathematically, we cannot store 256 in `c` -- there are not enough bits!  In this case, the value stored is "wrap around", and we get the value 0 instead.
+It turns out that after the execution above, `c` contains the value 0.  The variable `c` is of the type `uint8_t`, which is the unsigned 8-bit integer.  Being 8-bit, the variable can store values from 0 to 255.  When we add 1 to 255, even though we get the result 256, mathematically, we cannot store 256 in `c` -- there are not enough bits!  In this case, the value stored "wraps around", and we get the value 0 instead.
 
 The variable `c` above is unsigned. It gets trickier if `c` is signed.  In the case of overflowing signed integer, the behavior depends on the compiler and is undefined in the C standard.
 
