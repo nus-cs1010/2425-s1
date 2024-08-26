@@ -2,7 +2,7 @@
 
 Programming cannot be "studied".  Students must practice what they learn, through solving programming problems, to attain the skills of computational problem-solving in C.
 
-CS1010 provides close to 90 programming questions for students to practice.  These are organized into 9 weekly programming exercises.
+CS1010 provides close to 90 programming questions for students to practice.  These are organized into 9 weekly programming exercises and past-year PE exercises.
 
 ## General Advice
 
