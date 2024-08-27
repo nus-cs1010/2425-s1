@@ -140,7 +140,7 @@ Now try it with ++shift++ and see the difference in behavior.
 
 ## Learning More
 
-You can run `vimtutor` to learn more about `vim`.  Check out [the tips that we have collected for CS1010](vim-tips.md), or watch the various tutorials online.  Here are some interesting ones are:
+You can run `vimtutor` to learn more about `vim`.  Check out [the tips that we have collected for CS1010](vim-operations.md), or watch the various tutorials online.  Here are some interesting ones are:
 
 - [Vim Genius](http://vimgenius.com/): A game that goes together with `vimtutor`
 - [Learn vim Progressively](http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/).

@@ -1,5 +1,9 @@
 # Vim Tips for CS1010
 
+!!! Warning "Obsolete"
+
+    This tip collection has been replaced with a more comprehensive and better organized collection of [common vim operations](https://nus-cs1010.github.io/2425-s1/guides/vim-operations.html).
+
 I collected some tips on `vim` that I find helpful for CS1010/CS2030 students. 
 
 Prerequisite: You have gone through the basic [quick lessons](vim-quick-lessons.md) and have [set up your vim](vim-setup.md) in your PE account.
