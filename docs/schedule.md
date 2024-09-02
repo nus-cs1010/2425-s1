@@ -10,8 +10,8 @@
 |5 | 09-09 | Units 11-12: Loops                       |         | Problem Sets 9- 10 | Coding Style |               |
 |6 | 09-16 | Units 13-14: Call Stack, Arrays          |         | Problem Sets 11-12 | Test Cases | Session 2       |
 |  | 09-23 | Recess                                   |         |                    |          |                   |
-|7 | 09-30 | Midterm                                  | PE0     | Problem Sets 13-14 |          |                   |
-|8 | 10-07 | Units 15-18:Pointers, Memory Management  |         | Problem Sets 15-17 | Memory Errors |              |
+|7 | 09-30 | Units 15-18: Pointers, Memory Management | PE0     | Problem Sets 13-14 |          |                   |
+|8 | 10-07 | Midterm Test                             |         | Problem Sets 15-17 | Memory Errors |              |
 |9 | 10-14 | Units 19-20: Multi-d Array, Efficiency   |         | Problem Sets 20    | Compiling with Clang |       |
 |10 | 10-21 | Units 21-22: Searching and Sorting      | PE1     | Problem Sets 21-22 | C Pre-processor | Session 3  |
 |11 | 10-28 | Units 23-25: More Recursion             |         | Problem Sets 23-25 | No lab   |                   |
@@ -21,4 +21,4 @@
 
 -   Catch-up sessions are optional review + Q&A sessions meant for students who need time to recap and catch up. They are held on {--Wednesday 4 PM to 6 PM--} {++Saturday 10 AM to 12 PM++}.
 -   Practical exams (PEs) are held on Tuesday evening from 6 to 9 PM
--   Midterm is held during the lecture slot.
+-   Midterm is held during the lecture slot {++But will end 15 minutes later at 6:15 PM++}
