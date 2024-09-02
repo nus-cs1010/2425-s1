@@ -47,7 +47,7 @@ nav:
       - Programming Environments: "guides/environments.md"
       - Linking GitHub to PE: "guides/github.md"
       - Using tmate: "guides/tmate.md"
-    - C Programming:
+    - C Programming: 
       - C in CS1010: 'guides/c-in-cs1010.md'
       - Common Clang Messages: 'guides/messages.md'
       - CS1010 I/O Library: "guides/library.md"
