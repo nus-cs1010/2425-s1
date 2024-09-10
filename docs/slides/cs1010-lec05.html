@@ -267,7 +267,7 @@ while (cond A) {
 ---
 ```C
 // { cond B }
-while (cond A) {
+while (..) {
    //  ??
    :
    :
@@ -276,28 +276,41 @@ while (cond A) {
 ```
 
 ---
+
 ```C
 // { cond B }
-while (cond A) {
-   // B <-- only the first loop
+while (..) {
+   // B ❌ <-- only 1st loop
    :
    :
 }
-// B <-- only if we don't enter the loop
+// B ❌ <-- only if loop is not entered
 ```
 
 ---
-
 ```C
+// ??
+while (cond A) {
+   // ??
+   :
+   :
+   // ??
+}
+// { cond B } <-- if we want this 
+// where else must this be true?
+```
 
+---
+```C
+// { cond B } <-- must be true here
 while (cond A) {
    
    :
    :
-
+   // { cond B } <-- and here
 }
-// { cond B } <-- if we want this 
-// where else must this be true?
+// { cond B } <-- to guarantee that 
+// 	           B is true here.
 ```
 
 ---
