@@ -225,33 +225,65 @@ long factorial(long n)
 ---
 ```C
 while (cond) {
-   // 
+   // ??
    :
    :
 }
-// 
+// ??
+```
+
+---
+```C
+while (cond) {
+   // { cond } <-- always true
+   :
+   :
+}
+// { !cond } <-- always true
 ```
 
 ---
 ```C
 while (cond A) {
-   // 
+   // ?? 
    :
    :
    // { cond B }
 }
-// 
+//  ??
+```
+
+---
+```C
+while (cond A) {
+   // { A && B }
+   :
+   :
+   // { cond B }
+}
+// { !A && B }
 ```
 
 ---
 ```C
 // { cond B }
 while (cond A) {
-   // 
+   //  ??
    :
    :
 }
-// 
+//  ??
+```
+
+---
+```C
+// { cond B }
+while (cond A) {
+   // B <-- only the first loop
+   :
+   :
+}
+// B <-- only if we don't enter the loop
 ```
 
 ---
