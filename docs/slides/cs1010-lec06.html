@@ -247,7 +247,7 @@ class: wide
 int main() 
 {
   long list[9] = {4, 1, -4, 0, 9. 9, 3, 5, 8};
-  long = max(list, 9);
+  long list_max = max(list, 9);
 }
 ```
 ]
@@ -438,7 +438,7 @@ max(list, 10);  // pass in pointer to list
 ```C
 long* square(long list[], const long len) 
 {
-  for (long i = 1; i != len; i += 1) {
+  for (long i = 0; i != len; i += 1) {
     list[i] = list[i] * list[i];
   }
   return list;
