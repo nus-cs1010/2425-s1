@@ -411,7 +411,7 @@ max(list, 10);  // pass in pointer to list
 ```C
 long* square(long list[], const long len) 
 {
-  for (long i = 1; i != len; i += 1) {
+  for (long i = 0; i != len; i += 1) {
     list[i] = list[i] * list[i];
   }
   return list;
