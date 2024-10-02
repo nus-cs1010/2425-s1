@@ -7,10 +7,10 @@
 |2 | 08-19 | Units 3-4: Functions and Types 	      |         |                    |          |                   |
 |3 | 08-26 | Units 5-7: Basic C Programming           |         | Problem Set 2      | Unix/Vim Setup |	Session 1   |
 |4 | 09-02 | Units 8-10: Conditionals                 |         | Problem Sets 3, 8  | Debugging |                  |
-|5 | 09-09 | Units 11-12: Loops                       |         | Problem Sets 9- 10 | Coding Style |               |
+|5 | 09-09 | Units 11-12: Loops                       |         | Problem Sets 9- 10 | Assert    |                  |
 |6 | 09-16 | Units 13-14: Call Stack, Arrays          |         | Problem Sets 11-12 | Test Cases | Session 2       |
 |  | 09-23 | Recess                                   |         |                    |          |                   |
-|7 | 09-30 | Units 15-18: Pointers, Memory Management | PE0     | Problem Sets 13-14 |          |                   |
+|7 | 09-30 | Units 15-18: Pointers, Memory Management | PE0     | Problem Sets 13-14 | Arrays   |                   |
 |8 | 10-07 | Midterm Test                             |         | Problem Sets 15-17 | Memory Errors |              |
 |9 | 10-14 | Units 19-20: Multi-d Array, Efficiency   |         | Problem Sets 20    | Compiling with Clang |       |
 |10 | 10-21 | Units 21-22: Searching and Sorting      | PE1     | Problem Sets 21-22 | C Pre-processor | Session 3  |
