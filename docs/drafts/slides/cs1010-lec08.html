@@ -218,6 +218,90 @@ bool is_prime(long n)
 ```
 ]
 
+--
+Observation 1: if the moment we know $n$ is divisible by $i$ we can return false earlier.
+
+---
+.smaller[
+```C
+bool is_prime(long n)
+{
+  for (long i = 2; i &lt;= n - 1; i += 1) {
+    if (n % i == 0) {
+      return false; // line changed here
+    }
+  }
+  return true; // line changed here 
+}
+```
+]
+
+--
+.small[
+Maybe we could write this instead. Does this code always run with fewer iterations?
+]
+--
+
+No. Because if $n$ is prime, we still iterate until the end.
+
+---
+.smaller[
+```C
+bool is_prime(long n)
+{
+  for (long i = 2; i &lt;= n - 1; i += 1) {
+    if (n % i == 0) {
+      return false; // line changed here
+    }
+  }
+  return true; // line changed here 
+}
+```
+]
+
+So the number of iterations depends on the input, and there are still inputs
+that cause this program to use the maximum amount of iterations (around $n$ iterations).
+
+---
+.smaller[
+```C
+bool is_prime(long n)
+{
+  for (long i = 2; i &lt;= n - 1; i += 1) {
+    if (n % i == 0) {
+      return false; // line changed here
+    }
+  }
+  return true; // line changed here 
+}
+```
+]
+
+A better optimisation is one that works __for all__ possible inputs. 
+
+--
+Can we find such an optimisation here?
+---
+.smaller[
+```C
+bool is_prime(long n)
+{
+  for (long i = 2; i &lt;= n - 1; i += 1) {
+    if (n % i == 0) {
+      return false; // line changed here
+    }
+  }
+  return true; // line changed here 
+}
+```
+]
+
+Answer: We know that if $n = a \times b$, then at least one of $a$ or $b$ is at most $\sqrt{n}$.
+--
+
+
+So if $n$ is not prime, it has a divisor $i$ where $1 < i \leq \sqrt{n}$.
+
 ---
 .smaller[
 ```C
@@ -232,6 +316,11 @@ bool is_prime(long n)
 }
 ```
 ]
+So we can stop our iterations at $\sqrt{n}$.
+
+--
+Importantly, notice here that it does not matter if $n$ is prime or not. In either case, we can stop our iterations at $\sqrt{n}$.
+
 ---
 - Return `false` as soon as we know $n$ is not a prime
 
@@ -341,6 +430,12 @@ long fib(long n)
 ]
 
 ---
+class: top,center
+
+.fit[![:scale 75%](efficiency-pictures/fibo.png)]
+
+
+---
 class:top,center
 
 how many times is `fib()` called?
@@ -369,21 +464,99 @@ long fib(long n)
 ]
 
 ---
+class:center, middle
+
+## The Big O model of analysis
+
+---
+
+As we have seen earlier, counting operations is tricky, cumbersome, and complicated.
+
+--
+
+
+But what we really care about is **how the number of operations scales as $n$ gets larger and larger**.
+
+--
+
+Put another way, let $T(n)$ be the time taken for the program to solve a problem of time $n$,
+--
+ we care about 
+the behaviour of $T(n)$, as $n \to \infty$.
+
+---
 class:center
+
+E.g. when given $T(n) = \frac{n^4}{10} + 10000n^2 - n$, we want to say, $T(n)$ is "on the order of $n^4$".
+
+--
 
 $$O\left(\frac{n^4}{10} + 10000n^2 - n\right) = O(n^4)$$
 
 We drop terms with lower rate of growth and multiplicative constant.
+
+
+---
+class:center
+
+.fit[![:scale 50%](efficiency-pictures/theyre-the-same-big-o.png)]
+
+---
+class:center
+
+#### Which of these runtimes scales better with $n$?
+
+.fit[![:scale 50%](efficiency-pictures/big-o-idea.png)]
+
 
 ---
 ### Comparing Rate of Growth
 
 $f(n)$ grows faster than $g(n)$ if we can find constants $n_0$ and $c$ such that $f(n) > cg(n)$ for all $n \ge n_0$.
 
+
+
 ---
 class: top, center
 
 $f(n) = n^n$ vs. $g(n) = 3^n$ 
+
+--
+1. $f(1) = 1$ ; $g(1) = 3$
+--
+
+2. $f(2) = 4$ ; $g(2) = 9$
+--
+
+3. $f(3) = 27$ ; $g(3) = 27$
+--
+
+4. $f(4) = 256$ ; $g(4) = 81$
+--
+
+5. $f(4) = 3125$ ; $g(5) = 243$
+
+---
+class: top, center
+
+$f(n) = n^n$ vs. $g(n) = 3^n$ 
+
+
+.fit[![:scale 50%](efficiency-pictures/function-comparison.png)]
+
+---
+class: top, center
+
+$f(n) = n^n$ vs. $g(n) = 3^n$ 
+
+* $f(n)$ after some point dominates $g(n)$. 
+
+--
+
+* So in this example: $g(n) = O(f(n))$.
+
+
+
 
 ---
 ### Running Time / Time Complexity
@@ -393,6 +566,25 @@ $f(n) = n^n$ vs. $g(n) = 3^n$
 - In CS1010, we are interested in the _worst case_ running time
 
 - Should be expressed in simplest big-O notation with tightest bound
+
+---
+.small[
+```C
+long foo(long x) {
+  long y = x * 10;
+  return y;
+}
+```
+]
+
+--
+.small[
+There are 2 lines, each line has some **fixed number** of operations that do not depend on the input.]
+
+--
+.small[
+Let's say there are 4 operations in total in total, (could be 6 could be 10, doesn't matter) we will say `foo`
+takes $O(4) = O(1)$ time. $O(1)$ time means constant time.]
 
 ---
 .tiny[
@@ -411,6 +603,22 @@ size_t max(size_t n, const long list[])
 }
 ```
 ]
+
+--
+.small[
+* The loop body takes $O(1)$ time.
+]
+
+--
+.small[
+* There are $O(n)$ loop iterations.
+]
+
+--
+.small[
+* In total: $O(1) \times O(n) = O(n)$ time.
+]
+
 
 ---
 .tiny[
@@ -434,6 +642,28 @@ void draw_rectangle(long m, long n)
 }
 ```
 ]
+
+--
+.tiny[
+* `cs1010_print_string` takes $O(m)$ time.
+]
+
+--
+.tiny[
+* The inner loop takes takes $O(m)$ time.
+]
+
+--
+.tiny[
+* There are $O(n)$ iterations.
+]
+
+--
+.tiny[
+* Total time $O(2m) + O(nm) = O(nm)$ time.
+]
+
+
 ---
 .smaller[
 ```C
@@ -448,6 +678,12 @@ bool is_prime(long n)
 }
 ```
 ]
+
+--
+
+* `is_prime` takes $O(n)$ time.
+
+
 ---
 .smaller[
 ```C
@@ -462,6 +698,11 @@ bool is_prime(long n)
 }
 ```
 ]
+
+--
+
+* `is_prime` takes $O(n)$ time.
+
 ---
 .smaller[
 ```C
@@ -493,6 +734,104 @@ long find_max(const long list[], long start, long end){
 }
 ```
 ]
+
+
+$
+T(n) = 2T(n/2) + 1
+$
+--
+
+
+$
+T(1) = 1
+$
+
+---
+### Solving $T(n)$
+
+$T(n) = 2 T(n/2) + 1$
+
+--
+
+$T(n) = 2 (2 T(n/ 4) + 1) + 1$
+
+--
+
+$T(n) = 4 T(n/ 4) + 2 + 1$
+
+--
+
+$T(n) = 4 (2 T(n/ 8) + 1) + 2 + 1$
+
+--
+
+$T(n) = 8 T(n/ 8) + 4 + 2 + 1$
+
+---
+### Solving $T(n)$
+
+$T(n) = 2 T(n/2) + 1$
+
+$T(n) = 4 T(n/ 4) + 2 + 1$
+
+$T(n) = 8 T(n/ 8) + 4 + 2 + 1$
+
+---
+### Solving $T(n)$
+
+$T(n) = 2^i T(n/2^i) + \sum_{j = 0}^{i - 1} 2^j$
+
+--
+
+But when do we stop expanding?
+
+--
+
+When we hit the base case, $n = 1$. $T(1) = 1$.
+
+--
+
+$T(n/2^i) = T(1)$, when $i = \log(n)$. (Base 2)
+
+
+---
+### Solving $T(n)$
+
+$T(n) = 2^i T(n/2^i) + \sum_{j = 0}^{i - 1} 2^j$ with $i = \log(n)$
+
+--
+
+$T(n) = 2^{\log(n)} T(1) + \sum_{j = 0}^{\log(n) - 1} 2^j$
+
+--
+
+$T(n) = n \times T(1) + \sum_{j = 0}^{\log(n) - 1} 2^j$
+
+
+---
+### Solving $T(n)$
+
+$T(n) = n \times T(1) + \sum_{j = 0}^{\log(n) - 1} 2^j$
+
+--
+
+Using GP: 
+
+$$
+\sum_{j = 0}^{\log(n) - 1} 2^j = \frac{2^{\log(n)} - 1}{2 - 1} = n - 1 = O(n)
+$$
+
+---
+### Solving $T(n)$
+
+$T(n) = n \times T(1) + n - 1$
+
+--
+
+$T(n) = n \times 1 + n - 1 = O(n)$
+
+
+
 ---
 ### Finding Fibonacci Numbers
 
@@ -509,6 +848,105 @@ long fib(long n)
 ]
 ---
 class:top
+
+### Simple bound for Fibonacci:
+
+$T(n) = T(n - 1) + T(n - 2) + 1$
+
+$T(1) = T(2) = 1$
+
+--
+
+$T(n) \leq T(n - 1) + T(n - 1) + 1$
+
+--
+
+$T(n) \leq 2T(n-1) + 1$
+
+---
+class:top
+
+### Simple bound for Fibonacci:
+
+$T(n) \leq 2T(n-1) + 1$
+
+--
+
+$T(n) \leq 2(2T(n-2) + 1) + 1$
+
+--
+
+$T(n) \leq 4T(n-2) + 2 + 1$
+
+--
+
+$T(n) \leq 4(2T(n-3) + 1) + 2 + 1$
+
+
+--
+
+$T(n) \leq 8T(n-3) + 4 + 2 + 1$
+
+---
+class:top
+
+### Simple bound for Fibonacci:
+
+$T(n) \leq 2^i T(n-i) + \sum_{j = 0}^{i - 1} 2^j$
+
+--
+
+$T(n) \leq 2^{n - 1} T(1) + \sum_{j = 0}^{n - 2} 2^j$
+
+
+--
+
+$T(n) \leq 2^{n - 1} \times 1 + \sum_{j = 0}^{n - 2} 2^j$
+
+--
+
+$T(n) \leq 2^{n - 1} + \sum_{j = 0}^{n - 2} 2^j$
+
+---
+class:top
+
+### Simple bound for Fibonacci:
+
+$T(n) \leq 2^i T(n-i) + \sum_{j = 0}^{i - 1} 2^j$
+
+
+
+$T(n) \leq 2^{n - 1} T(1) + \sum_{j = 0}^{n - 2} 2^j$
+
+
+
+
+$T(n) \leq 2^{n - 1} \times 1 + \sum_{j = 0}^{n - 2} 2^j$
+
+
+
+$T(n) \leq \sum_{j = 0}^{n - 1} 2^j$
+
+---
+class:top
+
+### Simple bound for Fibonacci:
+
+$T(n) \leq 2^i T(n-i) + \sum_{j = 0}^{i - 1} 2^j$
+
+
+
+$T(n) \leq 2^{n - 1} T(1) + \sum_{j = 0}^{n - 2} 2^j$
+
+
+
+
+$T(n) \leq 2^{n - 1} \times 1 + \sum_{j = 0}^{n - 2} 2^j$
+
+
+
+$T(n) \leq \sum_{j = 0}^{n - 1} 2^j = \frac{2^n - 1}{2 - 1} = 2^n - 1 = O(2^n)$
+
 
 ---
 ### Run-time analysis is not always trivial
