@@ -470,10 +470,27 @@ class:center, middle
 
 ---
 
-As we have seen earlier, counting operations is tricky, cumbersome, and complicated.
+How do we try to predict how well our programs will perform?
 
 --
 
+We could look at every operation, figure out how much it costs, and manually count.
+
+--
+
+But operation costs changes depending on machines. 
+A multiplication on Intel/AMD hardware might cost different amount of time compared on to ARM hardware.
+
+---
+
+class:left, top
+
+
+For an "initial guage" of how well a program performs, we probably don't need to go into the nitty gritty.
+--
+Counting exact the number operations is tricky, cumbersome, and complicated.
+
+--
 
 But what we really care about is **how the number of operations scales as $n$ gets larger and larger**.
 
