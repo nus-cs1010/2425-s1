@@ -5,7 +5,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="stylesheets/cs1010.css">
 <link rel="stylesheet" type="text/css" href="stylesheets/light.css">
-<title>CS1010 AY23/24 S1 Lecture 8</title>
+<title>CS1010 AY24/25 S1 Lecture 8</title>
 <meta charset="utf-8">
 </head>
 <body>
@@ -14,7 +14,7 @@ class: middle, center
 
 # Lecture 8
 
-### 16 October 2023
+### 14 October 2024
 
 .smaller[
 **Admin Matters**<br>
@@ -25,17 +25,11 @@ Unit 20: **Efficiency**<br>
 ---
 ### PE1
 
-- When: 24 October 2023, 6 - 9 PM
+- When: 22 October 2024, 6 - 9 PM
+
 - What: Unit 1 to Unit 18 (1D Array)
 
----
-### Midterm and PE0
-
-- Midterm to be returned this week
-- PE0 will be returned in phases
-
-- Questions + partial comments on Canvas
-- Fill up Canvas form if you want a regrade
+- File a ticket by Friday if you need alternative arrangements
 
 ---
 class: middle,center
@@ -432,7 +426,7 @@ long fib(long n)
 ---
 class: top,center
 
-.fit[![:scale 75%](efficiency-pictures/fibo.png)]
+.fit[![:scale 75%](figures/lec08-efficiency/fibo.png)]
 
 
 ---
@@ -466,7 +460,7 @@ long fib(long n)
 ---
 class:center, middle
 
-## The Big O model of analysis
+## The Big-O model of analysis
 
 ---
 
@@ -486,7 +480,7 @@ A multiplication on Intel/AMD hardware might cost different amount of time compa
 class:left, top
 
 
-For an "initial guage" of how well a program performs, we probably don't need to go into the nitty gritty.
+For an "initial guage" of how well a program performs, we probably don't need to go into the nitty gritty.    
 --
 Counting exact the number operations is tricky, cumbersome, and complicated.
 
@@ -516,14 +510,14 @@ We drop terms with lower rate of growth and multiplicative constant.
 ---
 class:center
 
-.fit[![:scale 50%](efficiency-pictures/theyre-the-same-big-o.png)]
+.fit[![:scale 50%](figures/lec08-efficiency/theyre-the-same-big-o.png)]
 
 ---
 class:center
 
 #### Which of these runtimes scales better with $n$?
 
-.fit[![:scale 50%](efficiency-pictures/big-o-idea.png)]
+.fit[![:scale 50%](figures/lec08-efficiency/big-o-idea.png)]
 
 
 ---
@@ -559,7 +553,7 @@ class: top, center
 $f(n) = n^n$ vs. $g(n) = 3^n$ 
 
 
-.fit[![:scale 50%](efficiency-pictures/function-comparison.png)]
+.fit[![:scale 50%](figures/lec08-efficiency/function-comparison.png)]
 
 ---
 class: top, center
@@ -706,7 +700,7 @@ bool is_prime(long n)
 ```C
 bool is_prime(long n)
 {
-  for (long i = 2; i*i &lt;= n; i++) {
+  for (long i = 2; i * i &lt;= n; i++) {
     if (n % i == 0) {
       return false;
     }
@@ -718,7 +712,7 @@ bool is_prime(long n)
 
 --
 
-* `is_prime` takes $O(n)$ time.
+* `is_prime` takes $O(\sqrt{n})$ time.
 
 ---
 .smaller[
@@ -1014,7 +1008,7 @@ var slideshow = remark.create({
 	},
 	ratio: '16:9',
 	highlightStyle: 'tomorrow',
-    slideNumberFormat: 'AY23/24 S1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%current%',
+    slideNumberFormat: 'AY24/25 S1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%current%',
 });
  // Setup MathJax
   MathJax.Hub.Config({
