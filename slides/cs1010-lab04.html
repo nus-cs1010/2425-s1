@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="stylesheets/cs1010.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/light.css">
+<title>CS1010 AY24/25 S1 Lab Week 4</title>
+<meta charset="utf-8">
+</head>
+<body>
+<textarea id="source">
+class: middle, center
+
+# Lab 2 (Week 4)
+
+### 5 September 2024
+
+**Debugging**<br>
+**Exercise 0**<br>
+**Exercise 1**<br>
+
+---
+### Debugging
+
+- The process of removing bugs from your code
+
+- Steps:
+	- Reproduce the condition that causes the bug
+	- Identify the cause of the bug
+	- Fix the bug
+	- Test the fix
+
+---
+### Today: Identifying the Cause of the Bug
+
+- Prerequisite: Know what is expected to happen in the code
+
+- Inspect the state of the program as it runs -- is the state as expected?
+
+- Narrow down to the place where the bug is likely to be
+
+---
+class: middle, center
+
+Let's go through an example with 
+
+`~cs1010/lab02/bmi.c`
+
+---
+class: middle, center
+
+### Debugging is Painful
+
+Practice good programming habits to avoid bugs
+
+---
+#### Good Programming Habits (So Far)
+
+.smaller[
+- Make the code readable and easier to understand
+    - Use descriptive names for variables and functions
+	- Use `( )` for arithmetic 
+	- Use `{ }` and indentation for blocks
+	- Write smaller and simpler functions
+
+- Avoid error-prone C syntax 
+    - `printf`, `scanf`,
+	- `++`, `--`, 
+	- using integer as boolean
+
+- Remove all warnings
+]
+
+---
+class: middle, center
+
+## Exercise 0
+
+---
+class: wide
+
+### echo
+
+```C
+long n = cs1010_read_long();
+cs1010_print_long(n);
+```
+
+or 
+
+```C
+cs1010_print_long(cs1010_read_long());
+```
+
+---
+class: wide
+
+### divide
+
+Is this correct?
+
+```C
+long x = cs1010_read_long();
+long y = cs1010_read_long();
+cs1010_println_double(x / y);
+```
+
+---
+class: wide
+### divide
+
+Is this correct?
+
+```C
+double x = cs1010_read_double();
+double y = cs1010_read_double();
+cs1010_println_double(x / y);
+```
+
+---
+class: wide
+
+### divide
+what if we want to update `x` or `y`?
+
+```C
+double x = cs1010_read_double();
+double y = cs1010_read_double();
+// change x 
+cs1010_println_double(x / y);
+```
+
+---
+class: wide
+
+### divide
+This is better.
+
+```C
+long x = cs1010_read_long();
+long y = cs1010_read_long();
+// change x 
+cs1010_println_double((double)x / (double)y);
+```
+
+---
+class: wide
+### ones
+
+Is this correct?
+
+```C
+// last digit of n
+cs1010_print_long(n % 10);
+
+// remaining digits of n
+cs1010_print_long(n - (n % 10) / 10);
+```
+
+---
+class: wide
+
+### ones
+```C
+// last digit of n
+cs1010_print_long(n % 10);
+
+// remaining digits of n
+cs1010_print_long(n / 10); 
+// ^^ no need to remove last digit
+```
+
+---
+class: wide
+
+### cuboid
+
+.small[
+```C
+double hypotenuse_of(double base, double height)
+{
+  return sqrt(pow(base, 2) + pow(height, 2));
+}
+
+long area_of_rectangle(long width, long height)
+{
+  return width * height;
+}
+```
+]
+
+---
+class: wide
+
+### cuboid
+
+Avoid `pow` unless argument is a floating point
+
+.small[
+```C
+double hypotenuse_of(double base, double height)
+{
+  return sqrt(base * base + height * height);
+}
+
+long area_of_rectangle(long width, long height)
+{
+  return width * height;
+}
+```
+]
+
+---
+class: wide
+
+### cuboid
+
+.smaller[
+```C
+int main() {
+  long width = cs1010_read_long();
+  long length = cs1010_read_long();
+  long height = cs1010_read_long();
+  long surface_area = 2 * area_of_rectangle(width, length) + 
+                      2 * area_of_rectangle(width, height) + 
+					  2 * area_of_rectangle(length,height);
+  cs1010_println_long(surface_area);
+
+  double base = sqrt((width * width) + length * length));
+  double hypotenuse = hypotenuse_of(base, (double)height);
+  cs1010_println_double(hypotenuse);
+}
+```
+]
+
+
+---
+class: wide
+
+### cuboid
+
+.smaller[
+```C
+int main() {
+  long width = cs1010_read_long();
+  long length = cs1010_read_long();
+  long height = cs1010_read_long();
+
+  long surface_area = surface_area_of_cuboid(width, length, height);
+  cs1010_println_long(surface_area);
+
+  double diagonal = diagonal_of_cuboid(width, length, height);
+  cs1010_println_double(diagonal);
+}
+```
+]
+
+---
+class: wide
+
+.smaller[
+```C
+long area1(long width, long length)
+{
+  return width * length;
+}
+
+long area2(long width, long height)
+{
+  return width * height;
+}
+
+long area3(long length, long height)
+{
+  return length * height;
+}
+
+long surface_area_of_cuboid(long w, long l, long h) {
+  return 2 * (area1(w, l) + area2(w, h) + area3(l, h));
+}
+```
+]
+
+---
+class: wide
+
+### quadratic
+
+.smaller[
+```C
+int main() {
+  double a = cs1010_read_double();
+  double b = cs1010_read_double();
+  double c = cs1010_read_double();
+  double root1 = (-b + sqrt(b*b - 4*a*c))/2*a;
+  double root2 = (-b - sqrt(b*b - 4*a*c))/2*a;
+
+  cs1010_println_double(root1);
+  cs1010_println_double(root2);
+}
+```
+]
+
+---
+class: wide
+
+### quadratic
+
+.smaller[
+```C
+int main() {
+  double a = cs1010_read_double();
+  double b = cs1010_read_double();
+  double c = cs1010_read_double();
+  double discriminant = sqrt(b*b - 4*a*c);
+  double root1 = (-b + discriminant)/(2*a);
+  double root2 = (-b - discriminant)/(2*a);
+
+  cs1010_println_double(root1);
+  cs1010_println_double(root2);
+}
+```
+]
+
+---
+class: wide
+
+### quadratic
+
+.smaller[
+```C
+double root(double a, double b, double c, double sign) {
+  double discriminant = sqrt(b*b - 4*a*c);
+  return (-b + sign * discriminant)/(2*a);
+}
+
+int main() {
+  double a = cs1010_read_double();
+  double b = cs1010_read_double();
+  double c = cs1010_read_double();
+
+  cs1010_println_double(root(a, b, c, 1));
+  cs1010_println_double(root(a, b, c, -1));
+}
+```
+]
+
+---
+class: wide
+
+### Key Learning Outcomes
+
+- Decompose solution into small functions 
+
+- Reuse functions 
+
+- Use `long` as long as possible
+
+- Arithmetic operations: `/`, `( )`, etc
+
+---
+class: bottom
+
+.tiny[
+]
+</textarea>
+
+<script src="https://remarkjs.com/downloads/remark-latest.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML&delayStartupUntil=configured" type="text/javascript"></script>
+<script src="javascripts/counter.js">
+</script>
+<script>
+remark.macros.scale = function (percentage) {
+	var url = this;
+	return '<img src="' + url + '" style="width: ' + percentage + '" />';
+};
+// ![:scale 50%](image.jpg)
+
+var slideshow = remark.create({
+    navigation: {
+	    scroll: false
+	},
+	ratio: '16:9',
+	highlightStyle: 'tomorrow',
+    slideNumberFormat: 'AY24/25 S1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%current%',
+});
+ // Setup MathJax
+  MathJax.Hub.Config({
+	  tex2jax: {
+		inlineMath: [['$', '$']],
+		// inlineMath: [['$', '$'], ['\\(', '\\)']],
+		displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+		skipTags: ['script', 'noscript', 'style', 'pre']
+	  }
+  });
+
+  MathJax.Hub.Configured();
+</script>
+</body>
+</html>

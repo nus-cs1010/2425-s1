@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="xterm/css/xterm.css" />
+<script src="xterm/lib/xterm.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="stylesheets/cs1010.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/light.css">
+<title>CS1010 AY24/25 S1 Lecture 2</title>
+<meta charset="utf-8">
+</head>
+<body>
+<textarea id="source">
+class: middle, center
+
+# Lecture 2
+
+### 19 August 2024
+
+Admin Matters<br>
+**Unit 3**: Functions<br>
+**Unit 4**: Types
+
+---
+class: top,wide
+
+### Tutorials and Labs
+
+- Starts next week.
+
+- Appeal via CourseReg if you still haven't gotten a slot.
+
+- Swap with your friends if your slot is not ideal.
+
+- We might ask you to switch rooms to balance out the groups (please say yes).
+
+---
+class: top,wide
+
+### Preparing for CS1010
+
+By now you should:
+
+- have your Piazza, GitHub, and SoC accounts setup and ready to go
+
+- be able to `ssh` into the PE environments and use basic Unix CLI commands
+
+---
+class: top,wide
+
+### Unix Clinics (This week only)
+
+Venue: MR6 (AS6 #05-14)
+
+- Tuesday, 2 - 3 PM 
+- Wednesday, 12 - 1 PM, 2 - 3 PM 
+- Thursday, 12 - 1 PM 
+
+---
+class: middle,center
+background-image: url(figures/why-cli/terminal.png)
+
+## <font color="white">Why Unix CLI?</font>
+
+---
+class: middle,center
+
+.fit[![stackoverflow](figures/why-cli/remote-access.png)]
+
+.tiny[
+<a href="https://www.flaticon.com/free-icons/computer" title="computer icons">Computer icons created by Freepik - Flaticon</a>
+]
+
+---
+class: middle,center
+background-image: url(figures/why-vim/vim-example.png)
+
+## <font color="white">Why Vim?</font>
+
+---
+class: top
+
+- Terminal-based
+
+- Practical examination constraints
+
+- Installed by default in many OSes
+
+- Optimized for keyboard-only editing
+
+- Editing at the speed of thoughts
+
+---
+background-image: url(figures/why-vim/stackoverflow-survey-2024.png)
+class: black
+
+???
+.tiny[[via stackoverflow](https://survey.stackoverflow.co/2024/technology#most-popular-technologies-new-collab-tools)]
+
+---
+background-image: url(figures/reddit-vim-is-helpful.png)
+class: black
+
+???
+.tiny[[via reddit](https://www.reddit.com/r/nus/comments/nwpc54/nus_cs_fun/h1b2ikz/?context=3)]
+
+---
+class: top
+
+### Getting start with `vim`
+
+- Read CS1010 Handbook articles about [the philosophy of `vim`](https://nus-cs1010.github.io/2425-s1/guides/vim-philosophy.html) and [our quick lessons](https://nus-cs1010.github.io/2425-s1/guides/vim-quick-lessons.html)
+
+- [Set up `Vim` on your PE account](https://nus-cs1010.github.io/2425-s1/guides/vim-setup.html)
+
+- Run `vimtutor`
+
+- Many other resources available on the Web
+
+---
+class: black, center
+background-image: url(figures/why-vim/vim-racer.png)
+
+## <font color="white">Vim Racer</font>
+
+---
+class: black, center
+background-image: url(figures/why-vim/vim-adventure.png)
+
+## <font color="white">Vim Adventures</font>
+
+---
+
+class: black, center
+background-image: url(figures/why-vim/vim-genius.png)
+
+## <font color="white">Vim Genius</font>
+
+---
+class: top,center
+
+.smaller[.fit[![flowchart](figures/xkcd/flow_charts.png)]<br>https://xkcd.com/518]
+
+---
+class: top,wide
+
+### Flowchart
+
+.fit[![flowchart](../notes/figures/max-flowchart/max-flowchart-pdf-0.png)]
+
+---
+class: middle,center
+
+## Functions
+
+<!-- Start changes here -->
+---
+class: top,center
+
+### Functions in Math
+
+$$f : \mathbb{R} \rightarrow \mathbb{R}$$
+
+$$f(x) = x^2 + 1$$
+
+$f(2)$ evaluates to $5$
+
+---
+class: middle,center,wide
+
+$$m = max(L, k)$$
+
+.fit[![flowchart](../notes/figures/max-flowchart/max-flowchart-pdf-6.png)]
+
+---
+class: middle,center,wide
+
+Represent the solution to a computational problem<br>as a function.
+
+.fit[![flowchart](../notes/figures/max-flowchart/max-flowchart-pdf-7.png)]
+
+---
+### Find The Range
+
+- The _range_ of a given list of $k$ integers is the difference between the max and the min values in the list.
+
+- Give an algorithm to find the range given a list $L$ of $k$ integers.
+
+---
+class: middle,center,wide
+
+We can try to change
+
+.fit[![flowchart](../notes/figures/max-flowchart/max-flowchart-pdf-0.png)]
+
+---
+class: middle,center
+
+or refer to existing solutions (as functions)
+
+### $max(L, k) - min(L, k)$
+
+---
+class: middle,center
+
+### Abstraction
+
+.fit[![:scale 95%](figures/excalidrawings/delegation.png)]
+
+---
+class: top
+
+### Functions
+
+- A powerful tool to help us think at a higher level.
+
+- We can focus on _what_ a function does, not _how_ it does it.
+
+- Free us from worrying about details (e.g., variables $i$ and $m$ are now internal to $max$)
+
+- Allows us to re-use the same idea/process.
+
+---
+class: top
+
+### Find the Mean
+
+- Give an algorithm to find the mean value given a list $L$ of $k$ integers.
+
+---
+class: middle,center
+
+## $\frac{sum(L,k)}{k}$
+
+---
+class: top
+
+### A C program is just a collection of functions
+
+--
+- written by you
+- provided by the standard C library
+- provided by other libraries
+
+---
+class: middle,center
+
+Assume $len(L)$ returns the size of the list.
+
+## $\frac{sum(L)}{len(L)}$
+
+
+---
+### Find the Standard Deviation
+
+Give an algorithm to find the standard deviation of a list $L$ of $k$ integers.
+
+$$\sqrt{\frac{\sum\_{i=0}^{k-1}(l\_i - \mu)^2}{k}}$$
+
+---
+class: middle,center
+
+### Let's break it down into sub-problems
+
+---
+class: middle,center
+
+### Colour Coded:
+
+.fit[![:scale 95%](figures/excalidrawings/std-dev.png)]
+---
+class: middle,center
+
+### Pictorially:
+
+.fit[![:scale 50%](figures/excalidrawings/pictorially.png)]
+---
+class: middle,center
+
+.small[
+$$\sum\_{i=0}^{k-1}(l\_i - \mu)^2$$
+
+set $\mu$ to $mean(L)$
+
+set $L'$ to $subtract(L, \mu)$
+
+set $L''$ to $square(L')$
+
+set $v$ to $mean(L'')$
+
+set $\sigma$ to $sqrt(v)$]
+---
+class: middle,center,wide
+
+### So here's the flowchart:
+
+.fit[![:scale 80%](figures/excalidrawings/huge-flow-chart.png)]
+
+---
+class: middle,center,wide
+
+### Decomposing the problem into smaller problems.
+
+.fit[![:scale 80%](figures/excalidrawings/decomposition.png)]
+
+---
+class: middle,center,wide
+
+### The smaller problems should be abstracted away.
+
+.fit[![:scale 80%](figures/excalidrawings/abstraction.png)]
+
+---
+### Functions we wish for
+
+- $square(L)$
+- $subtract(L, \mu)$
+- $sqrt(x)$
+- $mean(L)$
+
+---
+class: middle,center
+
+.fit[![](../notes/figures/max-flowchart/max-flowchart-pdf-10.png)]
+
+---
+class: middle, center
+
+### What about $sqrt(x)$?
+
+How do we implement this?
+
+---
+class:center,top
+
+### Hold on, an important detail:
+
+.fit[![:scale 80%](figures/excalidrawings/what-are-the-incoming-arrows.png)]
+
+What are the incoming arrows for?
+
+---
+class:center,top
+
+### Hold on, an important detail:
+
+.fit[![:scale 80%](figures/excalidrawings/function-signatures.png)]
+
+.small[Remember: Functions take inputs and produce outputs.]
+
+
+---
+
+### Approach to solve computational problems
+
+- _Decompose_ a problem into (simpler, smaller) sub-problems
+
+- Solve the sub-problems one-by-one with appropriate functions  
+
+- Compose the functions to solve the original given task
+
+---
+class: center
+
+### Question: What's stopping a function from using itself?
+
+--
+
+
+Nothing! We can totally do it.
+
+---
+class: center, middle
+## Recursion
+
+To understand recursion, you must first understand recursion.
+
+---
+class: center, middle
+
+Let's go through a few problems that can be solved recursively
+
+---
+class: center
+
+### Let's try solving factorial:
+
+Recall:
+
+$$ n! = n \times (n - 1)!$$
+and also
+$$0! = 1$$
+
+---
+class: top, center
+
+### What do we think of this algorithm?
+.fit[![:scale 55%](figures/excalidrawings/factorial-basic.png)]
+
+--
+
+.small[The program will not terminate!]
+
+---
+class: top, center
+
+### Actual factorial flowchart:
+.fit[![:scale 55%](figures/excalidrawings/factorial-fixed.png)]
+
+---
+class: top
+
+### Wishful thinking:
+
+Key features:
+- The algorithm solved the problem by relying on solutions to _smaller_ or _simpler_ sub-problems.
+- The algorithm "does not care" how it's done. Only that the answer is correct.
+- The algorithms have "base cases" that they eventually solve.
+
+
+---
+class: top
+
+### Recursion: Top-down vs Bottom-up.
+
+Up until this point, we've shown you how to solve Factorial
+using a top-down approach:
+
+--
+
+(Informally) "To solve problem $n$, we trust someone to solve the $n - 1$ case, and
+we make use of it to solve our problem."
+
+---
+class: top
+
+### Recursion: Top-down vs Bottom-up.
+
+There is another way (slightly different way) of seeing it:
+
+--
+
+We slowly build up bigger and bigger solutions, using parts that we have built up.
+---
+class: center
+
+### Finding the max of a list. Again.
+
+Recall we did this last week iteratively. This week, let's try to solve it recursively.
+
+---
+class: center
+
+### Before we begin:
+
+.fit[![:scale 60%](figures/excalidrawings/new-max-signature.png)]
+
+---
+class: center
+
+### Finding max of 3 elements:
+
+.fit[![:scale 70%](figures/excalidrawings/bottom-up-1.png)]
+
+---
+class: center
+
+### Finding max of 3 elements:
+
+.fit[![:scale 70%](figures/excalidrawings/bottom-up-2.png)]
+
+---
+class: center
+
+### Finding max of 3 elements:
+
+.fit[![:scale 70%](figures/excalidrawings/bottom-up-3.png)]
+
+---
+class: center
+
+### Finding max of 3 elements:
+
+.fit[![:scale 70%](figures/excalidrawings/bottom-up-4.png)]
+
+---
+class: center
+
+### Finding max of 3 elements:
+
+.fit[![:scale 70%](figures/excalidrawings/bottom-up-5.png)]
+
+---
+class: center
+
+### Finding max of 3 elements:
+
+.fit[![:scale 70%](figures/excalidrawings/bottom-up-6.png)]
+
+---
+class: center
+
+### Finding max of 3 elements:
+
+.fit[![:scale 40%](figures/excalidrawings/bottom-up-7.png)]
+
+---
+class: center
+
+### Here's how we represent it in a flowchart:
+
+.fit[![:scale 75%](figures/excalidrawings/max-faulty-flowchart.png)]
+
+--
+
+Gotcha! The base case is missing!
+
+---
+class: center
+
+### With the base case back in:
+
+.fit[![:scale 75%](figures/excalidrawings/max-flowchart-fixed.png)]
+
+---
+class: center
+
+### Yet another way to do it recursively:
+
+.tiny[
+```
+12  20  11  20  14  2   24  36  43  16  27  6   11  7 
+10  15  38  10  22  7   16  26  32  30  11  9   30  6 
+20  6   27  19  26  10  27  6   19  34  5   9   3   22
+10  4   13  1   10  22  43  36  39  29  41  12  13  25
+17  8   30  31  29  38  2   42  7   45  24  33  9   40
+34  29  37  2   26  17  19  34  6   7   34  22  21  41
+38  5   15  13  9   1   42  39  5   29  38  4   22  29
+41  10  26  32  30  26  16  16  18  22  32  34  14  10
+5   17  25  16  19  6   31  16  3   13  8   42  41  0 
+13  30  44  1   41  14  5   39  40  38  6   37  38  9 
+.
+
+```
+]
+
+--
+Say we were given a list of numbers.
+
+---
+class: middle,center
+### Yet another way to do it recursively:
+
+.tiny[
+```
+12  20  11  20  14  2   24                            
+10  15  38  10  22  7   16                            
+20  6   27  19  26  10  27                            
+10  4   13  1   10  22  43                            
+17  8   30  31  29  38  2                             
+34  29  37  2   26  17  19                            
+38  5   15  13  9   1   42                            
+41  10  26  32  30  26  16                            
+5   17  25  16  19  6   31                            
+13  30  44  1   41  14  5                             
+.
+
+```
+]
+
+What if we knew the maximum from this half...
+
+(Let's call it $m_l$)
+
+---
+class: middle,center
+### Yet another way to do it recursively:
+
+.tiny[
+```
+                            36  43  16  27  6   11  7 
+                            26  32  30  11  9   30  6 
+                            6   19  34  5   9   3   22
+                            36  39  29  41  12  13  25
+                            42  7   45  24  33  9   40
+                            34  6   7   34  22  21  41
+                            39  5   29  38  4   22  29
+                            16  18  22  32  34  14  10
+                            16  3   13  8   42  41  0 
+                            39  40  38  6   37  38  9 
+.
+
+```
+]
+
+... and the maximum from this half?
+
+(Let's call it $m_r$)
+
+---
+class: middle,center
+### Yet another way to do it recursively:
+
+.tiny[
+```
+12  20  11  20  14  2   24  36  43  16  27  6   11  7 
+10  15  38  10  22  7   16  26  32  30  11  9   30  6 
+20  6   27  19  26  10  27  6   19  34  5   9   3   22
+10  4   13  1   10  22  43  36  39  29  41  12  13  25
+17  8   30  31  29  38  2   42  7   45  24  33  9   40
+34  29  37  2   26  17  19  34  6   7   34  22  21  41
+38  5   15  13  9   1   42  39  5   29  38  4   22  29
+41  10  26  32  30  26  16  16  18  22  32  34  14  10
+5   17  25  16  19  6   31  16  3   13  8   42  41  0 
+13  30  44  1   41  14  5   39  40  38  6   37  38  9 
+.
+
+```
+]
+
+Then, the overall max of the entire list is just the larger of $m_l$ and $m_r$!
+
+
+---
+class: center
+
+### In general, this is the process:
+
+.fit[![:scale 65%](figures/excalidrawings/max-half-and-half.png)]
+
+.tiny[Note: $\lfloor x \rfloor$ means to round $x$ down to the nearest integer.]
+
+---
+class: center
+
+### Again, but with a flowchart:
+
+.fit[![:scale 75](../notes/figures/max-flowchart/max-flowchart-pdf-15.png)]
+
+
+---
+class: top
+
+### Some details to think about:
+
+- What is the base case? What do we do during the base case?
+- How are we decomposing the problem into sub-problems? 
+- How do we use the answers of the sub-problems?
+
+---
+class:middle,center
+
+# Types
+
+---
+### Recap
+
+- A variable is a named storage location in memory.
+
+- A variable holds a value.
+
+- A value is a sequence of bits.
+
+---
+class:middle
+
+### `1010010101010101001111010..` can mean
+
+- 1933091
+- 34.95108
+- `hello`
+- an image
+
+---
+class:middle
+
+### A variable needs a type to be interpreted correctly.
+
+---
+class:middle
+
+### A type is represented by a fixed, finite, number of bits.
+
+### Different types can be represented by a different number of bits.
+
+---
+class:middle, center
+
+### 1 bit: `1` or `0`
+
+black or white<br>
+true or false<br>
+yes or no<br>
+S or U
+
+---
+class:middle, center
+
+### 2 bits: `11`, `10`, `01`, or `00`
+
+north, south, east, west<br>
+spring, summer, fall, winter
+
+---
+class:middle, center
+
+### In general, $k$ bits can represent $2^k$ different possible values
+
+---
+class:middle
+
+### more bits $\rightarrow$ more memory, but can represent bigger range
+
+### fewer bits $\rightarrow$ less memory, but represent smaller range
+
+---
+class:middle
+
+### When writing programs for embedded systems, IoT devices, sensors, etc, you need to be frugal with memory usage.
+
+### In CS1010, however, we will go with more bits for better precision.
+
+---
+class:middle, center
+
+## Integers
+
+---
+class:middle, center
+
+### 8 bits: 256 different integers
+
+0 to 255 (for unsigned)<br>
+-128 to 127 (for signed)
+
+---
+class:middle, center
+
+### 64 bits signed
+
+
+-9,223,372,036,854,775,808 <br>
+to <br>
+9,223,372,036,854,775,807
+
+---
+class:middle, center
+
+## Characters
+---
+class:middle, center
+
+### 8 bits: 127 different symbols using ASCII standards
+
+```
+0-9, A-Z, a-z
+<>?:”{}!@#$%^&*
+()_+-=[]\';/.,
+```
+
+return, tab, escape, etc
+
+---
+class:middle, center
+
+### up to 32 bits: Unicode (UTF-8)
+
+11111011000000000 😀
+
+---
+class:middle, center
+
+## Real numbers
+
+(also called floating point numbers)
+
+---
+class:middle
+
+### There are infinitely many real numbers but only a finite sequence of bits.  
+
+### Not all of real numbers can be represented.
+
+---
+class:middle, center
+
+### Not every real number can be presented precisely
+
+E.g., `0.1 + 0.2` is `0.30000000000000004`
+
+---
+class:middle, center
+background-image: url(figures/foodpanda.png)
+
+---
+class:middle, center
+
+### Rule: Use integer type unless you absolutely need to use a real number type.
+
+---
+class:middle, center
+
+### We normally use 32, 64, or 128 bits to represent real numbers.
+
+---
+class: middle
+
+- A variable needs a type to be interpreted correctly.
+
+- We need to decide on the type of a variable before we can use it.
+
+---
+class:middle
+
+set $total$ to $sum(L, k)$<br>
+set $avg$ to $mean(L, k)$
+
+$L$ is a list of integers.<br>
+$k$ is the number of elements in $L$.
+
+Should these variables be an integer or an real number?<br>
+
+- $k$
+- $total$
+- $avg$
+
+
+---
+class:top
+
+### Compound type
+
+- A compound type is made out of other _primitive types_.  Example,
+
+    - A word (a sequence of characters)
+    - A 2D coordinate (two real numbers $(x, y)$)
+
+---
+class: wide
+
+.small[
+
+### Homework
+
+- Problem Set in [Unit 3](https://nus-cs1010.github.io/2425-s1/03-func.html)
+
+- `ssh` into CS1010 PE hosts and follow the Unix CLI and `vim` tutorial
+
+- Diagnostic Quiz for Lecture 2 (due this Wed 2359)
+
+### From Last Week
+
+- Diagnostic Quiz for Lecture 1 (due this Wed 2359)
+
+- Diagnostic Quiz for Using CS1010 PE (due this Wed 2359)
+
+]
+
+---
+class: bottom
+
+.tiny[
+]
+</textarea>
+
+<script src="https://remarkjs.com/downloads/remark-latest.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML&delayStartupUntil=configured" type="text/javascript"></script>
+<script src="javascripts/counter.js">
+</script>
+<script>
+remark.macros.scale = function (percentage) {
+	var url = this;
+	return '<img src="' + url + '" style="width: ' + percentage + '" />';
+};
+// ![:scale 50%](image.jpg)
+
+var slideshow = remark.create({
+    navigation: {
+	    scroll: false
+	},
+	ratio: '16:9',
+	highlightStyle: 'monokai',
+    slideNumberFormat: 'AY24/25 S1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%current%',
+});
+ // Setup MathJax
+  MathJax.Hub.Config({
+	  tex2jax: {
+		inlineMath: [['$', '$']],
+		displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+		skipTags: ['script', 'noscript', 'style', 'pre']
+	  }
+  });
+
+  MathJax.Hub.Configured();
+
+  var term = new Terminal();
+  term.open(document.getElementById('terminal'));
+  term.write('Hello from \x1B[1;3;31mxterm.js\x1B[0m $ ')
+</script>
+</body>
+</html>
+
