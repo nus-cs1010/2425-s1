@@ -5,7 +5,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="stylesheets/cs1010.css">
 <link rel="stylesheet" type="text/css" href="stylesheets/light.css">
-<title>CS1010 AY24/25 S1 Lab 8</title>
+<title>CS1010 AY22/23 S1 Lab 8</title>
 <meta charset="utf-8">
 </head>
 <body>
@@ -13,6 +13,8 @@
 class: middle, center
 
 ## Intro to C Pre-processor
+
+### 2 November 2023
 
 ---
 
@@ -206,12 +208,70 @@ expands to:
 ```
 
 ---
+
+### if-defined directive
+
+The `#ifdef` and `#endif` directives can be used to decide on which of two alternatives to take at compile time.
+
+--
+.small[
+* You can use this to do things like change which function you're using in Windows vs Linux vs Apple.
+	- The networking library for Linux vs Windows is different. You need to include a different header file.]
+
+--
+
+.small[
+* You can have a debug vs non-debug compiled version of the code.
+]
+
+---
+
+
+For example:
+.small[```C
+void which_os(){
+#ifdef _WIN32
+	cs1010_println_string("windows");
+#endif
+#ifdef __APPLE__
+	cs1010_println_string("apple");
+#endif
+#ifdef __linux__
+	cs1010_println_string("linux");
+#endif
+}
+```]
+
+---
+### If you compiled with Windows:
+
+```C
+void which_os(){
+  cs1010_println_string("windows");
+}```
+
+---
+.small[```C
+void some_function(long n) {
+#ifdef DEBUG
+  cs1010_print_string("Input is: ");
+  cs1010_println_long(n);
+#endif
+
+	// remaining code here:
+}
+```]
+
+
+Now if you compiled with a `-DDEBUG` flag, then the print statements will be compiled in. Otherwise it won't.
+
+---
 class: bottom
 
 .tiny[
 Version: 1.1
 
-Last Updated:  Sun Sep  4 00:22:15 +08 2022
+Last Updated:  Tue Oct  22 23:19:15 +08 2024
 ]
 </textarea>
 
