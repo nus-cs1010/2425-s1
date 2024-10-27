@@ -92,6 +92,69 @@ $T(1) = 1$
 $T(k) = 2T(k-1) + 1$
 
 ---
+
+#### Question: How about a different algorithm?
+
+1. Move the top disk from peg `A` to peg `B`.
+
+--
+
+2. Move the remaining $k - 1$ disks from peg `A` to peg `C`.
+
+--
+
+3. Move the top disk from peg `B` to peg `C`.
+
+--
+
+**Question:** Where did we go wrong?
+
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/tower-of-hanoi.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/tower-of-hanoi-faulty-moves.png)
+
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/tower-of-hanoi-impossible-pegs.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/tower-of-hanoi-implicit-2.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/tower-of-hanoi-implicit-3.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/tower-of-hanoi-implicit-4.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/tower-of-hanoi-implicit-5.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/tower-of-hanoi-implicit-6.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/tower-of-hanoi-implicit-7.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/wishful-thinking-1.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/wishful-thinking-2.png)
+---
 class: middle,center
 
 Iterative solution?
@@ -114,6 +177,59 @@ abc cba acb cab bac bca
 - Generate permutation for string of length $k$
 
 ---
+class: middle, left
+
+![:scale 100%](figures/lec10/permutations-1.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/permutations-2.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/permutations-3.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/permutations-4.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/permutations-5.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/permutations-6.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/permutations-7.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/permutations-8.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/permutations-9.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/permutations-10.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/permutations-11.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/permutations-12.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/permutations-13.png)
+
+---
 To permutate `abc`:
 
 - starts with `a`, permutate `bc`: `abc acb`
@@ -127,17 +243,17 @@ Example:
 
 To permutate `abcd`:
 
-- starts with `a`, permutate `bcd`: `abcd abdc acbd ..`
-- starts with `b`, permutate `acd`: `bacd bacd bcad ..`
-- starts with `c`, permutate `abd`: `cabd cadb cbad ..`
-- starts with `d`, permutate `abc`: `dabc dacb cbac ..`
+- start with `a`, permutate `bcd`: `abcd abdc acbd ..`
+- start with `b`, permutate `acd`: `bacd bacd bcad ..`
+- start with `c`, permutate `abd`: `cabd cadb cbad ..`
+- start with `d`, permutate `abc`: `dabc dacb cbac ..`
 
 ---
-To permutate `abc` when we starts with `d`:
+To permutate `abc` when we start with `d`:
 
-- starts with `da`, permutate `bc`: `dabc dacb`
-- starts with `db`, permutate `ac`: `dbac dbca`
-- starts with `dc`, permutate `ab`: `dcab dcba `
+- start with `da`, permutate `bc`: `dabc dacb`
+- start with `db`, permutate `ac`: `dbac dbca`
+- start with `dc`, permutate `ab`: `dcab dcba `
 
 ---
 At any step, we have a fixed prefix, and permute
