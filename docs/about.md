@@ -36,7 +36,7 @@ After taking CS1010, students should
 -   <s>30 September 2024</s>7 October, Monday: Midterm Test <s>(4 - 6 PM)</s> (4:30 - 6:15 PM)
 -   22 October 2024, Tuesday: Practical Exam 1 (6 - 9 PM)
 -   12 November 2024, Tuesday: Practical Exam 2 (6 - 9 PM)
--   25 November 2024, Friday: Final Exam (1 - 3 PM)
+-   25 November 2024, <s>Friday:</s> Monday: Final Exam (1 - 3 PM)
 
 Due to coordination with multiple other courses and logistics issues -- the practical exam dates/times are subject to change.  It will be finalized by Week 3 of the semester.
 
