@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="stylesheets/cs1010.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/light.css">
+<title>CS1010 AY24/25 S1 Lecture 3</title>
+<meta charset="utf-8">
+</head>
+<body>
+<textarea id="source">
+class: middle, center
+
+# Lecture 3
+
+### 26 August 2024
+
+Admin Matters<br>
+Unit 5: **First C Program**<br>
+Unit 6: **CS1010 I/O Library**<br>
+Unit 7: **Arithmetic Operations**<br>
+
+---
+### Exercises
+
+- Read the [exercise guide](https://nus-cs1010.github.io/2425-s1/guides/exercises.html)
+
+- Read policy about:
+    - [late submission](https://nus-cs1010.github.io/2425-s1/about.html#latemissed-submission-policy)
+	- [collaboration](https://nus-cs1010.github.io/2425-s1/about.html#collaboration-on-programming-exercises)
+	- [use of AI](https://nus-cs1010.github.io/2425-s1/about.html#use-of-ai-tools)
+
+- Read about [how to ask for help](https://nus-cs1010.github.io/2425-s1/about.html#asking-questions-and-getting-help)
+
+---
+- Exercises are meant to help you learn.  
+
+- Submitting a perfect solution is not the point.
+
+- Do not copy verbatim from AI, others, or the Internet.  You will not learn anything.
+
+- Making mistakes is a critical part of the learning process.
+
+---
+### Collaboration
+
+- Help each other learn by _teaching each other_ the concepts and thought process behind.
+
+- Copy-pasting of code does _NOT_ help each other learn.
+
+- Give credits to those that help you.
+
+---
+### Catch-Up Session I
+
+- __Date__: Saturday, 31 August, 2024
+
+- __Time__: 10 AM to 12 PM
+
+- Via [Zoom](https://nus-sg.zoom.us/j/7308691994?omn=86463549431)
+
+---
+class: 
+.small[
+### Catch-Up Session I
+
+- Optional session
+
+- Q&amp;A format
+
+- Ask via [PigeonHole](https://pigeonhole.at/FUNCTIONSEVERYWHERE) (code: `FUNCTIONSEVERYWHERE`)
+
+- No new materials will be covered
+
+- Will be recorded
+]
+
+---
+.small[
+To follow along today's lecture, copy the following three files from the home directory of `cs1010` to your working directory:
+
+- `Makefile`
+
+- `compile_flags.txt`
+
+- `.clang-tidy`
+
+**Note**: Every weekly programming exercise comes with three files with the same name.  Don't mix them up.
+
+**Note**: My `vim` environment is already [set up according to here](https://nus-cs1010.github.io/2425-s1/guides/vim-setup.html).  Yours might behave differently.
+]
+
+---
+### Mathematical functions
+
+- Function declaration: $f : \mathbb{Z} \rightarrow \mathbb{Z}$
+
+- Function definition: $f(x) = x^2$
+
+- Referring to a function: $g(x) = f(x) + x$
+
+- Evaluating a function: $f(4)$ evaluates to 16
+
+---
+class: middle,center
+
+.w20[![square](figures/lec03/functions-0.png)]
+
+---
+class: middle,center
+
+## Let's code
+
+---
+.fit[![simplified](../notes/figures/function-anatomy/function-anatomy.001.png)]
+
+---
+### Compilation
+
+A compiler _compiles_ a program written in high-level language to machine code.
+
+.fit[![simplified](../notes/figures/c-compile-run/c-compile-run-pdf-0.png)]
+
+
+---
+### The `main` function
+
+- Entry point of a C program
+
+- Always return an `int`
+
+- Returns 0 if the program runs successfully.  Non-zero otherwise.
+
+---
+class: middle,center
+
+.w20[![square](figures/lec03/functions-1.png)]
+
+---
+class: middle,center
+
+.fit[![meme](figures/meme/bad-good-global.jpg)]
+
+---
+class: middle,center
+
+.tiny.center[
+type  | min bits | num of bits on PE nodes
+-----:|---------:|-----------------------:
+`char` | 8 | 8
+`short` | 16 | 16
+`int` | 16 | 32
+`long` | 32 | 64
+`long long` | 64 | 64
+]
+---
+class: middle
+
+`int` is not sufficient for CS1010 purposes.  
+
+We will only use `long` in CS1010.
+
+---
+class: middle
+
+.tiny.center[
+type  | num of bits
+-----:|:--------
+`float` | 32
+`double` | 64
+]
+
+We will only use `double` in CS1010.
+
+---
+class: middle,center
+
+.fit[![meme](figures/meme/bad-good-int-long.jpg)]
+
+---
+class: middle,center
+
+### Basic operators
+
+`+` `-` `*` `/` `%`
+
+---
+### Pitfall: Order of operations can be confusing
+
+`8 / 2 * (2 + 2)`
+
+---
+
+background-image: url("figures/ny-times-math-eq-stumps-internet.png")
+
+---
+### CS1010: Use parentheses everywhere
+
+`8 / (2 * (2 + 2))` 
+
+`(8 / 2) * (2 + 2)`
+
+---
+### CS1010: No need to worry about
+
+<iframe src="https://en.cppreference.com/w/c/language/operator_precedence" width="100%" height="400"></iframe>
+
+---
+class: middle,center
+
+.fit[![meme](figures/meme/bad-good-arithmetic.jpg)]
+
+---
+### Pitfall: Integer Overflow
+
+```C
+unsigned char c = 255;
+c = c + 1;
+```
+
+---
+### Pitfall: Integer Division
+
+```C
+long three = 3;
+long two = 2;
+double one_half = three/two;
+```
+
+---
+### Pitfall: The % Operator
+
+`x % n` is equivalent to `x - ((x / n) * n)`
+
+- What is `-9 % 4`?
+
+- What is `9 % -4`? 
+
+---
+### Compound Operator
+
+```C
+x <op>= y;
+```
+
+is equivalent to
+
+```C
+x = x <op> y;
+```
+
+E.g., `+=`, `-=`, `*=`, `/=`, `%=`, etc.
+---
+### Increment/Decrement Operator
+
+Postfix operator
+
+```C 
+x++; 
+x--; 
+```
+
+Use `x` first, then add/subtract one from `x`.
+
+
+---
+### Increment/Decrement Operator
+
+Prefix operator
+
+```C 
+++x; 
+--x; 
+```
+
+Add/subtract one from `x`, use `x`.
+
+---
+### Increment/Decrement Operator
+
+```C 
+long x = 1;
+y = x++; 
+// y becomes 1, x becomes 2
+```
+
+---
+### Increment/Decrement Operator
+
+```C 
+long x = 1;
+y = ++x; 
+// y becomes 2, x becomes 2
+```
+---
+### Undefined Behavior
+
+```C
+x = x++;
+x = x++ * ++x;
+```
+
+---
+class: middle,center
+
+.fit[![meme](figures/meme/bad-good-plusplus.jpg)]
+
+---
+class: middle
+
+### Programming cannot be learned by reading
+
+"Play" with code, ask "what if..", "why..", "why not..", etc
+
+---
+### Homework
+
+.small[
+- Problem Set in [Unit 5](https://nus-cs1010.github.io/2425-s1/05-first-c.html#problem-set-5)
+
+- [Diagnostic Quiz for Lecture 3](https://canvas.nus.edu.sg/courses/62224/quizzes/40049)
+
+- [Exercise 0](https://nus-cs1010.github.io/2425-s1/exercises/ex00.html)
+]
+
+
+---
+class: bottom
+
+.tiny[
+]
+</textarea>
+
+<script src="https://remarkjs.com/downloads/remark-latest.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML&delayStartupUntil=configured" type="text/javascript"></script>
+<script src="javascripts/counter.js">
+</script>
+<script>
+remark.macros.scale = function (percentage) {
+	var url = this;
+	return '<img src="' + url + '" style="width: ' + percentage + '" />';
+};
+// ![:scale 50%](image.jpg)
+
+var slideshow = remark.create({
+    navigation: {
+	    scroll: false
+	},
+	ratio: '16:9',
+	// highlightStyle: 'github',
+	// highlightStyle: 'solarized-light',
+	highlightStyle: 'tomorrow',
+	// highlightStyle: 'vs',
+    slideNumberFormat: 'AY24/25 S1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%current%',
+});
+ // Setup MathJax
+  MathJax.Hub.Config({
+	  tex2jax: {
+		inlineMath: [['$', '$']],
+		// inlineMath: [['$', '$'], ['\\(', '\\)']],
+		displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+		skipTags: ['script', 'noscript', 'style', 'pre']
+	  }
+  });
+
+  MathJax.Hub.Configured();
+</script>
+</body>
+</html>
+

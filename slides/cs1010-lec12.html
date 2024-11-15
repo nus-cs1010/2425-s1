@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="stylesheets/cs1010.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/light.css">
+<title>CS1010 AY24/25 S1 Lecture 12</title>
+<meta charset="utf-8">
+</head>
+<body>
+<textarea id="source">
+class: middle,center
+
+---
+class: middle, center
+
+# Lecture 12
+
+### 11 November 2024
+
+.smaller[
+Admin Matters<br>
+What's Next?<br>
+Recap of CS1010<br>
+]
+---
+
+### No Catch-Up Session IV
+
+---
+### PE2 
+
+- Tomorrow, 6 - 9 PM
+
+- Seating plan posted
+
+---
+### Last Lab 
+
+- PE2 questions
+
+---
+### Last Exercise
+
+- Only one question!
+- Due next Friday
+
+---
+class: bottom, right
+background-image: url(figures/meme/from-students/final-exercise_from_ryan_sim_ray_en.png)
+
+.tiny[
+from Ryan Sim (23/24)
+]
+---
+### Final Exam
+
+- 25 November 2024 (1 PM - 3 PM)
+
+- Coverage: Up to Unit 26
+
+- Open Book
+
+---
+class: middle,center
+
+### What's Next?
+
+---
+
+### What's Next?
+
+- **Data structure**: Organizing storage data in a way that is efficient to insert, delete, search, and retrieve.
+
+---
+### Data Structure in CS1010: 1D Array
+
+- Insert: $O(n)$
+- Delete: $O(1)$ if mark as delete; $O(n)$ to compact
+- Search: $O(\log n)$ if sorted; $O(n)$ otherwise
+- Retrieve: $O(1)$
+
+---
+### Data Structure: Linked List
+
+- Use `struct` to group relevant members together
+- Use pointers / `malloc` for dynamically shrink/increase size
+- Use recursion
+
+---
+.smaller[
+```C
+typedef struct node {
+  long x;
+  struct node *next;
+} node;
+
+typedef struct list {
+  struct node *head;
+  // struct node *tail;
+} list;
+```
+]
+
+---
+.smaller[
+```C
+list *create_new_list()
+{
+  list *l = malloc(sizeof(list));
+  l->head = NULL;
+  return l;
+}
+
+node *create_new_node(long x)
+{
+  node *new = malloc(sizeof(node));
+  new->x = x;
+  new->next = NULL;
+  return new;
+}
+```
+]
+---
+.smaller[
+```C
+void free_list(list *l)
+{
+  free_node(l->head);
+  free(l);
+}
+
+void free_node(node *n)
+{
+  if (n != NULL) {
+    free_node(n->next);
+    free(n);
+  }
+}
+```
+]
+
+---
+.smaller[
+```C
+void print_list(list *l)
+{
+  cs1010_print_string("[ ");
+  print_node(l->head);
+  cs1010_println_string("]");
+}
+
+void print_node(node *n)
+{
+  if (n != NULL) {
+    cs1010_print_long(n->x);
+    cs1010_print_string(" ");
+    print_node(n->next);
+  }
+}
+```
+]
+
+---
+.smaller[
+```C
+void insert_front(list *l, long x) {
+  node *new = create_new_node(x);
+  if (l->head == NULL) {
+    l->head = new;
+    new->next = NULL;
+  } else {
+    new->next = l->head;
+    l->head = new;
+  }
+}
+```
+]
+
+---
+.smaller[
+```C
+void insert_front(list *l, long x) {
+  node *new = create_new_node(x);
+  if (l->head == NULL) {
+    l->head = new;
+    new->next = NULL;
+  } else {
+    new->next = l->head;
+    l->head = new;
+  }
+}
+```
+]
+
+---
+.smaller[
+```C
+void insert_back(list *l, long x) {
+  node *new = create_new_node(x);
+  if (l->head == NULL) {
+    l->head = new;
+  } else {
+    node_insert_back(l->head, new);
+  }
+}
+
+void node_insert_back(node *n, node *new) {
+  if (n->next == NULL) {
+    n->next = new;
+  } else {
+    node_insert_back(n->next, new);
+  }
+}
+
+```
+]
+
+---
+.smaller[
+```C
+void insert_at(list *l, long x, long idx) {
+  if (idx == 0) {
+    insert_front(l, x);
+  } else {
+    node *new = create_new_node(x);
+    node_insert_at(l->head, new, idx);
+  }
+}
+
+void node_insert_at(node *n, node *new, long idx) {
+  if (idx == 1) {
+    new->next = n->next;
+    n->next = new;
+  } else {
+    node_insert_at(n->next, new, idx - 1);
+  }
+}
+
+```
+]
+
+
+---
+### Data Structure: Linked List
+
+- Insert/delete front: $O(1)$
+
+- Insert/delete back: $O(n)$ 
+    - $O(1)$ with `tail` pointer
+
+- Insert/delete/retrieve at $i$: $O(i)$
+
+- Search: $O(n)$
+
+---
+
+### Other data structures you will encounter
+
+.smaller[
+```C
+// Tree
+typedef struct node {
+  long x;
+  struct node *left;
+  struct node *right;
+} node;
+
+// Graph
+typedef struct node {
+  long x;
+  struct list *neighbors;
+} node;
+```
+]
+
+---
+class: middle,center
+
+## Recap of CS1010
+
+---
+class: middle,center
+
+## What Have You Learned?
+
+---
+class: center,middle
+
+## 1. How to write C 
+
+---
+class: wide
+
+### Types
+
+- Use the correct type for the correct data.
+
+- Beware of precision issue when using `double` and `float`.
+
+---
+class: wide
+
+### Functions
+
+- Write functions that are small and do one thing.
+
+(more on this later)
+
+---
+class: wide
+
+### Operations
+
+- arithmetic operations: `+`, `-`, `*`, `/`, `%` 
+
+- bit operations in C: `^` `|` `&` `~` `<<` `>>`
+
+---
+class: wide
+
+### Branching and Logical Expressions
+
+- Use tables and flowcharts to help you understand the logic and simplify your code.
+- Use assertions to reason about your code
+- How to use the `assert` macro.
+- Avoid expressions that are always true or always false.
+- We skipped `switch/case` and `goto` statements.
+
+---
+class: wide
+
+### Loops
+
+- Identify the initial condition, what to repeat, when to stop, what/how to update after each repetition.
+- Ensure that we move towards the terminating conditions.
+- Use loop invariants to reason  about your loops.
+- We skipped `break` and `continue` statements.
+
+---
+class: wide
+
+### Arrays and Structs
+
+- Composite data types that store multiple values together.
+- Arrays is useful as a lookup table.
+- String is nothing but an array with terminating null character.
+- Beware of array out-of-bound errors
+- We skipped `union` and `enum`.
+
+---
+class: wide
+
+### Memory 
+
+- Arrays decays into pointers
+- Using pointers for passing by reference
+- Effective habits of memory management
+
+---
+class: wide
+
+### Pre-processing 
+
+- `#include` for headers
+- `#define` constants and macros
+- `#ifdef` and `#endif` for conditional compilation
+
+---
+
+- We focused on writing clean code.
+
+- Not just code that works.
+
+---
+class: bottom,right
+background-image: url(figures/meme/from-students/clang-tidy-from-Hao-Yi.jpg)
+
+.tiny[by Hao Yi (21/22)]
+
+---
+class: middle, center
+
+### 2. How a C program behaves
+
+---
+
+### Memory model
+
+- Stack and heap
+
+- Pointers and memory addresses
+
+- Pass by value vs. pass by reference
+
+---
+
+### Interacting with OS 
+
+- Proper memory management with `malloc` and `free`
+
+---
+class:middle,center
+<video width=900px controls><source src="figures/meme22/memory_error_by_james_hong_jey.mp4"></video>
+
+.tiny[by James Hong Jey (22/23)]
+
+---
+class: bottom,right
+background-image: url(figures/meme/from-students/memory-leak-moe_from_ryan_sim_ray_en.png)
+
+.tiny[by Ryan Sim (23/24)]
+
+---
+class: bottom,right
+background-image: url(figures/meme22/1_min_left_in_pe.jpg)
+
+.tiny[by Parth and Friends (22/23)]
+
+---
+class: middle,center
+
+### 3. Tools and Practices
+
+---
+`clang`, `vim`, `bash`
+
+.fit[![logn](figures/meme/olympic-vim.jpg)]
+
+---
+- Address and bound sanitizer
+- `clang-format`
+- `clang-tidy`
+- `git`
+- `make`
+
+--
+
+.fit[![logn](figures/meme/17-warnings-is-fine.jpg)]
+
+---
+class: middle, center
+
+### 4. Problem Solving Techniques
+
+---
+class: bottom,right
+background-image: url(figures/meme/from-students/cs1010_pe_is_iq_test_by_ng_wei_liang.png)
+
+.tiny[by Ng Wei Liang (23/24)]
+
+---
+### Decomposition
+
+- Break down the problem into "bite-size" sub-problems
+- Solve them one-by-one
+- Compose them back to solve the original problem
+
+---
+### Recursion
+
+- Solve the "simplest" version
+- Assume you can solve the "simpler" version
+- Compose the solution to the original problem from the solution of the
+simpler version.
+
+---
+### Thinking Tools
+
+- Flowcharts
+- Truth Tables
+- Assertion and invariants
+- Test cases
+
+---
+class: middle,center
+
+### Computational Thinking
+
+The mental process associated with computational problem solving
+
+---
+### Four Pillars of Computational Thinking
+
+- Decomposition
+- Pattern Recognition
+- Abstraction
+- Algorithms
+
+---
+class: middle,center
+
+## Decomposition
+
+---
+class:middle
+
+### Find the Std Dev (Lecture 2)
+
+- Give an algorithm to find the standard deviation of a list $L$ of $k$ integers.
+
+$$\sqrt{\frac{\sum\_{i=0}^{k-1}(l\_i - \mu)^2}{k}}$$
+
+---
+class:middle,center
+
+### Decomposition makes a problem easier to solve, reason about, and test
+
+---
+class: middle,center,wide
+
+### Decomposition
+
+George Polya said: "If you can't solve a problem, there is an easier problem that you can solve: find it"
+
+---
+### Decomposition
+
+- Solve the easier problem first, then generalized.
+- E.g., `social`: find two-hops friends, then generalized to k hops
+- E.g., `pattern`: draw the left most cell, then generalized
+
+---
+### Recursion
+
+- Assume the easier problem is solved, then generalized.
+- E.g., `binary`: assume we know how to convery a binary number with n-1 digits to decimal, then solve for n digits.
+- E.g., `tower of hanoi`: assume we know how to move k-1 discs, then solve for k disc.
+
+---
+### Four Pillars of Computational Thinking
+
+- Decomposition
+- Pattern Recognition
+- Abstraction
+- Algorithms
+
+---
+class: middle,center
+
+## Pattern Recognition
+
+---
+class: middle,center
+
+### Pattern Recognition
+
+Observe trends and patterns, then generalized
+
+---
+### Writing loops
+
+- What to initialize? 
+- What changes from one loop to the next?
+- Loop invariants
+
+---
+class: middle
+
+### Make code shorter and easier to change
+
+Taxi 
+
+- The first 1 km or less (Flag Down) 	$3.90
+- Every 400 m thereafter or less, up to 10 km 	$0.24
+- Every 350 m thereafter or less, after 10 km 	$0.24
+
+(See the pattern?)
+
+---
+class: middle
+
+### Taxi
+
+| unit dist | max dist  | fare |
+|-----------|-----------|------|
+| Every 1000 m | next 1 km | $3.90 |
+| Every 400 m  | next 9 km | $0.24 |
+| Every 350 m  | next $\infty$ km | $0.24 |
+
+---
+class: middle, wide
+
+.tiny[
+```C
+double fare = 0;
+for (int i = 0; i < NUM_TIERS; i += 1) {
+    if (distance < 0) {
+		  return fare;
+    }
+	long min_dist = min(distance, tiers[i].max_distance);
+	double units = ceil(min_dist*1.0/ tiers[i].unit_distance);
+	fare += tiers[i].fare * units;
+	distance -= tiers[i].max_distance;   
+}
+```
+]
+
+---
+class: middle,center
+
+## Abstraction
+
+---
+### Abstraction
+
+- Identifying and abstracting relevant information
+- Hide details
+- Adapt to change
+- Generalize to other domain
+
+---
+class: middle,center
+
+### Data Abstraction
+
+Model the problem with only the necessary information
+
+---
+class: center,middle
+### N-Queens
+
+.fit[![queens](../notes/figures/lec10-queens/lec10-queens-pdf-6.png)]
+---
+class: center,middle
+### Hanoi
+
+.fit[![hanoi](../notes/figures/tower-of-hanoi/tower-of-hanoi.002.png)]
+
+---
+class: middle,center
+
+### Functional Abstraction
+
+Hide details and focus on higher-level logic
+
+---
+class:wide
+
+Does it matter (to this code) if how we keep track of friendship?
+
+.tiny[
+```C
+// is i and j connected through some m at h+1 hops?
+char is_connected(long n, network degree_1, network degree_h, long i, long j) {
+	for (long m = 0; m < n; m += 1) { 
+		if (is_friend(degree_1, i, m) && is_friend(degree_h, m, j)) {
+			return FRIEND;    
+		}  
+	} 
+	return STRANGER;
+}
+```
+]
+
+---
+class: middle,center
+
+## Algorithms
+
+---
+### Ways to solve problems
+
+- Branches and Loops
+- Recursion
+- Memoization with arrays
+- Divide and conquer
+- Exploit properties in data
+
+---
+### Four Pillars of Computational Thinking
+
+- Decomposition
+- Pattern Recognition
+- Abstraction
+- Algorithms
+
+---
+from Lecture 1..
+
+### Work hard
+### Work very very hard
+
+
+---
+class:bottom,right
+
+background-image: url(figures/meme22/dont_know_whats_wrong.jpg)
+
+.tiny[by Parth and Friends (22/23)]
+
+---
+class:bottom,right
+
+background-image: url(figures/meme22/once_again_asking.jpg)
+
+.tiny[by Parth and Friends (22/23)]
+
+---
+class:bottom,right
+
+background-image: url(figures/meme/from-students/they-dont-know_by_ryan_sim.png)
+
+.tiny[by Ryan Sim (23/24)]
+
+---
+class:bottom,right
+
+background-image: url(figures/meme22/incomplete_exercises.jpg)
+
+.tiny[by Parth and Friends (22/23)]
+
+---
+### Special Thanks to 
+
+- The tutorial instructors: Eric, Gizem, Yunjeong, Malaika
+- The lab tutors (all 25 of them)
+- The SoC IT Support Team: Tan Hsiao Wei, Lai Zit Seng, and lab technicians
+- All the students
+
+---
+class: bottom
+
+.tiny[
+]
+</textarea>
+
+<script src="https://remarkjs.com/downloads/remark-latest.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML&delayStartupUntil=configured" type="text/javascript"></script>
+<script src="javascripts/counter.js">
+</script>
+<script>
+remark.macros.scale = function (percentage) {
+	var url = this;
+	return '<img src="' + url + '" style="width: ' + percentage + '" />';
+};
+// ![:scale 50%](image.jpg)
+
+var slideshow = remark.create({
+    navigation: {
+	    scroll: false
+	},
+	ratio: '16:9',
+	highlightStyle: 'tomorrow',
+    slideNumberFormat: 'AY24/25 S1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%current%',
+});
+ // Setup MathJax
+  MathJax.Hub.Config({
+	  tex2jax: {
+		inlineMath: [['$', '$']],
+		// inlineMath: [['$', '$'], ['\\(', '\\)']],
+		displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+		skipTags: ['script', 'noscript', 'style', 'pre']
+	  }
+  });
+
+  MathJax.Hub.Configured();
+</script>
+</body>
+</html>
+
+---
+class: middle,center
+
+.fit[![meme](figures/meme/from-students/Man-of-Culture-from-Hao-Yi.jpg)]
+
+.tiny[by Hao Yi (21/22)]
+
+---
+class: bottom,right
+background-image: url(figures/meme/from-students/making-meme.jpg)
+
+.tiny[by Benjamin Poh (21/22)]
+
+---
+class: center,middle
+![meme](figures/meme/from-students/memes-appear-from-Benjamin-Poh.png)
+
+.tiny[by Benjamin Poh (21/22)]
+
+---
+### Taxi 
+
+.tiny[
+```C
+double surcharge(long day, long hour, long minute) {
+	if (is_weekday(day) && is_morning_peak(hour, minute)) {
+		return MORNING_SURCHARGE;  
+	}
+	if (is_evening_peak(hour)) {
+		return EVENING_SURCHARGE;  
+	}
+	if (is_midnight_peak(hour)) {
+		return MIDNIGHT_SURCHARGE;  
+	}
+	return 1.0; 
+}
+```
+]
+
+---
+.tiny[
+```C
+bool is_weekday(long day) { 
+  return (day >= 1 && day <= 5);
+}
+bool is_morning_peak(long hour, long minute) {
+  return (hour >= 6 && hour < 9) || 
+		 (hour == 9 && minute <= 29);
+}
+bool is_evening_peak(long hour) { 
+  return (hour >= 18 && hour <= 23); 
+} 
+bool is_midnight_peak(long hour) { 
+  return (hour >= 0 && hour < 6);
+}
+```
+]
+
+---
+### Social 
+
+.tiny[
+```C
+// is i and j connected through some m at h+1 hops?
+char is_connected(long n, char **degree_1, 
+		          char **degree_h, long i, long j) {
+	for (long m = 0; m < n; m += 1) { 
+		if (is_friend(degree_1, i, m) && 
+		    is_friend(degree_h, m, j)) {
+			return FRIEND;    
+		}  
+	} 
+	return STRANGER;
+}
+```
+]
+
+---
+### Social
+
+.tiny[
+```C
+bool is_friend(char **network, int i, int j) {
+   if (i >= j) {
+      return network[i][j] == FRIEND;  
+   } 
+   return network[j][i] == FRIEND;
+}
+```
+]
+---
+class: center,middle
+
+![meme](figures/meme/goodbye-cs1010.jpg)
+

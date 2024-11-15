@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="stylesheets/cs1010.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/light.css">
+<title>CS1010 AY20/21 S1 Lecture 10</title>
+<meta charset="utf-8">
+</head>
+<body>
+<textarea id="source">
+class: middle, center
+
+# Lecture 10
+
+### 28 October 2024
+
+.smaller[
+Admin Matters<br>
+Unit 25: Tower of Hanoi<br>
+Unit 26: Permutation<br>
+Unit 27: N Queens<br>
+]
+
+---
+### Midterm and PE0 Twos
+
+Please file your request to remark by this Friday, 1 November 2024, 2359
+
+---
+class: middle, center
+
+### No labs this week
+
+Happy Deepavali / Diwali!
+
+---
+### Recursion
+
+- Mostly linear recursion so far
+- Can be easily written as loops
+- What else can recursion do?
+
+---
+class: middle,center
+
+## Tower of Hanoi
+
+---
+class: middle,wide
+
+![start](figures/recursion/recursion.001.png)
+
+---
+class: middle,wide
+
+![start](figures/recursion/recursion.002.png)
+
+---
+class: middle,center
+
+[Let's play](https://www.mathplayground.com/logic_tower_of_hanoi.html)
+
+---
+### Recursion
+
+- Find a solution for trivial input (one disc)
+- Assume we know how to move $k-1$ discs to another peg
+- Solve the problem with $k$ discs
+
+---
+Start with this:
+
+![start](figures/recursion/recursion.001.png)
+
+---
+Move $k-1$ disc from A to B (wishful thinking)
+
+![start](figures/recursion/recursion.003.png)
+
+---
+Move one disc from A to C
+
+![start](figures/recursion/recursion.004.png)
+
+---
+Move $k-1$ discs from B to C (wishful thinking)
+
+![start](figures/recursion/recursion.005.png)
+
+---
+### Abstraction
+
+Representating the problem:
+- discs as integers 1 to $k$
+- pegs as characters `A` `B` `C`
+
+---
+### How many moves?
+
+$T(1) = 1$
+
+$T(k) = 2T(k-1) + 1$
+
+---
+
+#### Question: How about a different algorithm?
+
+1. Move the top disk from peg `A` to peg `B`.
+
+--
+
+2. Move the remaining $k - 1$ disks from peg `A` to peg `C`.
+
+--
+
+3. Move the top disk from peg `B` to peg `C`.
+
+--
+
+**Question:** Where did we go wrong?
+
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/tower-of-hanoi.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/tower-of-hanoi-faulty-moves.png)
+
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/tower-of-hanoi-impossible-pegs.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/tower-of-hanoi-implicit-2.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/tower-of-hanoi-implicit-3.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/tower-of-hanoi-implicit-4.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/tower-of-hanoi-implicit-5.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/tower-of-hanoi-implicit-6.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/tower-of-hanoi-implicit-7.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/wishful-thinking-1.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/wishful-thinking-2.png)
+---
+class: middle,center
+
+Iterative solution?
+
+---
+### Generating Permutations
+
+Given a string with no repetition, say `abc`, generate all permutations of 
+the chars in the string:
+
+```C
+abc cba acb cab bac bca
+```
+
+---
+### Recursion
+
+- Generate a permutation for trivial input (one-char string)
+- Assume we know how to generate permutation for string of length $k-1$
+- Generate permutation for string of length $k$
+
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/permutations-1.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/permutations-2.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/permutations-3.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/permutations-4.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/permutations-5.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/permutations-6.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/permutations-7.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/permutations-8.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/permutations-9.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/permutations-10.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/permutations-11.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/permutations-12.png)
+---
+class: middle, left
+
+![:scale 100%](figures/lec10/permutations-13.png)
+
+---
+To permutate `abc`:
+
+- starts with `a`, permutate `bc`: `abc acb`
+- starts with `b`, permutate `ac`: `bac bca`
+- starts with `c`, permutate `ab`: `cab cba`
+
+---
+class: wide
+
+Example:
+
+To permutate `abcd`:
+
+- start with `a`, permutate `bcd`: `abcd abdc acbd ..`
+- start with `b`, permutate `acd`: `bacd bacd bcad ..`
+- start with `c`, permutate `abd`: `cabd cadb cbad ..`
+- start with `d`, permutate `abc`: `dabc dacb cbac ..`
+
+---
+To permutate `abc` when we start with `d`:
+
+- start with `da`, permutate `bc`: `dabc dacb`
+- start with `db`, permutate `ac`: `dbac dbca`
+- start with `dc`, permutate `ab`: `dcab dcba `
+
+---
+At any step, we have a fixed prefix, and permute
+the suffix (recursively)
+
+---
+### Running Time
+
+$T(1) = 1$
+
+$T(k) = kT(k-1) + 1$
+
+---
+class: middle,center
+
+## N Queens
+
+---
+class: middle,center
+
+![queens](figures/recursion/recursion.006.png)
+
+---
+class: middle,center
+
+![queens](figures/recursion/recursion.007.png)
+
+---
+class: middle,center
+
+Given $n \times n$ chess board, place $n$ queens so that they do not threaten each other.
+
+---
+### Recursion
+
+- Find the solution for trivial input ($1 \times 1$ chessboard)
+- Assume we know how to find a solution for a smaller chessboard ($n-1 \times n-1$)
+- Find the solution for a $n \times n$ chessboard
+
+--
+
+Does not work!
+---
+### We need the right representation of the problem
+
+- There is one queen per row, one queen per column
+- So the positions of the queens can be represented with the column ids
+
+---
+class: middle,center
+
+![queens](figures/recursion/recursion.006.png)
+---
+class: middle,center
+
+![queens](figures/recursion/recursion.007.png)
+
+
+---
+### How to solve
+
+- Generate all possible placement of $n$ queens
+- Print all placements that are valid
+
+---
+class: middle,center
+
+![:scale 900px](figures/lec10/lec10-permute-crop-pdf-1.png)
+
+---
+class: middle,center
+![:scale 900px](figures/lec10/lec10-permute-crop-pdf-2.png)
+
+---
+class: bottom
+
+.tiny[
+Version: 1.0 Sat Oct 26 14:45:45 +08 2024
+]
+</textarea>
+
+<script src="https://remarkjs.com/downloads/remark-latest.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML&delayStartupUntil=configured" type="text/javascript"></script>
+<script src="javascripts/counter.js">
+</script>
+<script>
+remark.macros.scale = function (percentage) {
+	var url = this;
+	return '<img src="' + url + '" style="width: ' + percentage + '" />';
+};
+// ![:scale 50%](image.jpg)
+
+var slideshow = remark.create({
+    navigation: {
+	    scroll: false
+	},
+	ratio: '16:9',
+	highlightStyle: 'tomorrow',
+    slideNumberFormat: 'AY24/25 S1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%current%',
+});
+ // Setup MathJax
+  MathJax.Hub.Config({
+	  tex2jax: {
+		inlineMath: [['$', '$']],
+		// inlineMath: [['$', '$'], ['\\(', '\\)']],
+		displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+		skipTags: ['script', 'noscript', 'style', 'pre']
+	  }
+  });
+
+  MathJax.Hub.Configured();
+</script>
+</body>
+</html>

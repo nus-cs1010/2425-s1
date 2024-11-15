@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="stylesheets/cs1010.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/light.css">
+<title>CS1010 AY24/25 S1 Lecture 11</title>
+<meta charset="utf-8">
+</head>
+<body>
+<textarea id="source">
+class: middle, center
+
+# Lecture 11
+
+### 4 November 2024
+
+.smaller[
+Admin Matters<br>
+Unit 26: Struct<br>
+Unit 27: Standard I/O<br>
+]
+---
+### PE1
+
+- Watch out for emails from SoftMark tonight/tomorrow
+
+- Check marking scheme and common mistakes
+
+- File remarking request ticket by this Friday
+
+---
+### PE2
+
+- Next Tuesday, 6 - 9 PM
+
+- Scope: until Unit 25
+
+---
+### Exercise 8
+
+- Released today
+
+- Due next Friday
+
+- If you need more time, you can submit by the end of Monday, Reading Week
+
+---
+
+### Past Year Papers
+
+- Posted for both final exam and PE2 
+
+- Will go through some final questions during tutorials
+
+---
+class: 
+
+### Open call for CS1010 memes
+
+- Email your best memes to us!
+
+- Feel free to roast us or the course :) 
+
+---
+class: middle,center
+background-image: url(figures/ceg-shirt.jpg)
+
+### `struct`
+
+---
+### Some things belong together
+
+- 1D array and its length
+- 2D array, its width, and its height
+- x and y position in a maze
+- r, g, b of a pixel
+
+---
+### Defining a `struct`
+
+```C
+struct matrix {
+  double** cells;
+  long num_of_rows;
+  long num_of_columns;
+};
+```
+
+---
+```C
+struct course {
+  char *code;
+  char *title;
+  long units;
+};
+```
+
+---
+### Declaring a struct variable
+
+```C
+struct course cs1010;
+```
+
+---
+### Possible to have a `struct` of `struct`
+
+```C
+struct point {
+  long x;
+  long y;
+};
+
+struct rectangle {
+  struct point top_left;
+  struct point bottom_right;
+};
+```
+
+---
+### Initializing a struct variable
+
+.small[
+```C
+struct course cs1010;
+cs1010.code = "CS1010";
+cs1010.title = "Programming Methodology";
+cs1010.units = 4;
+```
+]
+
+---
+### Declaring AND Initializing a struct variable
+
+.small[
+```C
+struct course cs1010 = {
+  .code = "CS1010",
+  .title = "Programming Methodology",
+  .units = 4
+};
+```
+]
+---
+### Reading and writing members of a `struct`
+
+.small[
+```C
+cs1010.units = hours_spent_per_week/2.5;
+cs1010_println_long(cs1010.units);
+```
+]
+
+---
+### Assigning one `struct` to another
+
+.small[
+```C
+struct color black = {
+  .r = 0;
+  .g = 0;
+  .b = 0;
+};
+
+struct color background = black;
+```
+]
+
+---
+### `struct` are passed by-value
+
+.smaller[
+```C
+void update_units(struct course c, long weekly_hours) {
+  c.units = weekly_hours/2.5;
+}
+  :
+
+struct course cs1010;
+cs1010.units = 4;
+update_units(cs1010, 80);
+// { cs1010.units == 4 }
+```
+]
+
+---
+### Passing a `struct` by reference
+
+Using `*` dereference operator
+
+.smaller[
+```C
+void update_units(struct course *c, long weekly_hours) {
+  (*c).units = weekly_hours/2.5;
+}
+  :
+
+struct course cs1010;
+update_units(&cs1010, 80);
+// cs1010.units becomes 32
+```
+]
+
+---
+### Passing a `struct` by reference
+
+Using `->` arrow operator
+
+.smaller[
+```C
+void update_units(struct course *c, long weekly_hours) {
+  c->units = weekly_hours/2.5;
+}
+  :
+
+struct course cs1010;
+update_units(&cs1010, 80);
+// cs1010.units becomes 32
+```
+]
+
+---
+### Passing multiple values back to caller 
+
+Method 1
+
+.smaller[
+```C
+void find_max_steps(long n, long *max_n, long *max_num_steps) {
+  *max_num_steps = 0;
+  *max_n = 1;
+  for (long i = 1; i <= n; i += 1) {
+    long num_of_steps = count_num_of_steps(i);
+    if (num_of_steps >= *max_num_steps) {
+      *max_n = i;
+      *max_num_steps = num_of_steps;
+    }
+  }
+}
+```
+]
+
+---
+### Passing multiple values back to caller 
+
+Method 2
+
+.smaller[
+```C
+struct answer {
+  long max_n;
+  long max_num_steps;
+};
+```
+]
+
+---
+### Passing multiple values back to caller 
+
+.smaller[
+```C
+struct answer find_max_steps(long n) {
+  struct answer ans = {
+    .max_n = 1,
+    .max_num_steps = 0
+  };
+  for (long i = 1; i <= n; i += 1) {
+    long num_of_steps = count_num_of_steps(i);
+    if (num_of_steps >= ans.max_num_steps) {
+      ans.max_n = i;
+      ans.max_num_steps = num_of_steps;
+    }
+  }
+  return ans;
+}
+```
+]
+
+---
+### Defining Your Own Type
+
+.smaller[
+```C
+typedef unsigned long person_t;
+  :
+void is_contact(char **network, person_t i, person_t j) {
+  :
+}
+```
+]
+
+---
+.small[
+```C
+typedef struct course {
+  char *code;
+  char *title;
+  long units;
+} course;
+
+void update_units(course *c, long weekly_hours)
+{
+  c->units = weekly_hours/2.5;
+}
+```
+]
+
+---
+### Where to declare type and struct
+
+- Same scoping rules apply.
+
+- Structs and types are usually used across multiple functions -- you can define them globally.
+
+- Struct variables are still variables -- avoid global variables.
+
+---
+### Life After CS1010
+
+- No `Makefile`, `compile_flags.txt`, etc.
+
+- No CS1010 I/O library
+
+- Input is not always valid
+
+---
+### Reading and Printing without `libcs1010`
+
+- Most C introductory courses teach `printf` and `scanf`
+
+- How to use them correctly
+
+---
+.smaller[
+```C
+printf("%s is a %ld-unit course\n", course.code, course.units);
+
+long n = 42;
+printf("%ld\n", n);
+printf("%5ld\n", n);
+printf("%05ld\n", n);
+
+double pi = 3.1415926;
+printf("%.9lf\n", pi);
+printf("%010.3le\n", pi);
+```
+]
+
+---
+- `printf` behaves differently from functions that you have been writing.
+
+- It can take in a _variable number_ of arguments of _variable types_.
+
+---
+### Wrong/Dangerous use of `printf`
+
+```C
+double pi = 3.1415;
+long x = 0;
+printf("%ld\n", pi);
+printf("%ld %s\n", x, x);
+printf("%s %s\n");
+```
+
+---
+```C
+long width;
+long height;
+scanf("%ld %ld", &width, &height);
+```
+
+---
+- Space in between the format specifier matches zero or more white spaces (space, tab, newline)
+
+- Scanning stops when an input character does not match such a format character or when an input conversion fails
+
+---
+Reading a string with `scanf`
+
+```C
+char word[10];
+scanf("%s", word);
+```
+
+What could possible go wrong?
+
+---
+Reading a number with `scanf`
+
+```C
+long n;
+scanf("%ld", &n);
+```
+
+What could possible go wrong?
+
+---
+### Homework
+
+- Quiz 11 (last quiz)
+
+- Exercise 8 (last exercise)
+
+- Look at past year questions
+
+---
+class: bottom
+
+.tiny[
+]
+</textarea>
+
+<script src="https://remarkjs.com/downloads/remark-latest.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML&delayStartupUntil=configured" type="text/javascript"></script>
+<script src="javascripts/counter.js">
+</script>
+<script>
+remark.macros.scale = function (percentage) {
+	var url = this;
+	return '<img src="' + url + '" style="width: ' + percentage + '" />';
+};
+// ![:scale 50%](image.jpg)
+
+var slideshow = remark.create({
+    navigation: {
+	    scroll: false
+	},
+	ratio: '16:9',
+	highlightStyle: 'tomorrow',
+    slideNumberFormat: 'AY24/25 S1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%current%',
+});
+ // Setup MathJax
+  MathJax.Hub.Config({
+	  tex2jax: {
+		inlineMath: [['$', '$']],
+		// inlineMath: [['$', '$'], ['\\(', '\\)']],
+		displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+		skipTags: ['script', 'noscript', 'style', 'pre']
+	  }
+  });
+
+  MathJax.Hub.Configured();
+</script>
+</body>
+</html>

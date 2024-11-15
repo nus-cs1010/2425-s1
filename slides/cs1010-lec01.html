@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="stylesheets/cs1010.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/light.css">
+<title>CS1010 AY24/25 S1 Lecture 1</title>
+<meta charset="utf-8">
+</head>
+<body>
+<textarea id="source">
+class: middle, center
+
+# CS1010
+## Programming Methodology<br>
+
+.tiny[
+Use `k` and `j` to navigate up and down
+]
+---
+class: middle, center
+
+# Lecture 1
+
+### 12 August 2024
+
+Admin Matters<br>
+Unit 1: **What is a Program?**<br>
+Unit 2: **Computational Problems &amp; Algorithms**<br>
+
+---
+class: middle, center
+
+### Ooi Wei Tsang
+
+ooiwt@comp.nus.edu.sg
+
+__Office__ : AS6 05-14
+
+__Office Hour__ : Tuesday 1 - 2 PM
+
+---
+class: middle, center
+
+### Eldon Chung
+
+eldon.ch@nus.edu.sg
+
+__Office__ : COM3 03-28
+
+__Office Hour__ : Friday 11 - 12 PM
+
+---
+class: top
+
+### [Teaching Team](https://nus-cs1010.github.io/2425-s1/team.html)
+
+- **2 lecturers + lab tutors**
+    - Wei Tsang, Eldon
+
+- **4 tutorial instructors**
+    - Eric, Gizem, Malaika, Yunjeong
+
+- **25 UG lab tutors**
+
+---
+
+class: middle, center
+
+### Please read this:
+
+[CS1010 Course Information and Policy](https://nus-cs1010.github.io/2425-s1/about.html)
+
+---
+class: middle, center
+
+## Important Websites
+
+---
+class: top, center
+
+### CS1010 Handbook
+
+[`https://nus-cs1010.github.io/2425-s1/`](https://nus-cs1010.github.io/2425-s1/)
+
+lecture notes<br>
+problem sets<br>
+programming exercises<br>
+guides<br>
+
+---
+class: middle, center, wide
+
+### Piazza
+
+[`https://piazza.com/nus.edu.sg/fall2024/cs1010/home`](https://piazza.com/nus.edu.sg/fall2024/cs1010/home)
+
+ask questions<br>
+
+---
+class: middle, center
+
+### GitHub
+
+[`https://www.github.com/`](https://www.github.com)
+
+programming exercise submissions<br>
+programming exercise feedback<br>
+
+---
+class: middle, center
+
+### Canvas
+
+[`https://canvas.nus.edu.sg/courses/62224`](https://canvas.nus.edu.sg/courses/62224)
+
+announcements<br>
+quizzes<br>
+grades<br>
+survey<br>
+etc.
+
+---
+class: middle, center
+
+### RT (Request Ticket)
+
+[`https://mysoc.nus.edu.sg/app/cs1010/`](https://mysoc.nus.edu.sg/app/cs1010/)
+
+request to be excused from tests<br>
+request for regrade<br>
+etc.
+
+---
+class: middle, center
+
+## Assessments
+
+how you will be graded
+
+---
+class: middle,center
+
+.cols[
+.fifty[
+.tiny[
+### Formative
+&nbsp;            | Percentage    
+-----------------:|:--------------
+Quizzes           | 5%
+Programming Exercises | 5%
+Problem Sets      | 0%
+Past Year Papers  | 0%
+]]
+
+.fifty[
+.tiny[
+### Summative
+&nbsp;            | Percentage    
+-----------------:|:--------------
+Midterm           | 15%
+Final             | 30%
+3$\times$ Practical Exams   | 45%
+]]]
+
+---
+### Programming Exercises
+
+- The most important formative component of CS1010.
+
+- 60+ practice questions of various difficulties.  
+
+- Complete them to gain the skills and confidence of solving computational problems
+
+---
+class: middle,center
+
+.smaller[
+Assessment         | Date                       | Time
+:------------------|:-------------------------- |:-------------
+Midterm            | Mon, 30 Sep                | 4 - 6 PM
+Final              | Fri, 25 Nov                | 1 - 3 PM
+Practical Exam 0   | Tue, 1 Oct                 | 6 - 9 PM
+Practical Exam 1   | Tue, 22 Oct                | 6 - 9 PM
+Practical Exam 2   | Tue, 12 Nov                | 6 - 9 PM
+]
+
+---
+class:top
+
+### Open Book Exam
+
+- Bring any (analog) materials you want
+
+- Nothing to memorize
+
+---
+class:top
+
+### Not "bell-curved"
+
+- Your grade is based solely on you
+
+- Not relative to others in the class
+
+---
+class: center,middle
+
+## Expectations
+
+---
+class: center,middle
+
+You are responsible for your own education.
+
+Self-motivated to work hard, learn, and improve.
+
+---
+class: center,middle
+
+The teaching team is here to facilitate and help.  
+
+Don't be afraid to ask questions.
+
+---
+background-image: url(figures/meme/andy-too-afraid-to-ask.png)
+
+---
+class: center,middle
+
+Help each other to learn and succeed.
+
+---
+background-image: url(figures/not-alone.jpg)
+
+---
+class: center,middle
+
+Read instructions and adhere to [the policies](https://nus-cs1010.github.io/2425-s1/about.html).
+
+Respect deadlines.
+
+
+---
+class: center,middle
+
+## Words of Advice
+
+---
+class: middle,center
+
+### CS1010 is difficult
+
+but useful
+
+---
+background-color: #000
+background-image: url(figures/reddit_cs1010_made_me_cry.png)
+
+---
+class: middle,center
+
+### Work hard consistently
+
+Invest time to learn and practice
+
+Don't fall behind
+
+---
+class: middle,center
+
+### This is a fresh start
+
+It does not matter:
+
+how well you did academically<br>
+how much you know about programming
+
+---
+class: middle,center
+
+### Grade is not everything
+
+Focus on:
+
+learning new things<br>
+level-up your skills<br>
+enriching your experience<br>
+
+---
+class: middle,center
+
+### Take care of yourself
+
+Mental wellness is important.
+
+If you can't cope or is falling behind, talk to us.
+
+---
+
+class: middle, center
+
+# Lecture 1
+
+### 12 August 2024
+
+Admin Matters<br>
+Unit 1: **What is a Program?**<br>
+Unit 2: **Computational Problems and Algorithms**<br>
+
+---
+class: middle,center
+
+## What is a program?
+
+---
+class: middle,center
+
+### A sequence of step-by-step instructions given to computers to process data in order to perform a certain task.
+---
+class: center
+background-color:#fff
+
+### How CPU Executes a Program
+
+
+.fit[![simplified](../notes/figures/cpu-memory/cpu-memory-pdf.png)]
+
+.tiny[(A highly simplfied view)]
+
+---
+### Machine Code
+
+- Instructions that can be interpreted by a CPU
+
+- Different CPU architecture may use different instruction sets
+
+`1001010001011110100010101010101000101`
+
+---
+### Assembly Language
+
+- Use mnemonic to represent the instructions such as `incr`, `decr`, `store`, etc. in a more human-readable way.
+
+- Still difficult to write: operation that is conceptually simple still requires multiple instructions to be issued.
+
+---
+### Higher-Level Language
+
+- Allow programmers to express an operation closer to their intention
+
+- E.g., $x = x + y$ if $y < 0$
+
+
+---
+### Higher-Level Languages
+
+- FORTRAN (first popular programming language from 1950s)
+
+- C (1972, still influential today)
+
+- [Many many others](https://en.wikipedia.org/wiki/List_of_programming_languages)
+
+---
+class: wide	
+
+<iframe src="https://en.wikipedia.org/wiki/List_of_programming_languages" width=100% style="display: block; height: 95vh"></iframe>
+
+---
+class: top
+
+### Why C?
+
+- It lets you have more control over how you use memory.  
+- It forces students to think and understand how machine works.
+- It is fast.
+
+Important for InfoSec and CEG students.
+
+---
+background-color:#fff
+
+### Compilation
+
+A compiler _compiles_ a program written in high-level language to machine code.
+
+.fit[![simplified](../notes/figures/c-compile-run/c-compile-run-pdf-0.png)]
+
+---
+class: middle,center
+
+## What will you learn in CS1010?
+
+---
+class: middle,center
+
+### How a C program behaves
+
+---
+class: middle,center
+
+### How to write C programs
+---
+class: middle,center
+
+### Tools and techniques to write good and correct C programs
+---
+class: middle,center,wide
+
+### How to use C to solve computational problems
+---
+class: middle
+
+### *Easy*: Write a program that does what you want
+
+### *Harder*: Knowing what your program should do
+
+---
+class: middle,center
+
+## What is a computational problem?
+
+---
+class: middle
+
+### Computational problems 
+
+- are problems that can be solved _step-by-step_ by a computer
+
+- have _well-defined_ inputs, outputs, and constraints
+
+---
+class: middle,center
+
+### Example: Testing if integer is odd
+
+![:scale 75%](../notes/figures/lec01/oddness.png)
+
+---
+class: middle,center
+
+### Example: Is the input number a prime?
+
+![:scale 75%](../notes/figures/lec01/primality.png)
+
+---
+class: middle,center
+
+#### Example: Output the triangle in a network.
+
+![:scale 75%](../notes/figures/lec01/triangle.png)
+
+---
+class: middle,center
+
+### What is the meaning of life?
+
+
+![:scale 75%](../notes/figures/lec01/notwelldefined.png)
+
+---
+class: middle,center
+
+### Do I look good in this outfit?
+
+![:scale 75%](../notes/figures/lec01/notwelldefined.png)
+
+---
+class: top
+
+### Types of Computational Problems:
+
+1. Decision problems (e.g. Is there a path from point A to point B on a map?)
+
+--
+
+2. Search problems (e.g. Output a path from point A to point B if it exists.)
+
+--
+
+3. Optimization problems (e.g. Output the _shortest_ path from point A to point B if it exists.)
+
+---
+
+class: middle,center
+
+### The Point:
+
+#### In this course, we are in the business of writing programs to solve computational problems.
+
+.fit[![:scale 75%](../notes/figures/lec01/wearegiven.png)]
+---
+
+class: middle,center
+
+### The Point:
+
+#### In this course, we are in the business of writing programs to solve computational problems.
+
+.fit[![:scale 75%](../notes/figures/lec01/whatwedo.png)]
+
+---
+class: center
+
+### Let's start with an experiment:
+What I need you to do:
+--
+
+
+Pay special attention to your methods and strategy on how you solve the given problem.
+
+
+---
+class: center
+
+#### Find the maximum among this list of numbers:
+
+```
+5  9  8
+1  3  2
+```
+--
+So what was your strategy?
+
+---
+class: center
+
+### How about now? What's the maximum number here?
+
+.tiny[
+```
+12  20  11  20  14  2   24  36  43  16  27  6   11  7 
+10  15  38  10  22  7   16  26  32  30  11  9   30  6 
+20  6   27  19  26  10  27  6   19  34  5   9   3   22
+10  4   13  1   10  22  43  36  39  29  41  12  13  25
+17  8   30  31  29  38  2   42  7   45  24  33  9   40
+34  29  37  2   26  17  19  34  6   7   34  22  21  41
+38  5   15  13  9   1   42  39  5   29  38  4   22  29
+41  10  26  32  30  26  16  16  18  22  32  34  14  10
+5   17  25  16  19  6   31  16  3   13  8   42  41  0 
+13  30  44  1   41  14  5   39  40  38  6   37  38  9 
+.
+
+```
+]
+
+--
+
+What was your strategy this time?
+
+---
+class: top
+
+### How close does this match what you tried?
+
+--
+
+1. Scan the integers one-by-one
+
+--
+
+2. Keep track of the "max so far"
+
+--
+
+3. When we are done scanning, the "max so far" will be the answer.
+
+
+---
+class: top
+
+### Did you do any of the following:
+
+--
+
+1. Use an arbitrary/random sequence to go through the numbers?
+
+--
+
+2. Look at groups of numbers at a go?
+
+--
+
+3. Double back to look at the same numbers you already did?
+
+---
+class: top
+
+### Computational Thinking:
+
+The thing is, computers aren't exactly like humans. 
+They don't look at the list like this:
+
+.fit[![](../notes/figures/lec01/lookall.jpeg)]
+
+---
+class: top
+
+### Computational Thinking:
+It's easier for them to process singular values one by one:
+
+.fit[![](../notes/figures/lec01/look1.jpeg)]
+
+---
+class: top
+
+### Computational Thinking:
+It's easier for them to process singular values one by one:
+
+.fit[![](../notes/figures/lec01/look1.jpeg)]
+
+
+---
+class: top
+
+### Computational Thinking:
+It's easier for them to process singular values one by one:
+
+.fit[![](../notes/figures/lec01/look2.jpeg)]
+
+.footnote[This is not entirely true, but that is a very advanced topic.]
+---
+class: top
+
+### Computational Thinking:
+It's easier for them to process singular values one by one:
+
+.fit[![](../notes/figures/lec01/look3.jpeg)]
+
+.footnote[This is not entirely true, but that is a very advanced topic.]
+---
+class: top
+
+### Computational Thinking:
+It's easier for them to process singular values one by one:
+
+.fit[![](../notes/figures/lec01/look4.jpeg)]
+
+.footnote[This is not entirely true, but that is a very advanced topic.]
+
+---
+class: top
+
+### Computational Thinking:
+Also, they are very good at following precise instructions. 
+So we will try to get them to read the list in a _fixed sequence_.
+E.g. From first number to last number.
+
+---
+class: top
+
+### Computational Thinking:
+Lastly, computers are really good at remembering things. 
+So unlike us humans, they don't need to "double back" to re-check their results.
+
+---
+class: top
+
+
+### Computational Thinking:
+Let's try to be less human 🤖 and try to get a computer 
+to follow the same strategy.
+
+--
+
+To do this, we need to do a few things:
+
+--
+1. A problem formulation. (So that we know what the computer is given as input.)
+
+--
+2. A fixed set of instructions. (This describes the strategy to implement.)
+
+---
+class: top
+
+### Step 1: General Problem Formulation
+
+- Input: $L$ = $\langle l\_0,...,l\_{k-1\} \rangle$
+
+- Output: $m$
+
+- Constraint $m$ should be from the input list $L$ and $m$ is the largest value 
+among all of the values in $L$.
+
+---
+class: top 
+
+### Step 2: Designing an implementable strategy.
+
+But wait! We haven't told what kind of steps computers can make. And this is tricky
+
+
+---
+class: top 
+
+### Step 2 Detour: The Program Model.
+
+We think of a program as something that 
+<span style="color:blue"><u>manipulates</u></span> 
+<span style="color:red"><u>data</u></span>.
+
+---
+class: top 
+
+### Step 2 Detour: The Program Model.
+
+We think of a program as something that 
+<span style="color:blue"><u>manipulates</u></span> 
+<span style="color:red"><u>data</u></span>.
+ Here, <span style="color:red"><u>data</u></span> is stored in _variables_.
+
+- E.g. $m$ could be a variable remembers the maximum value seen so far.
+
+---
+class: top 
+
+### Step 2 Detour: The Program Model.
+
+We think of a program as something that 
+<span style="color:blue"><u>manipulates</u></span> 
+<span style="color:red"><u>data</u></span>.
+ Here, <span style="color:red"><u>data</u></span> is stored in _variables_.
+
+- E.g. $m$ could be a variable remembers the maximum value seen so far.
+
+- We can also _read_ and _write_ values to variables.
+E.g. $m = 5$ sets $m$ to $5$. $m = z$, sets $m$ to whatever value $z$ had.
+---
+class: top 
+
+### Step 2 Detour: The Program Model.
+
+We think of a program as something that 
+<span style="color:blue"><u>manipulates</u></span> 
+<span style="color:red"><u>data</u></span>. 
+<span style="color:red"><u>Data</u></span> can also be stored in _lists_.
+- E.g. our input is in the form of a list $L = \langle l\_0,...,l\_{k-1\} \rangle$.
+
+--
+
+- E.g. $l_0$ gives us the first element of $L$. And $l_1$ gives us the second element of $L$, and so on.
+---
+class: top 
+
+### Step 2 Detour: The Program Model.
+
+We think of a program as something that 
+<span style="color:blue"><u>manipulates</u></span> 
+<span style="color:red"><u>data</u></span>. 
+<span style="color:red"><u>Data</u></span> can also be stored in _lists_.
+
+Important Note: A _variable_ has a corresponding location in computer memory, and it holds a value.
+---
+class: top 
+
+### Step 2 Detour: The Program Model.
+
+We think of a program as something that 
+<span style="color:blue"><u>manipulates</u></span> 
+<span style="color:red"><u>data</u></span>.
+ To <span style="color:blue"><u>manipulate</u></span> data, we operate on the variables.
+
+---
+class: top 
+
+### Step 2 Detour: The Program Model.
+
+We think of a program as something that 
+<span style="color:blue"><u>manipulates</u></span> 
+<span style="color:red"><u>data</u></span>.
+ To <span style="color:blue"><u>manipulate</u></span> data, we operate on the variables.
+
+- We will allow comparisons $<, >, =$, and basic arithmetic operations ($+$, $-$, $\times$, $\div$, $mod$).  
+
+---
+class: top 
+
+### Step 2 Detour: The Program Model.
+
+We think of a program as something that 
+<span style="color:blue"><u>manipulates</u></span> 
+<span style="color:red"><u>data</u></span>.
+ To <span style="color:blue"><u>manipulate</u></span> data, we operate on the variables.
+
+- We will allow comparisons $<, >, =$, and basic arithmetic operations ($+$, $-$, $\times$, $\div$, $mod$).  
+
+- E.g. $value = value + 1$ will take $value$ and increment it by $1$.
+---
+class: top
+
+### Step 2: Back at it. Our input:
+
+- $L$ : The list of numbers being scanned.
+- $k$ : The size of the list (or number of values).
+
+---
+class: top
+
+### Step 2: Declare our program variables:
+
+- $m$ : The maximum value so far.
+- $i$ : Index into the list.
+
+--
+
+We will set $m = l_0$ and $i = 1$. 
+
+---
+class: top
+
+### Step 3: Finally, the computation: 
+
+1. Compare $m$ with $l_i$.
+
+--
+
+2. If $m < l_i$, then update $m$ by setting $m = l_i$.
+
+--
+
+3. Then to scan the next element, we set $i = i + 1$.
+
+---
+class: top
+
+### Done scanning?
+
+- Done _after_ we have scanned $l_{k - 1}$ (remember this is the last element!).
+
+- This happens when $i = k$. So when we realise $i = k$, we stop.
+$m$ now contains the maximum element of $L$.
+--
+
+
+(Pop quiz: Why when $i = k$ and not $i = k - 1$?).
+
+---
+class: top
+
+### Think about what $i$ represents:
+
+.fit[ ![:scale 45%](../notes/figures/lec01/trace0.png) ]
+
+This is our initial program state.
+
+---
+class: top
+
+### Think about what $i$ represents:
+
+.fit[ ![:scale 45%](../notes/figures/lec01/trace1.png) ]
+
+After one iteration.
+
+---
+class: top
+
+### Think about what $i$ represents:
+
+.fit[ ![:scale 45%](../notes/figures/lec01/trace2.png) ]
+
+After another iteration.
+
+
+---
+class: top
+
+### Think about what $i$ represents:
+
+.fit[ ![:scale 50%](../notes/figures/lec01/trace3.png) ]
+
+After the final iteration.
+
+---
+class: top
+
+### Think about what $i$ represents:
+
+.fit[ ![:scale 25%](../notes/figures/lec01/trace3.png) ]
+
+Notice: The variable $i$ represents the total number of scanned elements.
+
+--
+E.g. When $i = 2$, $m$ is the max of the first $2$ elements.
+
+--
+So when $i = k$, $m$ is the max of the first $k$ elements (i.e. all of them).
+
+---
+class: top
+
+### To summarize:
+
+- Given list of numbers $L$, of size $k$. 
+- Set $m = l_0$, and $index = 1$.
+- Update $m$ to be the larger of $m$ and $l_i$.
+- Increment $i$. 
+- Stop when $i = k$.
+
+---
+class: top
+background-color: white
+
+### Here's how you can picture it with a flowchart.
+
+.fit[![](../notes/figures/max-flowchart/max-flowchart-pdf-0.png)]
+
+--
+Let's try going through the flowchart.
+
+---
+class: top
+
+### Did you notice? 
+
+We've not done any C but we're quite close to having a program.
+
+---
+class: top
+
+### These steps to solve a computational problem form the _algorithm_.
+
+--
+The algorithm is how you _describe_ the solution. In CS1010, we'll use C 
+to _implement_ it.
+
+--
+
+Note Bene: A good approach is to think of how to solve the problem conceptually first.
+And _then_ implement it in C. (We've done the conceptual solving today.)
+
+---
+class: top
+
+### How do we know the algorithm is correct?
+
+--
+* Just because an algorithm outputs the correct value on some inputs, it does not necessarily mean it's correct.
+
+--
+* For an algorithm to be correct it has to be correct on _all possible inputs_.
+
+---
+class: top
+
+
+#### For example, outputting if a number is odd:
+
+.center[.fit[![:scale 70%](../notes/figures/lec01/incorrect1.png)]]
+
+---
+class: top
+
+
+#### For example, outputting if a number is odd:
+
+.center[.fit[![:scale 70%](../notes/figures/lec01/incorrect2.png)]]
+
+---
+class: top
+
+### Later in the course:
+
+* Will cover methods on how to show correctness.
+
+* Will cover how to come up with good test cases.
+
+---
+### Homework (Preparing for labs)
+
+- Read and follow the instructions to log into your CS1010 [programming environment](https://nus-cs1010.github.io/2425-s1/guides/environments.html) (PE)
+
+- Learn about using [Unix command line interface](https://nus-cs1010.github.io/2425-s1/guides/unix-essentials.html)
+
+- Complete diagnostic quiz for PE 
+    - Due next Wednesday 2359
+
+---
+### Important Note:
+
+Your labs should be done on the PE nodes because the environment is set up there.
+
+---
+### Homework (Lecture 1)
+
+- Complete diagnostic quiz for Lecture 1
+  - Due next Wednesday 2359
+
+- Problem Set 2.1 to 2.3 
+  - Not graded.  To be discussed Week 3.
+
+---
+class: center, middle
+
+# Thank You!
+
+
+
+</textarea>
+
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML&delayStartupUntil=configured" type="text/javascript"></script>
+<script src="javascripts/counter.js"></script>
+<script>
+remark.macros.scale = function (percentage) {
+	var url = this;
+	return '<img src="' + url + '" style="width: ' + percentage + '" />';
+};
+// ![:scale 50%](image.jpg)
+
+var slideshow = remark.create({
+    navigation: {
+	    scroll: false
+	},
+	ratio: '16:9',
+	highlightStyle: 'monokai',
+    slideNumberFormat: 'AY24/25 S1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%current%',
+});
+ // Setup MathJax
+  MathJax.Hub.Config({
+	  tex2jax: {
+		inlineMath: [['$', '$']],
+		displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+		skipTags: ['script', 'noscript', 'style', 'pre']
+	  }
+  });
+
+  MathJax.Hub.Configured();
+</script>
+</body>
+</html>
+
