@@ -32,7 +32,7 @@ Let's say we consider the prefix `a` in the example above.  The permuted strings
 ```
 abcd
 abdc
-abcd
+acbd
 acdb
 adcb
 adbc
@@ -43,7 +43,7 @@ Excluding `a`, the strings have suffixes:
 ```
 bcd
 bdc
-bcd
+cbd
 cdb
 dcb
 dbc
